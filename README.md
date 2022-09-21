@@ -1,2 +1,2 @@
 # cinema-epul
-School project - RESTful Spring Boot / Angular
+School project - RESTful Spring Boot / React / React Native
