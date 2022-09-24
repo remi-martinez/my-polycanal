@@ -11,9 +11,9 @@ import java.util.Objects;
 @Embeddable
 public class PersonnageId implements Serializable {
     private static final long serialVersionUID = -2955374240123434273L;
-    @Column(name = "NoFilm", nullable = false)
+    @Column(name = "no_film", nullable = false)
     private Integer noFilm;
-    @Column(name = "NoAct", nullable = false)
+    @Column(name = "no_act", nullable = false)
     private Integer noAct;
 
     public Integer getNoAct() {

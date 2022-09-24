@@ -2,24 +2,22 @@ package com.server.cinemaepul.entity;
 
 import javax.persistence.*;
 
-@Table(name = "personnage", indexes = {
-        @Index(name = "NoFilm", columnList = "NoFilm"),
-        @Index(name = "NoAct", columnList = "NoAct")
-})
 @Entity
+@Table(name = "personnage")
 public class Personnage {
     @EmbeddedId
     private PersonnageId id;
+    @MapsId("noAct")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "no_act")
+    private Acteur acteur;
 
-    @Column(name = "NomPers", nullable = false, length = 30)
-    private String nomPers;
-
-    public String getNomPers() {
-        return nomPers;
+    public Acteur getActeur() {
+        return acteur;
     }
 
-    public void setNomPers(String nomPers) {
-        this.nomPers = nomPers;
+    public void setActeur(Acteur acteur) {
+        this.acteur = acteur;
     }
 
     public PersonnageId getId() {
@@ -29,4 +27,6 @@ public class Personnage {
     public void setId(PersonnageId id) {
         this.id = id;
     }
+
+    //TODO Reverse Engineering! Migrate other columns to the entity
 }

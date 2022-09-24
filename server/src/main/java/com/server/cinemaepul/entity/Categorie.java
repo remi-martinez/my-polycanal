@@ -1,22 +1,32 @@
 package com.server.cinemaepul.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
-@Table(name = "categorie")
 @Entity
+@Table(name = "categorie")
 public class Categorie {
     @Id
-    @Column(name = "CodeCat", nullable = false, length = 2)
+    @Column(name = "code_cat", nullable = false, length = 2)
     private String id;
 
-    @Column(name = "LibelleCat", nullable = false, length = 20)
+    @Column(name = "libelle_cat", nullable = false, length = 20)
     private String libelleCat;
 
     @Column(name = "image", nullable = false, length = 150)
     private String image;
+
+    @OneToMany(mappedBy = "codeCat")
+    private Set<Film> films = new LinkedHashSet<>();
+
+    public Set<Film> getFilms() {
+        return films;
+    }
+
+    public void setFilms(Set<Film> films) {
+        this.films = films;
+    }
 
     public String getImage() {
         return image;

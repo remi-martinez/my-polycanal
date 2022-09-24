@@ -2,26 +2,39 @@ package com.server.cinemaepul.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
-@Table(name = "acteur")
 @Entity
+@Table(name = "acteur")
 public class Acteur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "NoAct", nullable = false)
+    @Column(name = "no_act", nullable = false)
     private Integer id;
 
-    @Column(name = "NomAct", nullable = false, length = 20)
+    @Column(name = "nom_act", nullable = false, length = 20)
     private String nomAct;
 
-    @Column(name = "PrenAct", length = 20)
+    @Column(name = "pren_act", length = 20)
     private String prenAct;
 
-    @Column(name = "DateNaiss")
+    @Column(name = "date_naiss")
     private LocalDate dateNaiss;
 
-    @Column(name = "DateDeces")
+    @Column(name = "date_deces")
     private LocalDate dateDeces;
+
+    @OneToMany(mappedBy = "acteur")
+    private Set<Personnage> personnages = new LinkedHashSet<>();
+
+    public Set<Personnage> getPersonnages() {
+        return personnages;
+    }
+
+    public void setPersonnages(Set<Personnage> personnages) {
+        this.personnages = personnages;
+    }
 
     public LocalDate getDateDeces() {
         return dateDeces;
