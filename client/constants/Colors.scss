@@ -1,0 +1,667 @@
+/* Note: if needed later, we could use semantic colors (https://ether.thescenery.co/color/) */
+:root {
+  /* mono */
+  --color_white: hsl(0, 0%, 100%); /* #ffffff */
+  --color_white-0: hsla(0, 0%, 100%, 0); /* #ffffff */
+  --color_white-10: hsla(0, 0%, 100%, 0.1); /* #ffffff */
+  --color_white-20: hsla(0, 0%, 100%, 0.2); /* #ffffff */
+  --color_white-30: hsla(0, 0%, 100%, 0.3); /* #ffffff */
+  --color_white-50: hsla(0, 0%, 100%, 0.5); /* #ffffff */
+  --color_white-70: hsla(0, 0%, 100%, 0.7); /* #ffffff */
+  --color_white-80: hsla(0, 0%, 100%, 0.8); /* #ffffff */
+  --color_base: hsl(0, 0%, 60%); /* #999999 */
+  --color_black: hsl(0, 0%, 0%); /* #000000 */
+  --color_black-50: hsl(0, 0%, 0%, 50%); /* #808080 */
+  --color_black-80: hsl(0, 0%, 80%); /* #cccccc */
+  --color_dark: hsl(0, 0%, 5%); /* #0e0e0e */
+
+  /* neutral colors */
+  --color_grey-100: hsl(0, 0%, 96%); /* #f5f5f5 */
+  --color_grey-200: hsl(220, 14%, 88%); /* #dcdfe5 */
+  --color_grey-300: hsl(218, 7%, 78%); /* #c3c6cb */
+  --color_grey-350: hsl(240, 14%, 90%); /* #e2e2e9 */
+  --color_grey-350-low-opacity: hsla(240, 14%, 90%, 0.2); /* #e2e2e9 opacity .2 */
+  --color_grey-400: hsl(215, 6%, 39%); /* #5d6269 */
+  --color_grey-450: hsl(217, 9%, 29%); /* #434851 */
+  --color_grey-500: hsl(0, 0%, 28%); /* #474747 */
+  --color_grey-600: hsl(213, 12%, 12%); /* #1b1e22 */
+  --color_grey-700: hsl(220, 12%, 10%); /* #16181d */
+  --color_grey-800: hsl(346, 35%, 7%); /* #180c0f */
+  --color_grey-850: hsl(0, 0%, 99%); /* #fcfcfc */
+  --color_grey-dark: hsl(215, 15%, 23%); /* #313842 */
+
+  /* V5 mono */
+  --color_amaranth-50: hsla(350, 83%, 57%, 0.5); /* #ec3654 opacity .5 */
+  --color_amaranth: hsl(350, 83%, 57%); /* #ec3654 */
+  --color_cod-grey: hsl(0, 0%, 9.4%); /* #181818 */
+  --color_cod-grey-50: hsla(0, 0%, 9.4%, 0.5); /* #181818 opacity .5 */
+  --color_gallery: hsl(0, 0%, 92.2%); /* #ebebeb */
+  --color_iron: hsl(180, 7.4%, 89.4%); /* #E2E6E6 */
+  --color_ivory: hsl(240, 5%, 96%); /* #f5f5f6 */
+  --color_maroon-flush: hsl(350.1, 67.4%, 45.7%); /* #c32640 */
+  --color_mine-shaft: hsl(0, 0%, 14.1%); /* #242424 */
+  --color_mine-shaft-light: hsl(0, 0%, 22.7%); /* #3a3a3a */
+  --color_tuna: hsl(233, 8%, 23%); /* #373840 */
+
+  /* theme colors */
+  --color_primary: hsl(0, 0%, 11%); /* #1c1c1c */
+  --color_secondary: var(--color_amaranth);
+
+  /* button colors */
+  --color_button-bg-hover: hsl(350, 83%, 59%); /* #ed405d */
+  --color_button-disabled-bg: var(--color_amaranth-50);
+  --color_button-disabled-fg: var(--color_white-70);
+  --color_button-fg: var(--color_white);
+
+  /* card colors */
+  --color_primary-card: hsl(217.5, 10.8%, 14.5%); /* #212429 */
+  --color_secondary-card: hsla(218, 11%, 15%, 0.63); /* #22252a opacity .63 */
+  --color_primary-card-shadow: hsl(216, 11%, 15%); /* #22252a */
+  --color_cardRemoveButton-bg: var(--color_primary-card);
+  --color_cardProgressBar-bg: var(--color_secondary);
+
+  /* text colors */
+  --color_text-primary: var(--color_primary);
+  --color_text-secondary: var(--color_font-grey);
+  --color_text-disabled: var(--color_primary);
+
+  /* dark mode */
+  --account_color_primary-card-hover: hsl(240, 5.3%, 96.3%);
+
+  --color_darkmode-primary: hsl(220, 12%, 10%); /* #16181C */
+  --color_darkmode-primary-0: hsla(220, 12%, 10%, 0); /* #16181C */
+  --color_darkmode-secondary: hsl(214, 7%, 19%); /* #2c2f33 */
+  --color_darkmode-tertiary: hsl(233, 8%, 23%); /* #373840 */
+  --color_darkmode-textcolor-primary: hsl(0, 0%, 100%); /* #ffffff */
+  --color_darkmode-textcolor-secondary: hsla(0, 0%, 100%, 0.9);
+  --color_darkmode-button: hsl(214, 7%, 19%); /* #2c2f33 */
+  --color_darkmode-button-lighter: hsla(214, 7%, 19%, 0.9); /* #2c2f33 */
+  --color_darkmode-button-hover: hsla(240, 14%, 90%, 0.2); /* #e2e2e9 opacity .2 */
+  --color_darkmode-line: hsl(217.5, 10.8%, 14.5%); /*  #212429 */
+  --background_darkmode-cover: linear-gradient(to top, var(--color_darkmode-primary) 1%, rgba(22, 25, 28, 0) 50%);
+  --color_darkmode-disabled-button: hsla(214, 7%, 19%, 0.9); /* #2C2F33E6 */
+  --color_darkmode-settings-background: hsl(217.5, 10.8%, 14.5%); /*  #212429 */
+  --color_darkmode-settings-hover: hsla(233, 8%, 23%, 0.5); /* #373840 opacity .5 */
+  --color_darkmode-settings-text: var(--color_white-70);
+  --color_darkmode-background-page: var(--color_darkmode-primary);
+  --color_darkmode-guide-collapsible-bg: var(--color_darkmode-primary);
+  --color_darkmode-guide-collapsible-hover-bg: var(--color_darkmode-secondary);
+  --color_darkmode-guide-day-selector-item-fg: var(--color_darkmode-textcolor-primary);
+  --color_darkmode-form-input-bg: var(--color_darkmode-secondary);
+  --color_darkmode-form-input-active-bg: var(--color_darkmode-secondary);
+  --color_darkmode-zoneSelector-country: var(--color_white-70);
+  --color_darkmode-zoneSelector-country-hover: var(--color_white);
+
+  /* link colors */
+  --color_link-normal: var(--color_secondary);
+  --color_link-hover: var(--color_maroon-flush);
+
+  /* brand colors */
+  --color_facebook: hsl(221, 44%, 41%); /* #3b5998 */
+  --color_twitter: hsl(196, 100%, 46%); /* #00aced */
+  --color_telerama: hsl(0, 86%, 43%); /* #CE0F0F */
+  --color_allocine: hsl(52, 100%, 50%); /* #FFDB00*/
+  --color_telecable: hsl(353, 100%, 44%); /* #e0001a */
+
+  /* error colors */
+  --color_error-msg: hsl(354, 76%, 62%); /* #e85463 */
+  --color_error-text: var(--color_secondary);
+
+  /* action colors */
+  --color_action-success: hsl(128, 85%, 57%); /* #34ef4d */
+
+  /* modal colors */
+  --color_modal-light-inner-bg: var(--color_white); /* #ffffff */
+  --color_modal-light-inner-fg: var(--color_primary); /* #1c1c1c */
+  --color_modal-dark-inner-bg: var(--color_darkmode-secondary); /* #2c2f33 */
+  --color_modal-dark-inner-fg: var(--color_darkmode-textcolor-primary); /* #ffffff */
+
+  /* mood colors */
+  --color_mood-neutral: hsl(220, 14%, 88%); /* #dcdfe5 */
+  --color_mood-like: hsl(157, 79%, 42%); /* #16c07f */
+  --color_mood-dislike: var(--color_secondary);
+
+  /* rating colors */
+  --color_rating: hsl(151, 91%, 43%); /* #0ad171 */
+
+  /* placeholder colors */
+  --color_placeholder: hsl(220, 16%, 89%); /*#dee1e7*/
+
+  /* form colors */
+  --color_form-input: hsl(216, 16%, 19%); /* #292f38 */
+  --color_form-input-bg: var(--color_white);
+  --color_form-input-hover: hsl(218, 18%, 26%); /* #696e77 */
+  --color_form-placeholder: hsl(219, 6%, 44%); /* #c62f48 */
+  --color_form_flipSwitch: var(--color_secondary);
+  --color_form_flipSwitch_label-fg: var(--color_secondary);
+  --color_form-flipSwitch-off: hsla(217.5, 10.8%, 14.5%, 0.2); /* #212429 opacity .2 */
+  --color_form_focus_outline: hsl(208, 59%, 60%); /* #5d9dd5 */
+
+  /* checkbox colors */
+  --color_checkbox_border: hsl(210, 9%, 70%); /* #ACB3B9 */
+  --color_checkbox_bg: hsl(218, 18%, 26%); /* 	#3E4551 */
+  --color_checkbox_checked_bg: hsl(310, 68%, 25%); /* #6B145D */
+
+  /* header colors */
+  --color_menu: hsl(218, 18%, 26%); /* #363f4f */
+  --color_menu-hover: var(--color_secondary);
+  --color_abonnement: var(--color_secondary);
+  --color_abonnement-hover: var(--color_maroon-flush);
+
+  /* zone selector footer colors */
+  --color_zoneSelector-country: var(--color_grey-400);
+  --color_zoneSelector-country-hover: var(--color_dark);
+
+  /* font colors */
+  --color_font-base: var(--color_black);
+  --color_primary-light: hsl(210, 14%, 55%); /* #7c8c9c */
+  --color_font-grey: hsla(217.5, 10.8%, 14.5%, 0.7); /* #212429 opacity .7 */
+  --color_standard_placeholder: rgb(117, 117, 117); /* #757575 */
+
+  /* generic focus colors */
+  --color_focus-primary: var(--color_white);
+  --color_focus-secondary: hsl(208, 59%, 60%); /* #5d9dd5 */
+
+  /* background colors */
+  --background-page: initial;
+  --background-cover: linear-gradient(to top, var(--color_white) 0%, gray(100 / 0.4) 15%, hsla(0, 0%, 11%, 0.1) 50%);
+  --background-notification-alert: var(--color_amaranth);
+  --background-cover-dark-top: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 3%, rgba(0, 0, 0, 0) 97%);
+  --background-cover-dark-bottom: linear-gradient(0deg, rgba(22, 25, 28, 1) 41%, rgba(22, 25, 28, 0) 96%);
+  --background-label-subscribe: hsl(216.3, 91.1%, 60.2%); /* #3d86f6 */
+  --background-label-lastdays: hsl(350, 89%, 45%); /* #d80c2e */
+  --background-label-grey: hsla(217.5, 10.8%, 14.5%, 0.8); /* #212429 opacity .8 */
+
+  /* tv guide colors */
+  --color_guide-collapsible-closed-bg: hsla(240, 5.3%, 96.3%, 0.4); /* #f5f5f6 opacity .4 */
+  --color_guide-collapsible-hover-bg: hsl(240, 12%, 90%); /* #E2E2E8 */
+  --color_guide-collapsible-bg: hsl(240, 5.3%, 96.3%); /* #f5f5f6 */
+  --color_guide-slate-grey: hsl(210, 6%, 39%); /* #5e646a */
+  --color_guide-dark-grey: hsl(217.5, 10.8%, 14.5%); /* #212429 */
+  --color_guide-pale-grey: hsl(240, 14%, 90%); /* #e2e2e9 */
+  --color_guide-day-selector-bg: var(--color_grey-350-low-opacity);
+  --color_guide-day-selector-item-active-fg: var(--color_secondary);
+  --color_guide-day-selector-item-fg: var(--color_primary);
+  --color_guide-collapsible-text-hover: var(--color_white);
+  --color_guide-column-item-border: var(--color_guide-pale-grey);
+  --color_guide-navigationButton-bg: var(--color_grey-600);
+  /* light mode */
+  --color_guide-channels-selector-light-bg: var(--color_white);
+  --color_guide-collapsible-hover-light-bg: hsl(240, 12%, 90%); /* #E2E2E8 */
+  --color_guide-collapsible-hover-light-fg: var(--color_text-primary);
+  --color_guide-collapsible-closed-light-bg: hsla(240, 5.3%, 96.3%, 0.4); /* #f5f5f6 opacity .4 */
+  /* dark mode */
+  --color_guide-channels-selector-dark-bg: var(--color_darkmode-tertiary);
+  --color_guide-collapsible-hover-dark-bg: var(--color_darkmode-secondary);
+  --color_guide-collapsible-hover-dark-fg: var(--color_darkmode-textcolor-primary);
+  --color_guide-collapsible-closed-dark-bg: var(--color_darkmode-tertiary);
+
+  /* live tv colors */
+  --color_live-tv-start-over-icon: hsla(217.5, 10.8%, 14.5%, 0.3); /* #212429 */
+  --color_live-tv-start-over-icon-arrow: var(--color_white);
+  --color_live-tv-start-over-icon-arrow-hover: var(--color_white);
+  --color_live-tv-favorites-empty-msg-bg: hsla(233, 8%, 23%, 0.1); /* #36373f */
+  --color_live-tv-favorites-empty-msg-icon: var(--color_white);
+  --color-live-tv-edit-favorites-input-group: var(--color_ivory);
+  --color-live-tv-edit-favorites-search-icon: hsla(218, 11%, 15%, 0.5); /* #22252A80 */
+  --color-live-tv-edit-favorites-card: var(--color_ivory);
+  --color-live-tv-edit-favorites-card-hover: hsla(240, 14%, 90%, 0.65);
+  --color-live-tv-edit-favorites-card-active: var(--color_grey-350); /* #e2e2e9 */
+  --color-live-tv-edit-favorites-card-check-icon: var(--color_amaranth);
+  --color-live-tv-modal-header-shadow: hsla(0, 0%, 0%, 0.07); /* #000000B3 */
+  --color-live-tv-modal-footer-shadow: hsla(0, 0%, 0%, 0.1); /* #000000E6 */
+  --color-live-tv-feature-card-bg: hsl(219, 15%, 19%); /* #292e37 */
+
+  /* media-card colors */
+  --color_media-card-header-button: hsla(0, 0%, 100%, 0.1); /* #FFFFFF1A */
+  --color_media-card-body: var(--color_grey-300);
+  --color_media-card-body-bg: var(--color_grey-600);
+  --color_media-card-personnalities: var(--color_white);
+  --color_media-card-seasonSwitcher-link-active: var(--color_secondary);
+  --color_media-card-listCardSummary: var(--color_base);
+  --color_media-card-body-meta: var(--color_base);
+  --color_media-card-c2c-bg: var(--color_white);
+  --color_media-card-reviews-review-fg: var(--color_grey-300);
+
+  /* multi-live setup colors */
+  --color_multi-live-setup-card-wrap-selection: hsla(218, 11%, 15%, 0.45); /* #22252A73 */
+
+  /* showcase colors */
+  --color_showcase-background: hsl(0, 0%, 5%); /* #0e0e0e */
+  --color_showcase-button-primary-bg: var(--color_amaranth);
+  --color_showcase-button-primary-hover-bg: var(--color_maroon-flush);
+  --color_showcase-button-secondary: hsl(214, 7%, 19%); /* #2c2f33 */
+  --color_showcase-button-secondary-hover: hsl(240, 5%, 23%); /*#38383e*/
+  --color_showcase-border: hsla(0, 0%, 100%, 0.1);
+  --color_showcase-fg: var(--color_white);
+  --color_showcase-description-fg: var(--color_white-70);
+  --color_showcase-paragraph-text: hsla(0, 0%, 100%, 0.3);
+  --color_showcase-tabs-indicator: hsl(214, 6%, 23%);
+  --color_showcase-tag-background: hsl(233, 8%, 23%); /* #373840 */
+  --color_showcase-cover-background: hsl(210, 12%, 10%); /* #16191c */
+
+  /* external services */
+  --color_external-services-button-show-episodes: hsla(218, 11%, 15%, 0.7);
+  --color_shadow-external-services-button-show-episodes: hsla(0, 0%, 0%, 0.5);
+
+  /* register colors */
+  --color_register-background: var(--color_white);
+  --color_register-background-icon: hsla(0, 0%, 0%, 0.3); /* #0000004c */
+  --color_register-error: hsl(354, 76%, 62%); /* #e85361 */
+  --color_register-border-input: var(--color_grey-200);
+  --color_register-cgu-text: hsla(0, 0%, 100%, 0.3);
+  --color_register-button-close-modal: hsla(217.5, 10.8%, 14.5%, 0.03); /* #212429 */
+  --color_register-button-update-password-text: hsla(217.5, 10.8%, 14.5%, 0.3); /* #212429 */
+  --color_register-right-bullet-point: hsl(157, 71%, 55%); /* #3add9e */
+  --color-register-button-hover: hsl(240, 5.3%, 96.3%); /* #f5f5f6 */
+  --color-register-button-hover-dark: hsl(233, 6.8%, 23.1%); /* #37383f */
+
+  /* profile colors */
+  --color_profile-dark-grey: hsl(217.5, 10.8%, 14.5%); /* #212429 */
+  --color_profile-background: hsl(210, 12%, 10%); /* #16191c */
+  --color_profile-background-tv: hsl(210, 12%, 10%); /* #16191c */
+  --color_profile-input-tv-bg: var(--color_white-70); /* #ffffff */
+  --color_profileForm-name-border: var(--color_grey-300);
+  --color_profileForm-name-light-bg: var(--color_white);
+  --color_profileForm-name-light-fg: var(--color_black);
+  --color_profileForm-name-dark-bg: var(--color_darkmode-secondary);
+  --color_profileForm-name-dark-bg-focus: var(--color_black);
+  --color_profileForm-name-dark-fg: var(--color_darkmode-textcolor-primary);
+  --color_profileForm-name-dark-fg-focus: var(--color_darkmode-textcolor-primary);
+  --color_profilesList-arrow: var(--color_grey-400);
+  --color_profilesList-profile-border-light: var(--color_grey-350);
+  --color_profilesList-profile-border-dark: var(--color_darkmode-line);
+  --color_usermenu-profile-edit-button-bg: hsla(0, 0%, 100%, 0); /* #ffffff */
+  --color_usermenu-profile-edit-button-tv-bg: hsl(214.3, 7.4%, 18.6%); /* #2C2F33 */
+  --color_usermenu-profile-edit-button-tv-fg: var(--color_white-70);
+
+  /* settings */
+  --color_settings-border: var(--color_grey-350);
+
+  /* tvod colors */
+  --color_tvod-primary: hsl(310, 64%, 34%); /* #8e1f7c */
+  --color_tvod-secondary: hsl(297, 32%, 26%); /* #552d58 */
+  --color_tvod-tertiary: hsl(311, 60%, 47%); /* #c030a5 */
+  --color_tvod-dark: hsl(215, 15%, 23%); /* #323943 */
+
+  /* my account idp */
+  --color_my-account-idp-text: hsla(217.5, 10.8%, 14.5%, 0.3); /* #212429 opacity .3 */
+  --color_my-account-idp-value: hsl(216, 2.9%, 34.3%); /* #55575a */
+
+  /* tooltip colors */
+  --color_toolTip-content-secondary-bg: var(--color_secondary);
+
+  /* V5 colors */
+  --color_detail-content: hsl(0, 0%, 9.8%); /* #191919 */
+  --color_detail-metas: hsla(0, 0%, 100%, 0.5);
+
+  /* user menu colors */
+  --color_usermenu-profile-edit-button-fg: var(--color_secondary);
+  --color_usermenu-bottom-button-authentication-fg: var(--color_white);
+
+  /* TV colors */
+  --color_button-tv: hsla(214, 7%, 19%, 0.9); /* #2c2f33 */
+
+  /* TV Focus colors */
+  --color_focus-outline: var(--color_amaranth);
+  --color_focus-bg: var(--color_amaranth);
+  --color_focus-fg: var(--color_white);
+  --color_focus-border: var(--color_amaranth);
+
+  /* gabaritList colors */
+  --color_gabaritList-accent: var(--color_amaranth);
+  /* light mode */
+  --color_gabaritList-item-light-fg: var(--color_chalkboard);
+  --color_gabaritList-dropdown-light-bg: var(--color_white);
+  --color_gabaritList-dropdown-light-fg-hover: var(--color_black);
+  --color_overflow-light: var(--color-white);
+  /* dark mode */
+  --color_gabaritList-item-dark-fg: var(--color_white);
+  --color_gabaritList-dropdown-dark-bg: var(--color_chalkboard);
+  --color_gabaritList-dropdown-dark-bg-hover: var(--color_tuna);
+  --color_gabaritList-dropdown-dark-fg-hover: var(--color_white);
+  --color_overflow-dark: var(--color_darkmode-primary);
+
+  /* perso template colors */
+  --color_persoTemplate-text: var(--color_primary);
+
+  /* badges colors */
+  --color_badge-button-bg: var(--color_grey-500);
+  --color_badge-button-hover-bg: var(--color_grey-500);
+  --color_badge-button-disabled-bg: hsl(0, 0%, 18%); /* #2e2e2e */
+  --color_badge-button-disabled-hover-bg: hsl(0, 0%, 18%); /* #2e2e2e */
+  --color_badge-button-disabled-svg-fill: hsl(0, 0%, 48%); /* #7b7b7b */
+  --color_badge-button-svg-fill: var(--color_grey-100);
+
+  /* dropdown colors */
+  /* light mode */
+  --color_dropdown-light-fg: var(--color_text-primary);
+  --color_dropdown-light-bg: var(--color_white);
+  --color_dropdown-border-light: var(--color_grey-350);
+  --color_dropdown-item-light-bg-hover: var(--color_grey-100);
+  --color_dropdown-item-light-fg-hover: var(--color_text-primary);
+  --color_dropdown-item-subtitle-light-fg: var(--color_guide-slate-grey);
+  /* dark mode */
+  --color_dropdown-dark-fg: var(--color_darkmode-textcolor-primary);
+  --color_dropdown-dark-bg: var(--color_darkmode-secondary);
+  --color_dropdown-border-dark: var(--color_darkmode-line);
+  --color_dropdown-item-dark-bg-hover: var(--color_darkmode-tertiary);
+  --color_dropdown-item-dark-fg-hover: var(--color_darkmode-textcolor-primary);
+  --color_dropdown-item-subtitle-dark-fg: var(--color_darkmode-textcolor-secondary);
+
+  /* GDPR & privacy manager colors */
+  --color_GDPR-text-fg: var(--color_white-80);
+  --color_GDPR-button-bg: var(--color_darkmode-button-lighter);
+  --color_GDPR-button-readonly-bg: hsla(0, 0%, 0%, 0.3); /* #000000 opacity .3 */
+  --color_GDPR-choice-fg: var(--color_white-70);
+  --color_GDPR-button-fg: var(--color_white-80);
+  --color_GDPR-icon-fg: var(--color_white-80);
+
+  /* parental code */
+  --color_parental-code-input-bg: hsla(218, 11%, 15%, 0.1);
+  --color_parental-code-input-border: hsla(0, 0%, 0%, 0.1);
+
+  /* ------------------------------------------------
+     OVERRIDE THEMING VALUES
+     ------------------------------------------------*/
+  /* LIGHT MODE MYCANAL
+  ---------------------------------------------------*/
+  [data-theme='light'] {
+    --background-page: var(--color_white);
+  }
+
+  /* DARK MODE MYCANAL
+  ---------------------------------------------------*/
+  [data-theme~='dark'] {
+    /* background colors */
+    --background-page: var(--color_darkmode-primary);
+
+    /* text colors */
+    --color_text-primary: hsl(0, 0%, 100%); /* #ffffff */
+    --color_text-secondary: var(--color_white-70);
+    --color_error-text: var(--color_secondary);
+
+    /* setting colors */
+    --color_settings-border: var(--color_darkmode-tertiary);
+
+    /* media card */
+    --color_media-card-c2c-bg: var(--color_darkmode-primary);
+
+    /* tv guide colors */
+    --color_guide-collapsible-hover-bg: var(--color_darkmode-secondary);
+    --color_guide-collapsible-closed-bg: var(--color_darkmode-tertiary);
+    --color_guide-day-selector-item-fg: var(--color_white);
+
+    /* live tv colors */
+    --color_live-tv-start-over-icon: var(--color_darkmode-tertiary);
+    --color_live-tv-favorites-empty-msg-bg: hsla(255, 255%, 255%, 0.1); /* #36373f */
+    --color-live-tv-edit-favorites-input-group: var(--color_darkmode-secondary);
+    --color-live-tv-edit-favorites-search-icon: hsla(0, 0%, 100%, 0.5); /* #FFFFFF80 */
+    --color-live-tv-edit-favorites-card: hsl(217.5, 10.8%, 14.5%); /* #212429 */
+    --color-live-tv-edit-favorites-card-hover: hsla(233, 8%, 23%, 0.7); /* #373840B3 */
+    --color-live-tv-edit-favorites-card-active: hsl(233, 8%, 23%); /* #373840 */
+
+    /* parental code */
+    --color_parental-code-input-bg: hsla(0, 0%, 14%);
+    --color_parental-code-input-border: var(--color_white-30);
+  }
+
+  /* TVOD MODE
+  ---------------------------------------------------*/
+  /* ~= selector is used to select elements with an attribute value containing a specified word like "tvod dark" or "tvod light" */
+  [data-theme~='tvod'] {
+    /* theme colors */
+    --color_secondary: hsl(311, 60%, 47%); /* #c030a5 */
+
+    /* button colors */
+    --color_button-disabled-bg: hsla(310, 64%, 34%, 0.5); /* #8e1f7c opacity .5 */
+    --color_button-bg-hover: var(--color_tvod-primary);
+
+    /* link colors */
+    --color_link-hover:var(--color_button-bg-hover);
+
+    /* form colors */
+    --color_form-placeholder: hsl(210, 9%, 70%); /* #acb3b9 */
+    --color_form_flipSwitch: hsl(310, 64%, 34%); /* #8e1f7c */
+    --color_form_flipSwitch_label-fg: hsl(310, 64%, 34%); /* #8e1f7c */
+    --color_form-flipSwitch-off: hsla(217.5, 10.8%, 14.5%, 0.2); /* #212429 opacity .2 */
+
+    /* header colors */
+    --color_menu-hover: var(--color_secondary);
+    --color_abonnement: hsl(310, 64%, 34%); /* #8e1f7c */
+    --color_abonnement-hover: hsl(350, 83%, 59%); /* #ed405e */
+
+
+
+    /* GabaritList colors */
+    --color_gabaritList-accent: var(--color_tvod-tertiary);
+
+    /* showcase colors */
+    --color_showcase-background: hsl(0, 0%, 5%); /* #0e0e0e */
+
+    /* profile colors */
+    --color_profilesList-light-fg: hsl(0, 0%, 11%); /* #1C1C1C */
+    --color_profilesList-dark-fg: hsl(0, 0%, 100%); /* #ffffff */
+  }
+
+  /* TIM MODE
+  ---------------------------------------------------*/
+  /* data-theme = "telecomitalia dark" || "telecomitalia light" */
+  [data-theme~='telecomitalia'] {
+    /* mono */
+    --color_secondary: var(--color_white);
+    --color_standard_placeholder: var(--color_white-50);
+    --color_gold-roti: hsl(46, 51.4%, 49.2%); /* #bea03d */
+    --color_gold-alpine: hsl(43.7, 60.3%, 45.5%); /* #ba942e */
+    --color_gold-kumera: hsl(37.9, 62.6%, 36.7%); /* #986d23 */
+    --color_gold-dark-primary: hsl(37.9, 63.1%, 32.9%); /* #89621f */
+    --color_gold-dark-secondary: hsl(37.7, 62.7%, 29.4%); /* #7a571c */
+    --color_gold-dark-tertiary: hsl(38, 63.1%, 25.5%); /* #6a4c18 */
+    --color_base: hsla(0, 0%, 100%, 0.7); /* #ffffff */
+
+    /* themes colors */
+    --color_live: hsl(350, 89.5%, 44.7%); /* #D80C2E */
+
+    /* background colors */
+    --background-page: var(--color_gold-kumera);
+
+    /* zone selector footer colors */
+    --color_zoneSelector-country: var(--color_white);
+    --color_zoneSelector-country-hover: var(--color_cod-grey);
+
+    /* text colors */
+    --color_text-primary: var(--color_white);
+    --color_text-secondary: var(--color_white-70);
+    --color_text-disabled: var(--color_white-60);
+
+    /* link colors */
+    --color_link-normal: var(--color_white);
+    --color_link-hover: var(--color_white-70);
+
+    /* button colors */
+    --color_button-bg-hover: var(--color_white-70);
+    --color_button-fg: var(--color_cod-grey);
+    --color_button-disabled-bg: var(--color_white-70);
+    --color_button_primary_hover-bg: hsl(350.1, 67.4%, 45.7%); /* #C32640 */
+    --color_button-disabled-fg: var(--color_cod-grey);
+    --color_button-icon: var(--color_cod-grey);
+
+    /* form colors */
+    --color_form-input: var(--color_white);
+    --color_form-input-bg: var(--color_gold-dark-secondary);
+    --color_form-placeholder: var(--color_white);
+    --color_form_flipSwitch: hsl(0, 0%, 9.4%); /* #181818 */
+    --color_form_flipSwitch_label-fg: var(--color_white);
+    --color_form-flipSwitch-off: hsla(0, 0%, 0%, 0.5);
+
+    /* media-card colors */
+    --color_media-card-body: var(--color_white);
+    --color_media-card-body-bg: var(--color_gold-kumera);
+    --color_media-card-body-meta: var(--color_white);
+    --color_media-card-personnalities: var(--color_white-50);
+    --color_media-card-seasonSwitcher-link-active: var(--color_white);
+    --color_media-card-listCardSummary: var(--color_white);
+    --color_media-card-c2c-bg: var(--color_gold-dark-primary);
+    --color_media-card-reviews-review-fg: var(--color_white-70);
+
+    /* tv guide colors */
+    --color_guide-day-selector-bg: var(--color_gold-dark-primary);
+    --color_guide-day-selector-item-active-fg: var(--color_white);
+    --color_guide-day-selector-item-fg: var(--color_white-60);
+    --color_guide-channels-selector-light-bg: var(--color_gold-kumera);
+    --color_guide-collapsible-bg: transparent;
+    --color_guide-collapsible-hover-bg: transparent;
+    --color_guide-collapsible-hover-light-bg: var(--color_gold-dark-primary);
+    --color_guide-collapsible-closed-bg: transparent;
+    --color_guide-collapsible-closed-light-bg: var(--color_gold-dark-primary);
+    --color_guide-collapsible-text-hover: var(--color_grey-700);
+    --color_guide-collapsible-hover-light-fg: var(--color_white-60);
+    --color_guide-column-item-border: hsla(0, 0%, 100%, 0.1);
+    --color_guide-navigationButton-bg: hsla(240, 14%, 90%, 0.2);
+    --color_guide-slate-grey: hsla(240, 14%, 90%, 0.5); /* #e2e2e9 opacity .5 */
+
+    /* modal colors */
+    --color_modal-light-inner-bg: var(--color_gold-alpine);
+    --color_modal-light-inner-fg: var(--color_white);
+
+    /* usermenu colors */
+    --color_usermenu-profile-edit-button-fg: var(--color_white);
+    --color_usermenu-profile-edit-button-bg: hsl(0, 0%, 100%);
+    --color_usermenu-bottom-button-authentication-fg: var(--color_black);
+    --color_usermenu-light-border: var(--color_white);
+
+    /* profiles colors */
+    --color_profileForm-name-border: transparent;
+    --color_profileForm-name-light-bg: var(--color_gold-dark-primary);
+    --color_profileForm-name-light-fg: var(--color_white);
+    --color_profilesList-arrow: var(--color_gold-dark-tertiary);
+    --color_profilesList-profile-border-light: var(--color_gold-dark-tertiary);
+
+    /* badges colors */
+    --color_badge-button-bg: var(--color_gold-dark-secondary);
+    --color_badge-button-hover-bg: var(--color_gold-dark-tertiary);
+    --color_badge-button-disabled-bg: rgba(122, 87, 28, 0.5); /* #7a571c opacity .5 */
+    --color_badge-button-disabled-hover-bg: var(--color_badge-button-disabled-bg);
+    --color_badge-button-disabled-svg-fill: var(--color_white-50);
+    --color_badge-button-svg-fill: var(--color_white);
+
+    /* gabaritList colors */
+    --color_gabaritList-accent: var(--color_white);
+    --color_gabaritList-item-light-fg: var(--color_white-60);
+    --color_gabaritList-dropdown-light-bg: var(--color_gold-kumera);
+    --color_gabaritList-dropdown-light-bg-hover: var(--color_gold-dark-primary);
+    --color_gabaritList-dropdown-light-fg-hover: var(--color_white);
+    --color_overflow-light: transparent;
+
+    /* dropdown colors */
+    --color_dropdown-item-subtitle-fg: hsla(240, 14%, 90%, 0.5); /* #e2e2e9 opacity .5 */
+    --color_dropdown-light-fg: var(--color_grey-350);
+    --color_dropdown-light-bg: var(--color_gold-dark-secondary);
+    --color_dropdown-item-light-bg-hover: var(--color_gold-dark-tertiary);
+    --color_dropdown-item-light-fg-hover: var(--color_white);
+    --color_dropdown-item-subtitle-light-fg: var(--color_dropdown-item-subtitle-fg);
+    --color_dropdown-border-light: var(--color_gold-kumera);
+
+    /* card colors */
+    --color_primary-card: var(--color_white);
+    --color_secondary-card: var(--color_white-70);
+    --color_cardRemoveButton-bg: var(--color_black);
+    --color_cardProgressBar-bg: var(--color_live);
+
+    /* live tv colors */
+    --color_live-tv-start-over-icon: var(--color_white-20);
+    --color_live-tv-start-over-icon-arrow-hover: var(--color_cod-grey);
+    --color-live-tv-edit-favorites-input-group: var(--color_gold-dark-secondary);
+    --color-live-tv-edit-favorites-search-icon: hsla(0, 0%, 100%, 0.5); /* #FFFFFF80 */
+
+    /* perso template colors */
+    --color_persoTemplate-text: var(--color_white);
+
+    /* error colors */
+    --color_error-text: var(--color_white);
+
+    /* my account idp */
+    --color_my-account-idp-text: var(--color_white-50);
+    --color_my-account-idp-value: var(--color_white-50);
+
+    /* TV colors */
+    --color_usermenu-profile-edit-button-tv-bg: var(--color_gold-dark-secondary);
+    --color_usermenu-profile-edit-button-tv-fg: var(--color_white);
+
+    /* TV Focus colors */
+    --color_focus-outline: var(--color_white);
+    --color_focus-bg: var(--color_white);
+    --color_focus-fg: var(--color_cod-grey);
+    --color_focus-border: var(--color_white);
+
+    /* GDPR & privacy manager colors */
+    --color_GDPR-text-fg: var(--color_white-80);
+    --color_GDPR-button-bg: var(--color_gold-dark-secondary);
+    --color_GDPR-button-fg: var(--color_white);
+    --color_GDPR-choice-fg: hsl(0, 0%, 5%); /* #0e0e0e */
+    --color_GDPR-icon-fg: var(--color_white);
+
+    /* dark colors */
+    --color_darkmode-background-page: var(--background-page);
+    --color_darkmode-textcolor-primary: var(--color_white);
+    --color_darkmode-line: var(--color_guide-column-item-border);
+    --color_darkmode-guide-collapsible-bg: transparent;
+    --color_darkmode-guide-day-selector-item-fg: var(--color-white-60);
+    --color_darkmode-guide-collapsible-hover-bg: transparent;
+    --color_darkmode-form-input-bg: var(--color_form-input-bg);
+    --color_darkmode-form-input-active-bg: var(--color_form-input-bg);
+    --color_darkmode-footer-text: var(--color_white-70);
+    --color_darkmode-zoneSelector-country: var(--color_white);
+    --color_darkmode-zoneSelector-country-hover: var(--color_black);
+    --color_darkmode-settings-background: hsla(0, 0%, 0%, 0.5);
+
+    /* tv guide colors */
+    --color_guide-channels-selector-dark-bg: var(--color_gold-kumera);
+    --color_guide-collapsible-hover-dark-bg: var(--color_gold-dark-primary);
+    --color_guide-collapsible-hover-dark-fg: var(--color_white-60);
+    --color_guide-collapsible-closed-dark-bg: var(--color_gold-dark-primary);
+
+    /* modal colors */
+    --color_modal-dark-inner-bg: var(--color_gold-alpine);
+    --color_modal-dark-inner-fg: var(--color_white);
+
+    /* profiles colors */
+    --color_profileForm-name-dark-bg: var(--color_gold-dark-primary);
+    --color_profileForm-name-dark-fg: var(--color_white);
+    --color_profileForm-name-dark-bg-focus: var(--color_gold-dark-primary);
+    --color_profileForm-name-dark-fg-focus: var(--color_white);
+    --color_profilesList-profile-border-dark: var(--color_gold-dark-tertiary);
+
+    /* setting colors */
+    --color_settings-border: var(--color_gold-dark-tertiary);
+
+    /* gabaritList colors */
+    --color_gabaritList-item-dark-fg: var(--color_white-60);
+    --color_gabaritList-dropdown-dark-bg: var(--color_gold-kumera);
+    --color_gabaritList-dropdown-dark-bg-hover: var(--color_gold-dark-primary);
+    --color_gabaritList-dropdown-dark-fg-hover: var(--color_white);
+    --color_overflow-dark: transparent;
+
+    /* dropdown colors */
+    --color_dropdown-dark-fg: var(--color_grey-350);
+    --color_dropdown-dark-bg: var(--color_gold-dark-secondary);
+    --color_dropdown-border-dark: var(--color_gold-kumera);
+    --color_dropdown-item-dark-bg-hover: var(--color_gold-dark-tertiary);
+    --color_dropdown-item-dark-fg-hover: var(--color_white);
+    --color_dropdown-item-subtitle-dark-fg: var(--color_dropdown-item-subtitle-fg);
+
+    /* showcase colors */
+    --color_showcase-background: var(--color_gold-kumera);
+    --color_showcase-button-primary-bg: var(--color_white);
+    --color_showcase-button-primary-hover-bg: var(--color_button-bg-hover);
+    --color_showcase-fg: var(--color_white);
+    --color_showcase-description-fg: var(--color_white-80);
+
+    /* tooltip colors */
+    --color_toolTip-content-secondary-bg: var(--color_gold-kumera);
+
+    /* V5 colors */
+    --color_detail-content: var(--color_gold-dark-primary);
+    --color_detail-metas: var(--color_white-70);
+  }
+}
