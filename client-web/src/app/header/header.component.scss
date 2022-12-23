@@ -8,6 +8,8 @@ header img{
   width: 7.25%;
   height: 50%;
   display: inline-block;
+  vertical-align: middle;
+  margin-left: 2%;
 }
 
 header ul{
@@ -21,16 +23,19 @@ header li{
   list-style: none;
   display: inline-block;
   margin-right: 2%;
-  font-family: 'Hind', sans-serif;
+
 }
 
 header a{
   text-decoration: none;
   color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: 'Hind', sans-serif;
 }
 
-header a:visited{
-  color: #E23F66;
+header a:link{
+  color: white;
 }
 
 header a:hover{
@@ -40,14 +45,17 @@ header a:hover{
 header div{
   display: inline-block;
   width:10%;
-  border: solid;
-  color: white;
   float: right;
-  margin-top: 1.2%;
+  margin-top: 1%;
 }
 
 header div img{
-  border: solid;
   color: white;
-  height: 50%;
+  height: 40px;
+  width: 40px;
+  margin-left: 10%;
+}
+
+.lienActif{
+  color: #E23F66;
 }
