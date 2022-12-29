@@ -1,7 +1,9 @@
 header{
-  width: 100%;
-  header:64px;
+  width: 102%;
+  height:30%;
   background-color: black;
+  margin-left: -1%;
+  margin-top: -0.6%;
 }
 
 header img{
@@ -42,20 +44,135 @@ header a:hover{
   color: #E23F66;
 }
 
-header div{
+header .imgNav{
   display: inline-block;
   width:10%;
   float: right;
   margin-top: 1%;
 }
 
-header div img{
+header .imgNav img{
   color: white;
   height: 40px;
   width: 40px;
   margin-left: 10%;
+  cursor: pointer;
 }
 
-.lienActif{
+.imageCompte:hover{
+  transform: scale(1.2);
+}
+
+.imageCompte:hover + .popupProfil{
+  opacity: 1;
+}
+
+
+
+.lien-actif{
   color: #E23F66;
+}
+
+/*popup profil*/
+
+.imgNav .popupProfil{
+  border-radius: 10px;
+  background-color: #2b2b2b;
+  z-index: 10;
+  width: 22%;
+  height: 70%;
+  margin-left: -15%;
+  margin-top: 1%;
+  position: absolute;
+  opacity: 0;
+}
+
+.imgNav .popupProfil:hover{
+  opacity: 1;
+}
+
+
+.imgNav .popupProfil img{
+  width: 50%;
+  height: 33%;
+  margin-left: -20%;
+}
+
+.popupProfil ul{
+  display: inline-block;
+  margin: 0%;
+  padding-top: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
+  text-align: center;
+}
+
+.popupProfil li{
+  margin: 0%;
+}
+
+.popupProfil li p{
+  margin-left: -80%;
+  margin-top: -20%;
+  font-size: 0.8rem;
+  font-family: 'Hind', sans-serif;
+  color: white;
+}
+
+.imgAjout:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+}
+
+.popupProfil p{
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Hind', sans-serif;
+  color: #E23F66;
+  cursor: pointer;
+}
+
+.popupProfil hr{
+  background-color: grey;
+  border:none;
+  height: 1px;
+}
+
+.liste_gestion_profil{
+  height:11%;
+}
+
+.liste_gestion_profil:hover{
+  background-color: gray;
+}
+
+.liste_gestion_profil img{
+  display: inline-block;
+  transform: scale(0.4);
+  margin-top: -20%;
+  margin-left: 0%;
+}
+
+.popupProfil .liste_gestion_profil  p{
+  display: inline-block;
+  margin-left: 0%;
+  margin-top: 0%;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+.seDeconnecter{
+  background-color: #393939;
+  width: 70%;
+  height: 8%;
+  margin-left: 15%;
+}
+
+.seDeconnecter:hover{
+  background-color: #454545;
+}
+
+.seDeconnecter p{
+  color: white;
+  padding-top: 3%;
 }

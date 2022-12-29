@@ -7,15 +7,66 @@
 <header>
   <img src="assets/img/title-logo.png">
   <ul>
-    <li><a [ngClass]="{'lien-actif': estAccueilActif}" routerLink="" >Accueil</a></li>
-    <li><a [ngClass]="{'lien-actif': estEnDirectActif}" routerLink="" >En direct</a></li>
+    <li><a [ngClass]="{'lien-actif': estAccueilActif}" routerLink="">Accueil</a></li>
+    <li><a [ngClass]="{'lien-actif': estEnDirectActif}" routerLink="">En direct</a></li>
     <li><a [ngClass]="{'lien-actif': estProgrammeTVActif}" routerLink="" >Programme TV</a></li>
     <li><a [ngClass]="{'lien-actif': estChaineAppsActif}" routerLink="" >Chaines & Apps</a></li>
     <li><a [ngClass]="{'lien-actif': estVideosActif}" routerLink="" >Mes vidéos</a></li>
   </ul>
-  <div>
+  <div class="imgNav">
     <img src="assets/img/loupe.png"/>
-    <img src="assets/img/popcorn.png" />
+    <img  class="imageCompte" src="assets/img/popcorn.png" />
+    <!-- popup profil-->
+    <div class="popupProfil">
+      <ul>
+        <li><img src="assets/img/popcorn.png" /></li>
+        <li><p style="margin-left: -130%">Vous</p></li>
+      </ul>
+      <ul class="imgAjout"  style="margin-left: -20%">
+        <li><img src="assets/img/plus.png" /></li>
+        <li><p>Ajouter</p></li>
+      </ul>
+      <p>Gérer les profils</p>
+      <hr>
+      <div class="liste_gestion_profil">
+        <ul>
+          <li>
+            <img style="margin-left: 0%" src="assets/img/mon_compte.png"/>
+            <p>Mon compte</p>
+          </li>
+        </ul>
+      </div>
+      <div class="liste_gestion_profil">
+        <ul>
+          <li>
+            <img style="margin-left: -20%" src="assets/img/canape.png"/>
+            <p>Le Club</p>
+          </li>
+        </ul>
+      </div>
+      <div class="liste_gestion_profil">
+        <ul>
+          <li>
+            <img style="margin-left: -10%" src="assets/img/assistance.png"/>
+            <p>Assistance</p>
+          </li>
+        </ul>
+      </div>
+      <div class="liste_gestion_profil">
+        <ul>
+          <li>
+            <img style="margin-left: -20%" src="assets/img/astuces.png"/>
+            <p>Astuces</p>
+          </li>
+        </ul>
+      </div>
+      <div class="seDeconnecter">
+        <p>Se déconnecter</p>
+      </div>
+    </div>
   </div>
   <hr>
+
+
 </header>
+
