@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import {AppComponent} from "./app.component";
 import { HeaderComponent } from './header/header.component';
+import { GrandCarouselComponent } from './grand-carousel/grand-carousel.component';
+import {IvyCarouselModule} from "angular-responsive-carousel";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    GrandCarouselComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
