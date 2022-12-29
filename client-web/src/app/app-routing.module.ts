@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HeaderComponent} from "./header/header.component";
+import {HeaderComponent} from "./Accueil/header/header.component";
 
 const routes: Routes = [{path:'', component:HeaderComponent}
 ];
