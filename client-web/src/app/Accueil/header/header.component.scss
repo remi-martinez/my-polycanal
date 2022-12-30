@@ -59,6 +59,26 @@ header .imgNav img{
   cursor: pointer;
 }
 
+.barreRecherche{
+  position: absolute;
+  border: 1px solid;
+  color: white;
+  width: 40%;
+  height: 5%;
+  top:2.5%;
+  left:50%;
+  animation: 1s ease-in-out zoneDeRecherche;
+  animation-fill-mode: forwards;
+}
+
+.barreRecherche input{
+  height: 82%;
+  width: 98.7%;
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
 .imageCompte:hover{
   transform: scale(1.2);
 }
@@ -66,8 +86,6 @@ header .imgNav img{
 .imageCompte:hover + .popupProfil{
   opacity: 1;
 }
-
-
 
 .lien-actif{
   color: #E23F66;
@@ -175,4 +193,15 @@ header .imgNav img{
 .seDeconnecter p{
   color: white;
   padding-top: 3%;
+}
+
+/*------ANIMATION-------*/
+@keyframes zoneDeRecherche {
+
+  from {
+    width: 5%;
+  }
+  to {
+    width: 40%;
+  }
 }

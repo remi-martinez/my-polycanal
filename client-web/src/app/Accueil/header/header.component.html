@@ -14,7 +14,8 @@
     <li><a [ngClass]="{'lien-actif': estVideosActif}" routerLink="" >Mes vidéos</a></li>
   </ul>
   <div class="imgNav">
-    <img src="../../../assets/img/loupe.png"/>
+    <img class="imageLoupe" (click)="rechercheDepliante()" src="../../../assets/img/loupe.png"/>
+    <div class="barreRecherche" *ngIf="showRechercheDiv" > <input type="text" ></div>
     <img  class="imageCompte" src="../../../assets/img/popcorn.png" />
     <!-- popup profil-->
     <div class="popupProfil">

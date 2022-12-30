@@ -15,6 +15,8 @@ export class HeaderComponent {
   estVideosActif = false;
   //on récupère le chemin de la route active
   cheminActuel = this.route.snapshot.routeConfig?.path;
+  //pour animation recherche
+  showRechercheDiv = false;
 
 
   constructor(private route: ActivatedRoute) {}
@@ -31,5 +33,8 @@ export class HeaderComponent {
     return this.cheminActuel==='';
   }
 
+  rechercheDepliante(){
+    this.showRechercheDiv = !this.showRechercheDiv;
+  }
 
 }
