@@ -65,10 +65,10 @@ header .imgNav img{
   color: white;
   width: 40%;
   height: 5%;
-
   top:2.5%;
-  left:90%;
-  animation: 1s ease-in-out zoneDeRecherche;
+  left:50%;
+  transform-origin: 100% 0;
+  animation: 0.3s ease-in-out zoneDeRecherche;
   animation-fill-mode: forwards;
 }
 
@@ -197,15 +197,17 @@ header .imgNav img{
 }
 
 /*------ANIMATION-------*/
-//TODO translate pour rendre l'animation plus propre
 @keyframes zoneDeRecherche {
 
   from {
-    width: 0%;
-    transform: translateX(0%);
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    opacity: 0;
   }
   to {
-    width: 40%;
-    transform: translateX(-100%);
+    transform-origin: 100% 0;
+    transform: scaleX(1);
+    opacity: 1;
   }
 }
+
