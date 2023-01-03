@@ -65,8 +65,9 @@ header .imgNav img{
   color: white;
   width: 40%;
   height: 5%;
+
   top:2.5%;
-  left:50%;
+  left:90%;
   animation: 1s ease-in-out zoneDeRecherche;
   animation-fill-mode: forwards;
 }
@@ -200,9 +201,11 @@ header .imgNav img{
 @keyframes zoneDeRecherche {
 
   from {
-    width: 5%;
+    width: 0%;
+    transform: translateX(0%);
   }
   to {
     width: 40%;
+    transform: translateX(-100%);
   }
 }
