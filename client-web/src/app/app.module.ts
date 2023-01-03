@@ -6,12 +6,14 @@ import {AppComponent} from "./app.component";
 import { HeaderComponent } from './Accueil/header/header.component';
 import { GrandCarouselComponent } from './Accueil/grand-carousel/grand-carousel.component';
 import {IvyCarouselModule} from "angular-responsive-carousel";
+import { CarouselTypeComponent } from './Accueil/carousel-type/carousel-type.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    GrandCarouselComponent
+    GrandCarouselComponent,
+    CarouselTypeComponent
   ],
   imports: [
     BrowserModule,
