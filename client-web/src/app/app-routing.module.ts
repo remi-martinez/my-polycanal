@@ -5,10 +5,12 @@ import {GrandCarouselComponent} from "./Accueil/grand-carousel/grand-carousel.co
 import {CarouselTypeComponent} from "./Accueil/carousel-type/carousel-type.component";
 import {TableauGestionComponent} from "./Gestion_Video/tableau-gestion/tableau-gestion.component";
 import {AjoutVideoComponent} from "./Gestion_Video/ajout-video/ajout-video.component";
+import {ModifVideoComponent} from "./Gestion_Video/modif-video/modif-video.component";
 
 const routes: Routes = [{path:'', component:GrandCarouselComponent},{path:'', component:CarouselTypeComponent},
   {path:'gestionVideo',component:TableauGestionComponent},
-  {path:'ajoutVideo',component:AjoutVideoComponent}
+  {path:'ajoutVideo',component:AjoutVideoComponent},
+  {path:'modifVideo', component:ModifVideoComponent}
 ];
 
 @NgModule({

@@ -13,4 +13,8 @@ export class TableauGestionComponent {
   ajoutFilm() {
     this.router.navigateByUrl('ajoutVideo');
   }
+
+  modifFilm(){
+    this.router.navigateByUrl('modifVideo');
+  }
 }
