@@ -7,13 +7,15 @@ import { HeaderComponent } from './Accueil/header/header.component';
 import { GrandCarouselComponent } from './Accueil/grand-carousel/grand-carousel.component';
 import {IvyCarouselModule} from "angular-responsive-carousel";
 import { CarouselTypeComponent } from './Accueil/carousel-type/carousel-type.component';
+import { TableauGestionComponent } from './Gestion_Video/tableau-gestion/tableau-gestion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     GrandCarouselComponent,
-    CarouselTypeComponent
+    CarouselTypeComponent,
+    TableauGestionComponent
   ],
   imports: [
     BrowserModule,
