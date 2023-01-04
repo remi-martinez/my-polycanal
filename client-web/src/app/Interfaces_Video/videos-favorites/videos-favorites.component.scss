@@ -1,0 +1,45 @@
+h1{
+  margin-top: -0.6%;
+  padding-top: 2%;
+  margin-left: 3%;
+  color: white;
+  font-family: 'Hind', sans-serif;
+}
+
+h3{
+  display: block;
+  color: white;
+  font-family: 'Hind', sans-serif;
+  font-size: 1em;
+  margin-top: 50%;
+}
+
+p{
+  display: block;
+  margin-top: -7%;
+  color: grey;
+  font-family: 'Hind', sans-serif;
+  font-size: 1em;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: 19% 19% 19% 19% 19%;
+  margin-left: 3%;
+  margin-right: 3%;
+  grid-gap: 1%;
+}
+
+.grille .afficheFilm{
+  border-radius: 4px;
+  width: 100%;
+}
+
+.grille .croix{
+  z-index: 8;
+  width: 10%;
+  display: flex;
+  margin-top: -55%;
+  margin-left: 87%;
+  cursor: pointer;
+}

@@ -10,6 +10,7 @@ import { CarouselTypeComponent } from './Accueil/carousel-type/carousel-type.com
 import { TableauGestionComponent } from './Gestion_Video/tableau-gestion/tableau-gestion.component';
 import { AjoutVideoComponent } from './Gestion_Video/ajout-video/ajout-video.component';
 import { ModifVideoComponent } from './Gestion_Video/modif-video/modif-video.component';
+import { VideosFavoritesComponent } from './Interfaces_Video/videos-favorites/videos-favorites.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ModifVideoComponent } from './Gestion_Video/modif-video/modif-video.com
     CarouselTypeComponent,
     TableauGestionComponent,
     AjoutVideoComponent,
-    ModifVideoComponent
+    ModifVideoComponent,
+    VideosFavoritesComponent
   ],
   imports: [
     BrowserModule,
