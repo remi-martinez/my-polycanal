@@ -1,0 +1,31 @@
+<body xmlns="http://www.w3.org/1999/html">
+<h1>Ajouter un nouveau film</h1>
+
+<div>
+  <form action="">
+    <label>Titre du film</label>
+    <input type="text" name="titreFilm" placeholder="Titre du film...">
+    <label>Réalisateur</label>
+    <input type="text" name="realisateur" placeholder="Nom du réalisateur...">
+    <label>Catégorie</label>
+    <select name="categorie" >
+      <option value="">--Choisissez une catégorie--</option>
+      <option value="Action">Action</option>
+      <option value="Comedie">Comédie</option>
+      <option value="Policier">Policier</option>
+      <option value="Western">Western</option>
+    </select>
+    <label>Durée</label>
+    <input type="time" name="duree" placeholder="Durée">
+    <label>Date de sortie</label>
+    <input type="date" name="date" value="2000-01-01"
+           min="1900-01-01" max="2023-12-31">
+    <label>Budget (€)</label>
+    <input type="number" name="budget" placeholder="0000">
+    <label>Montant recette (€)</label>
+    <input type="number" name="recette" placeholder="0000">
+
+    <input type="submit" value="Submit" (click)="goTableauFilm()">
+  </form>
+</div>
+</body>

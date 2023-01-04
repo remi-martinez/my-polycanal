@@ -8,6 +8,7 @@ import { GrandCarouselComponent } from './Accueil/grand-carousel/grand-carousel.
 import {IvyCarouselModule} from "angular-responsive-carousel";
 import { CarouselTypeComponent } from './Accueil/carousel-type/carousel-type.component';
 import { TableauGestionComponent } from './Gestion_Video/tableau-gestion/tableau-gestion.component';
+import { AjoutVideoComponent } from './Gestion_Video/ajout-video/ajout-video.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TableauGestionComponent } from './Gestion_Video/tableau-gestion/tableau
     HeaderComponent,
     GrandCarouselComponent,
     CarouselTypeComponent,
-    TableauGestionComponent
+    TableauGestionComponent,
+    AjoutVideoComponent
   ],
   imports: [
     BrowserModule,

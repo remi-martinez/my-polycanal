@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tableau-gestion',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class TableauGestionComponent {
 
+  constructor(private router: Router) { }
+
+  ajoutFilm() {
+    this.router.navigateByUrl('ajoutVideo');
+  }
 }
