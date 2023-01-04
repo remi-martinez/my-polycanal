@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,14 @@ import { Router } from '@angular/router';
   templateUrl: './tableau-gestion.component.html',
   styleUrls: ['./tableau-gestion.component.scss']
 })
-export class TableauGestionComponent {
+export class TableauGestionComponent implements OnInit{
+
 
   constructor(private router: Router) { }
+
+  ngOnInit(): void {
+
+  }
 
   ajoutFilm() {
     this.router.navigateByUrl('ajoutVideo');
@@ -17,4 +22,6 @@ export class TableauGestionComponent {
   modifFilm(){
     this.router.navigateByUrl('modifVideo');
   }
+
+
 }
