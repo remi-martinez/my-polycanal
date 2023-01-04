@@ -1,0 +1,72 @@
+body{
+  background-color: black;
+  padding-bottom: 3%;
+}
+
+
+h1{
+  margin-top: -0.6%;
+  text-align: center;
+  padding-top: 5%;
+  color: white;
+  font-family: 'Hind', sans-serif;
+}
+
+table {
+  margin-left: 15%;
+  font-family: 'Hind', sans-serif;
+  width: 70%;
+  border-collapse: collapse;
+}
+
+table td, table th {
+  padding: 8px;
+}
+
+table tr:nth-child(odd){background-color: #f2f2f2;}
+table tr:nth-child(even){background-color: rgba(242, 242, 242, 0.89);}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: grey;
+  color: white;
+}
+
+table .titre{
+  width: 50%;
+}
+
+table .realisateur{
+  width: 20%;
+}
+
+table img{
+  width: 8%;
+  height: 8%;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 4%;
+  cursor: pointer;
+}
+
+.ajouter{
+  background-color: #E23F66;
+  width: 15%;
+  text-align: center;
+  margin-left: 42%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.ajouter:hover{
+  background-color: rgba(226, 63, 102, 0.74);
+}
+
+.ajouter p{
+  color: white;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  font-family: 'Hind', sans-serif;
+}
