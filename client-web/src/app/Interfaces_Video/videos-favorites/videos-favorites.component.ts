@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class VideosFavoritesComponent {
 
+  showPopUp!: boolean;
+  showOverlay!: boolean;
+  showFav: boolean = true;
 }
