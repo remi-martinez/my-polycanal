@@ -17,6 +17,7 @@ import { BarreAffichageActeurRealisateurComponent } from './Interfaces_Video/bar
 import { AjoutProfilComponent } from './Gestion_Profils/ajout-profil/ajout-profil.component';
 import { GestionProfilsComponent } from './Gestion_Profils/gestion-profils/gestion-profils.component';
 import { ModifierProfilComponent } from './Gestion_Profils/modifier-profil/modifier-profil.component';
+import { PageIntrouvableComponent } from './Erreurs/page-introuvable/page-introuvable.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ModifierProfilComponent } from './Gestion_Profils/modifier-profil/modif
     BarreAffichageActeurRealisateurComponent,
     AjoutProfilComponent,
     GestionProfilsComponent,
-    ModifierProfilComponent
+    ModifierProfilComponent,
+    PageIntrouvableComponent
   ],
   imports: [
     BrowserModule,
