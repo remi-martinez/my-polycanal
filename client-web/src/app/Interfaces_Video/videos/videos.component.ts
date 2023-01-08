@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-videos',
@@ -6,7 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./videos.component.scss']
 })
 export class VideosComponent {
+
+  constructor(private router: Router) { }
+
   showPopUp!: boolean;
   showOverlay!: boolean;
   showFav: boolean = false;
+
+  goCategorieFilms() {
+    this.router.navigateByUrl('categories');
+  }
+
 }

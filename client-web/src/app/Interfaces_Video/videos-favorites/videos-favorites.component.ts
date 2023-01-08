@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-videos-favorites',
@@ -7,7 +8,14 @@ import { Component } from '@angular/core';
 })
 export class VideosFavoritesComponent {
 
+  constructor(private router: Router) { }
+
   showPopUp!: boolean;
   showOverlay!: boolean;
   showFav: boolean = true;
+
+  goCategorieFilms() {
+    this.router.navigateByUrl('categories');
+  }
+
 }
