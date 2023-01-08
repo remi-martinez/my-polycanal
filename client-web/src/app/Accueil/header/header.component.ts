@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +19,7 @@ export class HeaderComponent {
   showRechercheDiv = false;
 
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     // Définissions de la variable appropriée en fonction de la page active
@@ -29,12 +29,12 @@ export class HeaderComponent {
     }
   }
 
-  estSurAccueil() {
-    return this.cheminActuel=='';
-  }
-
   rechercheDepliante(){
     this.showRechercheDiv = !this.showRechercheDiv;
+  }
+
+  goAjoutProfil(){
+    this.router.navigateByUrl('ajoutProfil')
   }
 
 }

@@ -14,6 +14,7 @@ import { VideosFavoritesComponent } from './Interfaces_Video/videos-favorites/vi
 import { BarreAffichageCategorieComponent } from './Interfaces_Video/barre-affichage-categorie/barre-affichage-categorie.component';
 import { VideosComponent } from './Interfaces_Video/videos/videos.component';
 import { BarreAffichageActeurRealisateurComponent } from './Interfaces_Video/barre-affichage-acteur-realisateur/barre-affichage-acteur-realisateur.component';
+import { AjoutProfilComponent } from './Gestion_Profils/ajout-profil/ajout-profil.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BarreAffichageActeurRealisateurComponent } from './Interfaces_Video/bar
     VideosFavoritesComponent,
     BarreAffichageCategorieComponent,
     VideosComponent,
-    BarreAffichageActeurRealisateurComponent
+    BarreAffichageActeurRealisateurComponent,
+    AjoutProfilComponent
   ],
   imports: [
     BrowserModule,
