@@ -1,0 +1,61 @@
+h1{
+  color: white;
+  font-size: 2rem;
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+}
+
+.utilisateur{
+  text-align: center;
+  border-radius: 5px;
+  border: solid white 1px;
+  width: 30%;
+  margin-left: 34%;
+  margin-top: 2%;
+  cursor: pointer;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.utilisateur .popcorn{
+  display: inline-block;
+  width: 12%;
+}
+
+.utilisateur .fleche{
+  display: inline-block;
+  width: 7%;
+  margin-left: 30%;
+}
+
+.utilisateur p{
+  display: inline-block;
+  color: white;
+  font-size: 1.3rem;
+  font-family: 'Hind', sans-serif;
+  vertical-align: top;
+  margin-left: 10%;
+}
+
+.ajout{
+  background-color: #E23F66;
+  width: 50%;
+  height: 8%;
+  margin-left: 24%;
+  margin-top: 3%;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ajout:hover{
+  background-color: #c73a54;
+}
+
+.ajout p{
+  padding-top: 1%;
+  padding-bottom: 1%;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+}

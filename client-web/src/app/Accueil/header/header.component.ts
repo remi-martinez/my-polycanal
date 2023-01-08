@@ -37,4 +37,8 @@ export class HeaderComponent {
     this.router.navigateByUrl('ajoutProfil')
   }
 
+  goGestionProfils(){
+    this.router.navigateByUrl('gestionProfils')
+  }
+
 }

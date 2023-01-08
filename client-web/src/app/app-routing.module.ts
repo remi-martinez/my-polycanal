@@ -12,6 +12,7 @@ import {BarreAffichageCategorieComponent} from "./Interfaces_Video/barre-afficha
 import {VideosComponent} from "./Interfaces_Video/videos/videos.component";
 import {BarreAffichageActeurRealisateurComponent} from "./Interfaces_Video/barre-affichage-acteur-realisateur/barre-affichage-acteur-realisateur.component";
 import {AjoutProfilComponent} from "./Gestion_Profils/ajout-profil/ajout-profil.component";
+import {GestionProfilsComponent} from "./Gestion_Profils/gestion-profils/gestion-profils.component";
 
 const routes: Routes = [{path:'', component:GrandCarouselComponent},{path:'', component:CarouselTypeComponent},
   {path:'gestionVideo',component:TableauGestionComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [{path:'', component:GrandCarouselComponent},{path:'', co
   {path:'videoFav',component:VideosFavoritesComponent},
   {path:'categories', component:BarreAffichageCategorieComponent},{path:'categories', component:VideosComponent},
   {path:'personnalite', component:BarreAffichageActeurRealisateurComponent},{path:'personnalite', component:VideosComponent},
-  {path:'ajoutProfil', component:AjoutProfilComponent}
+  {path:'ajoutProfil', component:AjoutProfilComponent},
+  {path:'gestionProfils', component:GestionProfilsComponent}
 ];
 
 @NgModule({
