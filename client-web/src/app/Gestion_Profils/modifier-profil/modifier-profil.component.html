@@ -1,0 +1,12 @@
+<h1>Modifier un profil</h1>
+
+<form action="" >
+  <input type="text" name="nom" placeholder="Nom">
+  <input type="email" name="adresseMail" placeholder="Adresse Mail" >
+  <label>Mot de passe </label>
+  <input type="password" name="password" placeholder="">
+  <label>Confirmez votre mot de passe</label>
+  <input type="password" name="confirmPassword" placeholder="">
+  <input [disabled]="!allFieldsEntered()" type="submit" value="Submit" (click)="goProfils()">
+</form>
+

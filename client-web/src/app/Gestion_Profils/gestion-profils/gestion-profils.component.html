@@ -1,12 +1,12 @@
 <h1>Gérer les profils</h1>
 
 <!--TODO en fonction du nombre de profil (boucle for)-->
-<div class="utilisateur">
+<div class="utilisateur" (click)="goModifierProfil()">
   <img class="popcorn" src="assets/img/popcorn.png">
   <p>Nom de l'utilisateur</p>
   <img class="fleche" src="assets/img/fleche-droite.png">
 </div>
 
 <div class="ajout">
-  <p>Ajouter un profil</p>
+  <p (click)="goAjoutProfil()">Ajouter un profil</p>
 </div>

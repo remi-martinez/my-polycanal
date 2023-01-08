@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-gestion-profils',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class GestionProfilsComponent {
 
+  constructor(private router: Router) { }
+
+  goModifierProfil() {
+    this.router.navigateByUrl('modifierProfil');
+  }
+
+  goAjoutProfil(){
+    this.router.navigateByUrl('ajoutProfil');
+  }
 }

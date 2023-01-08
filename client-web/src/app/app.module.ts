@@ -16,6 +16,7 @@ import { VideosComponent } from './Interfaces_Video/videos/videos.component';
 import { BarreAffichageActeurRealisateurComponent } from './Interfaces_Video/barre-affichage-acteur-realisateur/barre-affichage-acteur-realisateur.component';
 import { AjoutProfilComponent } from './Gestion_Profils/ajout-profil/ajout-profil.component';
 import { GestionProfilsComponent } from './Gestion_Profils/gestion-profils/gestion-profils.component';
+import { ModifierProfilComponent } from './Gestion_Profils/modifier-profil/modifier-profil.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { GestionProfilsComponent } from './Gestion_Profils/gestion-profils/gesti
     VideosComponent,
     BarreAffichageActeurRealisateurComponent,
     AjoutProfilComponent,
-    GestionProfilsComponent
+    GestionProfilsComponent,
+    ModifierProfilComponent
   ],
   imports: [
     BrowserModule,
