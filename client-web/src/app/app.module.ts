@@ -13,6 +13,7 @@ import { ModifVideoComponent } from './Gestion_Video/modif-video/modif-video.com
 import { VideosFavoritesComponent } from './Interfaces_Video/videos-favorites/videos-favorites.component';
 import { BarreAffichageCategorieComponent } from './Interfaces_Video/barre-affichage-categorie/barre-affichage-categorie.component';
 import { VideosComponent } from './Interfaces_Video/videos/videos.component';
+import { BarreAffichageActeurRealisateurComponent } from './Interfaces_Video/barre-affichage-acteur-realisateur/barre-affichage-acteur-realisateur.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { VideosComponent } from './Interfaces_Video/videos/videos.component';
     ModifVideoComponent,
     VideosFavoritesComponent,
     BarreAffichageCategorieComponent,
-    VideosComponent
+    VideosComponent,
+    BarreAffichageActeurRealisateurComponent
   ],
   imports: [
     BrowserModule,

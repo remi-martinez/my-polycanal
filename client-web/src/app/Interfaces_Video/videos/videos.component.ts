@@ -18,4 +18,8 @@ export class VideosComponent {
     this.router.navigateByUrl('categories');
   }
 
+  goPersonnaliteFilms(){
+    this.router.navigateByUrl('personnalite')
+  }
+
 }

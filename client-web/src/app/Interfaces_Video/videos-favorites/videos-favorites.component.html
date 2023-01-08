@@ -21,8 +21,8 @@
   <img class="imgFilm" src="assets/img/testFilm1.webp">
   <img class="imgFav" (click)="showFav = true" *ngIf="!showFav" src="assets/img/etoile-vide.png"><img class="imgFav" (click)="showFav = false" *ngIf="showFav" src="assets/img/etoile.png">
   <p (click)="goCategorieFilms()" style="cursor: pointer">Catégorie</p>
-  <p> De : Realisateur</p>
-  <p> Casting : </p>
+  <p style="display: inline-block; color: #E23F66"> De : </p><p style="display: inline-block; cursor: pointer" (click)="goPersonnaliteFilms()">Realisateur</p>
+  <p style="display: inline-block;color: #E23F66"> Casting : </p><p style="display: inline-block; cursor: pointer" (click)="goPersonnaliteFilms()">Acteurs</p>
 </div>
 
 </body>
