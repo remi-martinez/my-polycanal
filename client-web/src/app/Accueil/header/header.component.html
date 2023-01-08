@@ -4,6 +4,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&display=swap" rel="stylesheet">
 </head>
 
+
+<!--TODO SI LA PERSONNE N'EST PAS CONNECTEE NE RIEN AFFICHER SAUF LE LOGO-->
+
 <header>
   <img src="../../../assets/img/title-logo.png">
   <ul>
@@ -59,7 +62,7 @@
           </li>
         </ul>
       </div>
-      <div class="seDeconnecter">
+      <div class="seDeconnecter" (click)="SeDeconnecter()">
         <p>Se déconnecter</p>
       </div>
     </div>

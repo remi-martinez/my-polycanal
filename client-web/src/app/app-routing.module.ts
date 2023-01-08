@@ -14,6 +14,7 @@ import {BarreAffichageActeurRealisateurComponent} from "./Interfaces_Video/barre
 import {AjoutProfilComponent} from "./Gestion_Profils/ajout-profil/ajout-profil.component";
 import {GestionProfilsComponent} from "./Gestion_Profils/gestion-profils/gestion-profils.component";
 import {ModifierProfilComponent} from "./Gestion_Profils/modifier-profil/modifier-profil.component";
+import {ConnexionComponent} from "./Connexion_inscription/connexion/connexion.component";
 
 const routes: Routes = [{path:'', component:GrandCarouselComponent},{path:'', component:CarouselTypeComponent},
   {path:'gestionVideo',component:TableauGestionComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [{path:'', component:GrandCarouselComponent},{path:'', co
   {path:'personnalite', component:BarreAffichageActeurRealisateurComponent},{path:'personnalite', component:VideosComponent},
   {path:'ajoutProfil', component:AjoutProfilComponent},
   {path:'gestionProfils', component:GestionProfilsComponent},
-  {path:'modifierProfil', component:ModifierProfilComponent}
+  {path:'modifierProfil', component:ModifierProfilComponent},
+  {path:'connexion', component:ConnexionComponent}
 ];
 
 @NgModule({

@@ -41,4 +41,8 @@ export class HeaderComponent {
     this.router.navigateByUrl('gestionProfils')
   }
 
+  SeDeconnecter(){
+    this.router.navigateByUrl('connexion')
+  }
+
 }

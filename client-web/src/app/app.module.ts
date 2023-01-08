@@ -18,6 +18,7 @@ import { AjoutProfilComponent } from './Gestion_Profils/ajout-profil/ajout-profi
 import { GestionProfilsComponent } from './Gestion_Profils/gestion-profils/gestion-profils.component';
 import { ModifierProfilComponent } from './Gestion_Profils/modifier-profil/modifier-profil.component';
 import { PageIntrouvableComponent } from './Erreurs/page-introuvable/page-introuvable.component';
+import { ConnexionComponent } from './Connexion_inscription/connexion/connexion.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PageIntrouvableComponent } from './Erreurs/page-introuvable/page-introu
     AjoutProfilComponent,
     GestionProfilsComponent,
     ModifierProfilComponent,
-    PageIntrouvableComponent
+    PageIntrouvableComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,64 @@
+h1{
+  color: white;
+  font-size: 2rem;
+  font-family: 'Hind', sans-serif;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+  width: 30%;
+  margin-left: 35%;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Hind', sans-serif;
+  margin-top: 3%;
+}
+
+form{
+  width: 70%;
+  margin-left: 15%;
+  font-family: 'Hind', sans-serif;
+}
+
+label{
+  color: #ffffff;
+  font-size: 1.1em;
+}
+
+input[name="adresseMail"],input[name="password"]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit]{
+  width: 40%;
+  background-color: #E23F66;
+  color: white;
+  padding: 14px 20px;
+  margin: 6% 0 0 30%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgba(226, 63, 102, 0.82);
+}
+
+div{
+  width: 28%;
+  background-color: #323131;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+  margin-left: 35.8%;
+}
+

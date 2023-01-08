@@ -1,0 +1,16 @@
+<h1>Se connecter</h1>
+<p>Vous avez déjà un compte CANAL+ ? Saisissez l'identifiant email de votre compte CANAL+.</p>
+
+<form action="" >
+  <input type="email" name="adresseMail" placeholder="Adresse Mail" >
+  <label>Mot de passe </label>
+  <input type="password" name="password" placeholder="">
+  <input [disabled]="!allFieldsEntered()" type="submit" value="Submit" (click)="goMenu()">
+</form>
+
+
+<p>Vous n'avez pas encore de compte my CANAL ?</p>
+
+<div (click)="goAjoutProfil()">
+<p>Continuer</p>
+</div>
