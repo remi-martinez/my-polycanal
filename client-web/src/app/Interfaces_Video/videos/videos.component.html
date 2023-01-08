@@ -1,0 +1,27 @@
+<body>
+<div class="grille">
+  <!--TODO la grille est déjà en place ! juste faire la boucle for pour ajouter nos favoris-->
+  <div>
+    <img src="assets/img/testFilmFav1.webp" class="afficheFilm" (click)="showPopUp = true; showOverlay = true">
+    <img src="assets/img/annuler.png" class="croix"> <!--bouton pour supprimer un favori-->
+    <h3 (click)="showPopUp = true; showOverlay = true">Les liaisons dangereuses</h3>
+    <p>Catégorie</p>
+  </div>
+
+</div>
+
+<!--GESTION POPUP-->
+<div class="overlay" *ngIf="showPopUp && showOverlay"></div>
+
+<div class="popup" *ngIf="showPopUp && showOverlay">
+  <img (click)="showPopUp = false ; showOverlay = false" src="assets/img/annuler.png" class="croixPopUp">
+  <h1>Les liaisons dangereuses</h1>
+  <img class="imgFilm" src="assets/img/testFilm1.webp">
+  <img class="imgFav" (click)="showFav = true" *ngIf="!showFav" src="assets/img/etoile-vide.png"><img class="imgFav" (click)="showFav = false" *ngIf="showFav" src="assets/img/etoile.png">
+  <p>Catégorie</p>
+  <p> De : Realisateur</p>
+  <p> Casting : </p>
+</div>
+
+</body>
+

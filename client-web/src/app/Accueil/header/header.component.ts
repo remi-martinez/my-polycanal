@@ -30,7 +30,7 @@ export class HeaderComponent {
   }
 
   estSurAccueil() {
-    return this.cheminActuel==='';
+    return this.cheminActuel=='';
   }
 
   rechercheDepliante(){
