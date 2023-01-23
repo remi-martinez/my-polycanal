@@ -1,11 +1,18 @@
 package com.server.cinemaepul.personnage;
 
 import com.server.cinemaepul.acteur.Acteur;
+import com.server.cinemaepul.film.Film;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "personnage")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Personnage {
     @EmbeddedId
     private PersonnageId id;
@@ -14,13 +21,9 @@ public class Personnage {
     @JoinColumn(name = "no_act")
     private Acteur acteur;
 
-    public Acteur getActeur() {
-        return acteur;
-    }
+    @Column(name = "nom_pers", nullable = false)
+    private String nomPers;
 
-    public void setActeur(Acteur acteur) {
-        this.acteur = acteur;
-    }
 
     public PersonnageId getId() {
         return id;
