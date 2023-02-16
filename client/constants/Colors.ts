@@ -21,6 +21,7 @@ export default {
   black: 'hsl(0, 0%, 0%)',
   dark5: 'hsl(0, 0%, 5%)',
   grey: 'hsl(0, 0%, 28%)',
+  grey5: 'hsl(240, 3%, 16%)',
   primary: 'hsl(0, 0%, 11%)',
   secondary: 'hsl(350, 83%, 57%)',
   buttonBgHover: 'hsl(350, 83%, 59%)',

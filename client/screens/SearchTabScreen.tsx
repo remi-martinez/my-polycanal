@@ -1,14 +1,60 @@
-import { StyleSheet } from 'react-native';
+import { ActivityIndicator, StyleSheet } from 'react-native';
+import { View } from '../components/Themed';
+import SearchBar from '../components/SearchBar';
+import { useEffect, useState } from 'react';
+import ResultDisplay from '../components/ResultDisplay';
+import { BehaviorSubject, debounceTime } from 'rxjs';
 
-import EditScreenInfo from '../components/EditScreenInfo';
-import { Text, View } from '../components/Themed';
+const searchChange: BehaviorSubject<string> = new BehaviorSubject('');
+const searchChange$ = searchChange.asObservable();
 
 export default function SearchTabScreen() {
+  const [searchPhrase, setSearchPhrase] = useState('');
+  const [clicked, setClicked] = useState(false);
+  const [fakeData, setFakeData] = useState();
+
+  const getData = async () => {
+    const apiResponse = await fetch(
+      'https://dummyjson.com/products/search?q=' + searchPhrase
+    );
+    const data = await apiResponse.json();
+    setFakeData(data.products);
+  };
+
+  const handleSearchPhraseChanged = (val: any) => {
+    searchChange.next(val);
+  }
+
+  useEffect(() => {
+    const subscription = searchChange$
+      .pipe(debounceTime(300))
+      .subscribe((value) => {
+        setSearchPhrase(value);
+        getData();
+      });
+
+    return () => {
+      return subscription.unsubscribe();
+    }
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Search Tab</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/SearchTab.tsx" />
+      <SearchBar searchPhrase={searchPhrase}
+                 searchPhraseChanged={(val: string) => handleSearchPhraseChanged(val)}
+                 clicked={clicked}
+                 setClicked={setClicked}></SearchBar>
+      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)"/>
+      <View>
+        {!fakeData ? <ActivityIndicator size="large"/> :
+          <ResultDisplay
+            searchPhrase={searchPhrase}
+            data={fakeData}
+            setClicked={setClicked}
+          />
+        }
+
+      </View>
     </View>
   );
 }
@@ -16,8 +62,6 @@ export default function SearchTabScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   title: {
     fontSize: 20,
@@ -26,6 +70,12 @@ const styles = StyleSheet.create({
   separator: {
     marginVertical: 30,
     height: 1,
-    width: '80%',
+    width: '100%',
+  },
+  item: {
+    color: 'white',
+    padding: 10,
+    fontSize: 18,
+    height: 44,
   },
 });
