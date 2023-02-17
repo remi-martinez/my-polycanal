@@ -46,6 +46,8 @@ public class PersonnageService {
         Personnage personnage = Personnage.builder()
                 .id(pId)
                 .nomPers(personnageInput.getNomPers())
+                .acteur(acteurService.getByIdOrThrow(personnageInput.getNoActeur()))
+                .film(filmService.getByIdOrThrow(personnageInput.getNoFilm()))
                 .build();
         return personnageRepository.save(personnage);
     }
@@ -56,6 +58,8 @@ public class PersonnageService {
         Personnage personnage = Personnage.builder()
                 .id(oldPersonnage.getId())
                 .nomPers(personnageInput.getNomPers())
+                .acteur(acteurService.getByIdOrThrow(personnageInput.getNoActeur()))
+                .film(filmService.getByIdOrThrow(personnageInput.getNoFilm()))
                 .build();
 
         return personnageRepository.save(personnage);

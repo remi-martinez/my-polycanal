@@ -1,6 +1,7 @@
 package com.server.cinemaepul.film;
 
 import com.server.cinemaepul.categorie.CategorieService;
+import com.server.cinemaepul.realisateur.RealisateurService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ public class FilmService {
 
     @Autowired
     private CategorieService categorieService;
+
+    @Autowired
+    private RealisateurService realisateurService;
 
     public Film getByIdOrThrow(Integer filmId) {
         return filmRepository.findById(filmId)
@@ -42,7 +46,7 @@ public class FilmService {
                 .titre(filmInput.getTitre())
                 .duree(filmInput.getDuree())
                 .dateSortie(filmInput.getDateSortie())
-                //.noRea(filmInput.getNoRea())
+                .noRea(realisateurService.getByIdOrThrow(filmInput.getNoRea()))
                 .codeCat(categorieService.getById(filmInput.getCodeCat()))
                 .budget(filmInput.getBudget())
                 .montantRecette(filmInput.getMontantRecette())
@@ -58,7 +62,7 @@ public class FilmService {
                 .titre(filmInput.getTitre())
                 .duree(filmInput.getDuree())
                 .dateSortie(filmInput.getDateSortie())
-                //.noRea(filmInput.getNoRea())
+                .noRea(realisateurService.getByIdOrThrow(filmInput.getNoRea()))
                 .codeCat(categorieService.getById(filmInput.getCodeCat()))
                 .budget(filmInput.getBudget())
                 .montantRecette(filmInput.getMontantRecette())

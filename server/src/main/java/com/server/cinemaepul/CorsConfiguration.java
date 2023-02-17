@@ -6,8 +6,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
-//FIXME : classe juste pour tester
-//TODO : à supprimer
 @Configuration
 public class CorsConfiguration {
     @Bean
@@ -18,7 +16,7 @@ public class CorsConfiguration {
                 registry.addMapping("/**")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
-                        .allowedOrigins("http://localhost:8080");
+                        .allowedOrigins("http://localhost:8080","http://localhost:4200");
             }
         };
     }

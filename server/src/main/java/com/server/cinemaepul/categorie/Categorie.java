@@ -1,9 +1,12 @@
 package com.server.cinemaepul.categorie;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.server.cinemaepul.film.Film;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -25,38 +28,8 @@ public class Categorie {
     @Column(name = "image", nullable = false, length = 150)
     private String image;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "codeCat")
     private Set<Film> films = new LinkedHashSet<>();
-
-    public Set<Film> getFilms() {
-        return films;
-    }
-
-    public void setFilms(Set<Film> films) {
-        this.films = films;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getLibelleCat() {
-        return libelleCat;
-    }
-
-    public void setLibelleCat(String libelleCat) {
-        this.libelleCat = libelleCat;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 }
+

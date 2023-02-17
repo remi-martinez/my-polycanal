@@ -1,9 +1,10 @@
 package com.server.cinemaepul.acteur;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.server.cinemaepul.personnage.Personnage;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -34,6 +35,7 @@ public class Acteur {
     private LocalDate dateDeces;
 
     @OneToMany(mappedBy = "acteur")
+    @JsonIgnore
     private Set<Personnage> personnages = new LinkedHashSet<>();
 
     public Set<Personnage> getPersonnages() {

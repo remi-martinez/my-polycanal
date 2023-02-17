@@ -31,7 +31,7 @@ public class RealisateurService {
     public Realisateur create(RealisateurInput realisateurInput) {
         Realisateur realisateur = Realisateur.builder()
                 .nomRea(realisateurInput.getNomRea())
-                .prenRea(realisateurInput.getPrenomRea())
+                .prenRea(realisateurInput.getPrenRea())
                 .build();
         return realisateurRepository.save(realisateur);
     }
@@ -42,7 +42,7 @@ public class RealisateurService {
         Realisateur realisateur = Realisateur.builder()
                 .id(oldRealisateur.getId())
                 .nomRea(realisateurInput.getNomRea())
-                .prenRea(realisateurInput.getPrenomRea())
+                .prenRea(realisateurInput.getPrenRea())
                 .build();
         return realisateurRepository.save(realisateur);
     }

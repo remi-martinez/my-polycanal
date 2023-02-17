@@ -1,9 +1,10 @@
 package com.server.cinemaepul.realisateur;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.server.cinemaepul.film.Film;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -26,6 +27,7 @@ public class Realisateur {
     @Column(name = "pren_rea", nullable = false, length = 20)
     private String prenRea;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "noRea")
     private Set<Film> films = new LinkedHashSet<>();
 

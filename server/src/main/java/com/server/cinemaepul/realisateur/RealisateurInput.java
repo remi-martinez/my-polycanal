@@ -9,5 +9,5 @@ import lombok.*;
 @NoArgsConstructor
 public class RealisateurInput {
     private String nomRea;
-    private String prenomRea;
+    private String prenRea;
 }

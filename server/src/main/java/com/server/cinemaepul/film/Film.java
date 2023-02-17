@@ -4,7 +4,7 @@ import com.server.cinemaepul.categorie.Categorie;
 import com.server.cinemaepul.realisateur.Realisateur;
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "film", indexes = {
@@ -42,7 +42,7 @@ public class Film {
     @JoinColumn(name = "no_rea", nullable = false)
     private Realisateur noRea;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "code_cat")
     private Categorie codeCat;
 

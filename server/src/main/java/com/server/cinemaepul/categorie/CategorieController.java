@@ -11,17 +11,18 @@ public class CategorieController {
     @Autowired
     private CategorieService categorieService;
 
-    @RequestMapping
+    @GetMapping
     public List<Categorie> findAll() {
         return categorieService.findAll();
     }
 
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public Categorie getByIdOrThrow(@PathVariable("id") String categorieId) {
         return categorieService.getById(categorieId);
     }
 
-    @PostMapping("/create")
+    //Normalement on a pas à en créer/modifier/supprimer mais au cas où les routes sont là
+    @PostMapping
     public Categorie create(@RequestBody CategorieInput categorieInput) {
         return categorieService.create(categorieInput);
     }
