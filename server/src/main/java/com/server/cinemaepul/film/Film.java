@@ -1,40 +1,49 @@
-package com.server.cinemaepul.entity;
+package com.server.cinemaepul.film;
 
-import javax.persistence.*;
+import com.server.cinemaepul.categorie.Categorie;
+import com.server.cinemaepul.realisateur.Realisateur;
+import lombok.*;
+
+import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Table(name = "film", indexes = {
-        @Index(name = "CodeCat", columnList = "CodeCat"),
-        @Index(name = "NoRea", columnList = "NoRea")
+        @Index(name = "CodeCat", columnList = "code_cat"),
+        @Index(name = "NoRea", columnList = "no_rea")
 })
 @Entity
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "NoFilm", nullable = false)
+    @Column(name = "no_film", nullable = false)
     private Integer id;
 
-    @Column(name = "Titre", nullable = false, length = 30)
+    @Column(name = "titre", nullable = false, length = 30)
     private String titre;
 
-    @Column(name = "Duree", nullable = false)
+    @Column(name = "duree", nullable = false)
     private Integer duree;
 
-    @Column(name = "DateSortie", nullable = false)
+    @Column(name = "date_sortie", nullable = false)
     private LocalDate dateSortie;
 
-    @Column(name = "Budget", nullable = false)
+    @Column(name = "budget", nullable = false)
     private Integer budget;
 
-    @Column(name = "MontantRecette", nullable = false)
+    @Column(name = "montant_recette", nullable = false)
     private Integer montantRecette;
 
     @ManyToOne(optional = false)
-    @JoinColumn(name = "NoRea", nullable = false)
+    @JoinColumn(name = "no_rea", nullable = false)
     private Realisateur noRea;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "CodeCat", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "code_cat")
     private Categorie codeCat;
 
     public Categorie getCodeCat() {
@@ -100,4 +109,6 @@ public class Film {
     public void setId(Integer id) {
         this.id = id;
     }
+
+    //TODO Reverse Engineering! Migrate other columns to the entity
 }

@@ -1,19 +1,24 @@
-package com.server.cinemaepul.entity;
+package com.server.cinemaepul.personnage;
 
+import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class PersonnageId implements Serializable {
     private static final long serialVersionUID = -2955374240123434273L;
-    @Column(name = "NoFilm", nullable = false)
+    @Column(name = "no_film", nullable = false)
     private Integer noFilm;
-    @Column(name = "NoAct", nullable = false)
+    @Column(name = "no_act", nullable = false)
     private Integer noAct;
 
     public Integer getNoAct() {
