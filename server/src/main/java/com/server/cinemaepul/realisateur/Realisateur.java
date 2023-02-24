@@ -30,36 +30,4 @@ public class Realisateur {
     @JsonIgnore
     @OneToMany(mappedBy = "noRea")
     private Set<Film> films = new LinkedHashSet<>();
-
-    public Set<Film> getFilms() {
-        return films;
-    }
-
-    public void setFilms(Set<Film> films) {
-        this.films = films;
-    }
-
-    public String getPrenRea() {
-        return prenRea;
-    }
-
-    public void setPrenRea(String prenRea) {
-        this.prenRea = prenRea;
-    }
-
-    public String getNomRea() {
-        return nomRea;
-    }
-
-    public void setNomRea(String nomRea) {
-        this.nomRea = nomRea;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }
