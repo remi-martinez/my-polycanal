@@ -1,10 +1,10 @@
 package com.server.cinemaepul.personnage;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -20,22 +20,6 @@ public class PersonnageId implements Serializable {
     private Integer noFilm;
     @Column(name = "no_act", nullable = false)
     private Integer noAct;
-
-    public Integer getNoAct() {
-        return noAct;
-    }
-
-    public void setNoAct(Integer noAct) {
-        this.noAct = noAct;
-    }
-
-    public Integer getNoFilm() {
-        return noFilm;
-    }
-
-    public void setNoFilm(Integer noFilm) {
-        this.noFilm = noFilm;
-    }
 
     @Override
     public int hashCode() {

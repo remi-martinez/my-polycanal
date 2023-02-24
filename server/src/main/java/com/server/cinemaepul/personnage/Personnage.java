@@ -1,5 +1,6 @@
 package com.server.cinemaepul.personnage;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.server.cinemaepul.acteur.Acteur;
 import com.server.cinemaepul.film.Film;
 import jakarta.persistence.*;
@@ -26,14 +27,4 @@ public class Personnage {
     private Film film;
     @Column(name = "nom_pers", nullable = false)
     private String nomPers;
-
-
-    public PersonnageId getId() {
-        return id;
-    }
-
-    public void setId(PersonnageId id) {
-        this.id = id;
-    }
-
 }
