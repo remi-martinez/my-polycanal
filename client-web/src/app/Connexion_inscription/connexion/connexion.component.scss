@@ -26,7 +26,7 @@ label{
   font-size: 1.1em;
 }
 
-input[name="adresseMail"],input[name="password"]{
+input[name="login"],input[name="password"]{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -35,7 +35,7 @@ input[name="adresseMail"],input[name="password"]{
   box-sizing: border-box;
 }
 
-input[type=submit]{
+.btn-connexion{
   width: 40%;
   background-color: #E23F66;
   color: white;
@@ -46,7 +46,7 @@ input[type=submit]{
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.btn-connexion:hover {
   background-color: rgba(226, 63, 102, 0.82);
 }
 

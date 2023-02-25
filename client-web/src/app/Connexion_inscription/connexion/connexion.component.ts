@@ -1,19 +1,32 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
   styleUrls: ['./connexion.component.scss']
 })
-export class ConnexionComponent {
-  constructor(private router: Router) { }
+export class ConnexionComponent implements OnInit {
+  constructor(private router: Router,
+              private authService: AuthService) { }
 
-  adresseMail!: string;
+  login!: string;
   password!: string;
 
-  goMenu() {
-    this.router.navigateByUrl('');
+  ngOnInit(): void {
+    if (localStorage.getItem('token')) {
+      this.router.navigateByUrl('');
+    }
+  }
+
+  onSubmit() {
+    this.authService.login(this.login, this.password).subscribe({
+      next: (res: {token: string}) => {
+        this.authService.loginSuccessful(res);
+        this.router.navigateByUrl('');
+      }
+    })
   }
 
   goAjoutProfil(){
@@ -21,7 +34,7 @@ export class ConnexionComponent {
   }
 
   allFieldsEntered(): boolean {
-    return !(!this.password) && !(!this.adresseMail) ;
+    return !this.password && !this.login;
   }
 
 }

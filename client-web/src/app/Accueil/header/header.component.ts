@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {AuthService} from "../../services/auth.service";
+import {Utilisateur} from "../../models/utilisateur";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  public connectedUtilisateur: Utilisateur | undefined;
   estAccueilActif = false;
   estEnDirectActif = false;
   estProgrammeTVActif = false;
@@ -19,30 +22,39 @@ export class HeaderComponent {
   showRechercheDiv = false;
 
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              public authService: AuthService) {
+  }
 
   ngOnInit() {
     // Définissions de la variable appropriée en fonction de la page active
     // @ts-ignore
-    if (this.estSurAccueil()) {
-      this.estAccueilActif = true;
-    }
+    this.estAccueilActif = true;
+    this.authService.getCurrentUser().subscribe(
+      value => {
+        this.connectedUtilisateur = value;
+      }
+    )
+
   }
 
-  rechercheDepliante(){
+  rechercheDepliante() {
     this.showRechercheDiv = !this.showRechercheDiv;
   }
 
-  goAjoutProfil(){
+  goAjoutProfil() {
     this.router.navigateByUrl('ajoutProfil')
   }
 
-  goGestionProfils(){
+  goGestionProfils() {
     this.router.navigateByUrl('gestionProfils')
   }
 
-  SeDeconnecter(){
-    this.router.navigateByUrl('connexion')
+  managerConnexion() {
+    if (localStorage.getItem('connectedUser')) {
+      this.authService.logout();
+    }
+    this.router.navigateByUrl('connexion');
   }
-
 }
