@@ -1,0 +1,32 @@
+h1{
+  display: inline-block;
+  color: white;
+  font-family: 'Hind', sans-serif;
+  font-size: 2em;
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
+h2{
+  display: inline-block;
+  color: white;
+  font-family: 'Hind', sans-serif;
+  font-size: 1em;
+  margin-left: 3%;
+  margin-top: 3%;
+  cursor: pointer;
+}
+
+h2:hover{
+  color: #E23F66;
+}
+
+.selection_cat{
+  display: inline-block;
+  color:#E23F66;
+  font-family: 'Hind', sans-serif;
+  font-size: 1em;
+  margin-left: 3%;
+  margin-top: 3%;
+  cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<body>
+
+<h1>Gestionnaire de vidéos</h1>
+
+<table>
+  <tr >
+    <th style="border-radius: 10px 0px 0px 0px">Titre du film</th>
+    <th>Réalisateur</th>
+    <th style="border-radius: 0px 10px 0px 0px">Actions</th>
+  </tr>
+  <!--zone de recherche-->
+
+  <tr>
+    <td><input type="text" placeholder="Rechercher"></td>
+    <td><input type="text" placeholder="Rechercher"></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td class="titre">Super 8</td>
+    <td class="realisateur">Spielberg</td>
+    <td><img (click)="modifFilm()" src="assets/img/modifier.png"><img src="assets/img/suppression.png"></td>
+  </tr>
+</table>
+
+<div class="ajouter" (click)="ajoutFilm()" >
+  <p>Ajouter un film</p>
+</div>
+
+</body>

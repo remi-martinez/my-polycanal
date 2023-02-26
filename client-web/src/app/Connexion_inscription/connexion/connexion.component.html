@@ -1,0 +1,14 @@
+<h1>Se connecter</h1>
+<p>Vous avez déjà un compte CANAL+ ? Saisissez l'identifiant de votre compte CANAL+.</p>
+
+<form>
+  <input type="login" name="login" placeholder="Identifiant" [(ngModel)]="login">
+  <label>Mot de passe </label>
+  <input type="password" name="password" placeholder="Mot de passe" [(ngModel)]="password">
+</form>
+<button [disabled]="false" class="btn-connexion" (click)="onSubmit()">Connexion</button>
+
+<p>Vous n'avez pas encore de compte my CANAL ?</p>
+<div (click)="goAjoutProfil()">
+  <p>Inscription</p>
+</div>

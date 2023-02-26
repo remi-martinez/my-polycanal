@@ -1,0 +1,210 @@
+header{
+  height:30%;
+  background-color: black;
+}
+
+header img{
+  width: 7.25%;
+  height: 50%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 2%;
+}
+
+header ul{
+  display: inline-block;
+  margin-top: 1.5%;
+  width: 50%;
+  margin-left: 2%;
+}
+
+header li{
+  list-style: none;
+  display: inline-block;
+  margin-right: 2%;
+
+}
+
+header a{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Hind', sans-serif;
+}
+
+header a:link{
+  color: white;
+}
+
+header a:hover{
+  color: #E23F66;
+}
+
+header .imgNav{
+  display: inline-block;
+  width:10%;
+  float: right;
+  margin-top: 1%;
+}
+
+header .imgNav img{
+  color: white;
+  height: 40px;
+  width: 40px;
+  margin-left: 10%;
+  cursor: pointer;
+}
+
+.barreRecherche{
+  position: absolute;
+  border: 1px solid;
+  color: white;
+  width: 40%;
+  height: 5%;
+  top:2.5%;
+  left:50%;
+  transform-origin: 100% 0;
+  animation: 0.3s ease-in-out zoneDeRecherche;
+  animation-fill-mode: forwards;
+}
+
+.barreRecherche input{
+  height: 82%;
+  width: 98.7%;
+  background-color: black;
+  border-color: black;
+  color: white;
+}
+
+.imageCompte:hover{
+  transform: scale(1.2);
+}
+
+.imageCompte:hover + .popupProfil{
+  opacity: 1;
+}
+
+.lien-actif{
+  color: #E23F66;
+}
+
+/*popup profil*/
+
+.imgNav .popupProfil{
+  border-radius: 10px;
+  background-color: #2b2b2b;
+  z-index: 10;
+  width: 22%;
+  height: 70%;
+  margin-left: -15%;
+  margin-top: 1%;
+  position: absolute;
+  opacity: 0;
+}
+
+.imgNav .popupProfil:hover{
+  opacity: 1;
+}
+
+
+.imgNav .popupProfil img{
+  width: 50%;
+  height: 33%;
+  margin-left: -20%;
+}
+
+.popupProfil ul{
+  display: inline-block;
+  margin: 0%;
+  padding-top: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
+  text-align: center;
+}
+
+.popupProfil li{
+  margin: 0%;
+}
+
+.popupProfil li p{
+  margin-left: -80%;
+  margin-top: -20%;
+  font-size: 0.8rem;
+  font-family: 'Hind', sans-serif;
+  color: white;
+}
+
+.imgAjout:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+}
+
+.popupProfil p{
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Hind', sans-serif;
+  color: #E23F66;
+  cursor: pointer;
+}
+
+.popupProfil hr{
+  background-color: grey;
+  border:none;
+  height: 1px;
+}
+
+.liste_gestion_profil{
+  height:11%;
+}
+
+.liste_gestion_profil:hover{
+  background-color: gray;
+}
+
+.liste_gestion_profil img{
+  display: inline-block;
+  transform: scale(0.4);
+  margin-top: -20%;
+  margin-left: 0%;
+}
+
+.popupProfil .liste_gestion_profil  p{
+  display: inline-block;
+  margin-left: 0%;
+  margin-top: 0%;
+  vertical-align: top;
+  font-size: 15px;
+}
+
+.managerConnexion{
+  background-color: #393939;
+  width: 70%;
+  height: 8%;
+  margin-left: 15%;
+}
+
+.managerConnexion:hover{
+  background-color: #454545;
+}
+
+.managerConnexion p{
+  color: white;
+  padding-top: 3%;
+}
+
+/*------ANIMATION-------*/
+@keyframes zoneDeRecherche {
+
+  from {
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform-origin: 100% 0;
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
