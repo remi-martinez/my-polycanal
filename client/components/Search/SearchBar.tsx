@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Keyboard, StyleSheet, TextInput, View } from 'react-native';
 import { Entypo, Feather } from '@expo/vector-icons';
-import Colors from '../constants/Colors';
+import Colors from '../../constants/Colors';
 
 
 interface SearchBarProps {
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.grey5,
-    borderRadius: 20,
+    borderRadius: 3,
     paddingLeft: 10,
     marginHorizontal: 10,
     padding: 8
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.grey5,
-    borderRadius: 20,
+    borderRadius: 3,
     paddingLeft: 10,
     marginHorizontal: 10,
     padding: 8

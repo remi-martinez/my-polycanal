@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Image, ListRenderItem, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Colors from '../constants/Colors';
+import Colors from '../../constants/Colors';
 
 const ItemDisplay = ({title, description, thumbnail}: Item) => (
   <View style={styles.item}>

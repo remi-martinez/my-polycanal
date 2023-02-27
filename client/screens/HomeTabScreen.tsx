@@ -1,21 +1,23 @@
-import { Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
-import ButtonStyled from '../components/ButtonStyled';
-import HomeCarousel from '../components/HomeCarousel';
+import HomeCarousel from '../components/Home/HomeCarousel';
+import HomeCategories from '../components/Home/HomeCategories';
+import HomeSelection from '../components/Home/HomeSelection';
 
 
-export default function HomeTabScreen({ navigation }: RootTabScreenProps<'HomeTab'>) {
-
+export default function HomeTabScreen({navigation}: RootTabScreenProps<'HomeTab'>) {
 
 
   return (
     <View style={styles.container}>
       <HomeCarousel/>
-      <Text style={styles.title}>Home Tab</Text>
-      <ButtonStyled title={'Abonner'}></ButtonStyled>
-      <Text>Le bouton ci-dessus sert à s'abonner.</Text>
+      <HomeCategories/>
+      <View style={styles.separator}>
+        <Text style={styles.title}>Notre sélection</Text>
+      </View>
+      <HomeSelection/>
     </View>
   );
 }
@@ -23,21 +25,20 @@ export default function HomeTabScreen({ navigation }: RootTabScreenProps<'HomeTa
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 30,
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    marginLeft: 20,
+    alignItems: 'flex-start',
   },
   separator: {
     marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
   button: {
-    alignItems: "center",
-    backgroundColor: "#DDDDDD",
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
     padding: 10
   },
 });

@@ -1,8 +1,8 @@
 import { ActivityIndicator, StyleSheet } from 'react-native';
 import { View } from '../components/Themed';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../components/Search/SearchBar';
 import { useEffect, useState } from 'react';
-import ResultDisplay from '../components/ResultDisplay';
+import ResultDisplay from '../components/Search/ResultDisplay';
 import { BehaviorSubject, debounceTime } from 'rxjs';
 
 const searchChange: BehaviorSubject<string> = new BehaviorSubject('');

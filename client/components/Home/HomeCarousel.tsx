@@ -57,7 +57,6 @@ export default class HomeCarousel extends React.Component<HomeCarouselProps, Hom
 
   get pagination() {
     const {entries, activeSlide} = this.state;
-    console.log(activeSlide);
     return (
       <Pagination
         activeDotIndex={activeSlide}
@@ -68,7 +67,7 @@ export default class HomeCarousel extends React.Component<HomeCarouselProps, Hom
           width: 10,
           height: 10,
           borderRadius: 5,
-          marginHorizontal: 4,
+          marginHorizontal: -4,
           backgroundColor: 'rgba(241,241,241,0.92)'
         }}
         inactiveDotStyle={{
