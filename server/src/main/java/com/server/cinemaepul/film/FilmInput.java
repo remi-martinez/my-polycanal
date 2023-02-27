@@ -17,4 +17,5 @@ public class FilmInput {
     private Integer montantRecette;
     private Integer noRea;
     private String codeCat;
+    private String lienImg;
 }

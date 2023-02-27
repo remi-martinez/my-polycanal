@@ -42,6 +42,9 @@ public class Film {
     @Column(name = "montant_recette", nullable = false)
     private Integer montantRecette;
 
+    @Column(name = "lien_img", nullable = false)
+    private String lienImg;
+
     @ManyToOne(optional = false)
     @JoinColumn(name = "no_rea", nullable = false)
     private Realisateur noRea;

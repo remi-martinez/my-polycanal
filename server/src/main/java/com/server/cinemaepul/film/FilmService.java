@@ -50,6 +50,7 @@ public class FilmService {
                 .codeCat(categorieService.getById(filmInput.getCodeCat()))
                 .budget(filmInput.getBudget())
                 .montantRecette(filmInput.getMontantRecette())
+                .lienImg(filmInput.getLienImg())
                 .build();
         return filmRepository.save(film);
     }
@@ -66,6 +67,7 @@ public class FilmService {
                 .codeCat(categorieService.getById(filmInput.getCodeCat()))
                 .budget(filmInput.getBudget())
                 .montantRecette(filmInput.getMontantRecette())
+                .lienImg(filmInput.getLienImg())
                 .build();
 
         return filmRepository.save(film);
