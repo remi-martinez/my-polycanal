@@ -27,7 +27,7 @@ import {ConnexionComponent} from './Connexion_inscription/connexion/connexion.co
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HttpRequestInterceptor} from "./http-request-interceptor";
 import {HomeComponent} from "./Accueil/home.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AjoutPersonnageComponent} from "./Gestion_Video/ajout-personnage/ajout-personnage.component";
 
 @NgModule({
@@ -57,7 +57,8 @@ import {AjoutPersonnageComponent} from "./Gestion_Video/ajout-personnage/ajout-p
     AppRoutingModule,
     IvyCarouselModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
