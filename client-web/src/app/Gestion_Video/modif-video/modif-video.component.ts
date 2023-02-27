@@ -61,24 +61,24 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 export class ModifVideoComponent implements OnInit {
 
   filmId: any | null;
-  film: Film = {
-    titre:'A',
-    noRea: {
-      prenRea: '',
-      nomRea: '',
-      id: 0
-    },
-    budget: 0,
-    dateSortie: new Date(),
-    duree: 0,
-    montantRecette: 0,
-    id:0,
-    codeCat: {
-      id: '',
-      libelleCat: '',
-      image: ''
-    }
-  };
+  // film: Film = {
+  //   titre:'A',
+  //   noRea: {
+  //     prenRea: '',
+  //     nomRea: '',
+  //     id: 0
+  //   },
+  //   budget: 0,
+  //   dateSortie: new Date(),
+  //   duree: 0,
+  //   montantRecette: 0,
+  //   id:0,
+  //   codeCat: {
+  //     id: '',
+  //     libelleCat: '',
+  //     image: ''
+  //   }
+  // };
   realisateurs: Realisateur[] | undefined;
   categories: Categorie[] | undefined;
   rlId: number = 2;
@@ -112,9 +112,7 @@ export class ModifVideoComponent implements OnInit {
         noRea: v.noRea.id!,
         titre: v.titre,
         montantRecette: v.montantRecette
-      })
-      this.film = v;
-      console.log(v.noRea)
+      });
       this.rlId = v.noRea.id;
     })
 
