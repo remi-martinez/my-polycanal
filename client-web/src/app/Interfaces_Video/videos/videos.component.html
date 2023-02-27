@@ -1,13 +1,14 @@
 <div>
   <div class="grille">
-    <!--TODO la grille est déjà en place ! juste faire la boucle for pour ajouter nos favoris-->
-    <div *ngFor="let film of films">
-      <img src="assets/img/testFilmFav1.webp" class="afficheFilm" (click)="showPopUp(film)">
-      <img src="assets/img/annuler.png" class="croix"> <!--bouton pour supprimer un favori-->
-      <h3 (click)="showOverlay = true" class="titre">{{ film.titre }}</h3>
-      <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film.codeCat?.libelleCat }}</p>
+    <div class="" *ngFor="let film of films">
+      <div class="imgContainer">
+        <img src="{{film.lienImg}}" class="afficheFilm" (click)="showPopUp(film)" >
+        <img src="assets/img/annuler.png" class="croix">
+      </div>
+      <div class="txtContainer">
+        <h3 (click)="showOverlay = true" class="titre">{{ film.titre }}</h3>
+        <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film.codeCat?.libelleCat }}</p>      </div>
     </div>
-
   </div>
 
   <div class="popup" *ngIf="showOverlay">

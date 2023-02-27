@@ -12,7 +12,6 @@ h3{
   color: white;
   font-family: 'Hind', sans-serif;
   font-size: 1em;
-  margin-top: 50%;
   cursor: pointer;
 }
 
@@ -32,19 +31,32 @@ p{
   grid-gap: 1%;
 }
 
-.grille .afficheFilm{
-  border-radius: 4px;
-  width: 100%;
-  cursor:pointer;
+.imgContainer {
+  position: relative;
+  width: 200px;
+  height: 300px;
 }
 
-.grille .croix{
-  z-index: 8;
-  width: 10%;
-  display: flex;
-  margin-top: -55%;
-  margin-left: 87%;
+.imgContainer > .afficheFilm{
+  border-radius: 4px;
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  cursor:pointer;
+  position: absolute;
+}
+
+.croix{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  position: relative;
+  top: 10px;
+  right: 5px;
+  float:right;
   cursor: pointer;
+  box-shadow: 0px 0px 10px #000;
+  border-radius: 50%;
 }
 
 .popup {
@@ -102,3 +114,8 @@ p{
   opacity: 0.8;
   display: block;
 }
+
+.cardFilm{
+  height: 100px;
+}
+
