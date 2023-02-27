@@ -28,6 +28,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HttpRequestInterceptor} from "./http-request-interceptor";
 import {HomeComponent} from "./Accueil/home.component";
 import {FormsModule} from "@angular/forms";
+import {AjoutPersonnageComponent} from "./Gestion_Video/ajout-personnage/ajout-personnage.component";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {FormsModule} from "@angular/forms";
     ModifierProfilComponent,
     PageIntrouvableComponent,
     ConnexionComponent,
-    HomeComponent
+    HomeComponent,
+    AjoutPersonnageComponent
   ],
   imports: [
     BrowserModule,
