@@ -36,6 +36,7 @@ public class ActeurService {
                 .prenAct(acteurInput.getPrenAct())
                 .dateNaiss(acteurInput.getDateNaiss())
                 .dateDeces(acteurInput.getDateDeces())
+                .lienImg(acteurInput.getLienImg())
                 .build();
         return acteurRepository.save(acteur);
     }
@@ -72,4 +73,6 @@ public class ActeurService {
         acteurRepository.delete(acteur);
         return acteurId;
     }
+
+    
 }

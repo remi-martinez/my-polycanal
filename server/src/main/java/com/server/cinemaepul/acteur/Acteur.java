@@ -34,6 +34,9 @@ public class Acteur {
     @Column(name = "date_deces")
     private LocalDate dateDeces;
 
+    @Column(name = "lien_img", length = 100)
+    private String lienImg;
+
     @OneToMany(mappedBy = "acteur")
     @JsonIgnore
     private Set<Personnage> personnages = new LinkedHashSet<>();

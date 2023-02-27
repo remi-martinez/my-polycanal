@@ -1,7 +1,8 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Acteur} from "../models/acteur";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
+import {Personnage} from "../models/personnage";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,15 @@ export class ActeurService {
 
   constructor(private http: HttpClient) { }
 
+  getAllActeursWithPersonnages(): Observable<Acteur[]> {
+    return this.http.get<any[]>(this.apiUrl).pipe( //TODO Faire l'url avec le DTO
+      map(items => items.map(item => {
+        const personnages = item.personnages.map((p: any) => new Personnage(p.nomPers, p.film, p.acteur));
+        return new Acteur(item.nomAct, item.prenAct, new Date(item.dateNaiss), item.dateDeces ? new Date(item.dateDeces) : null, item.lienImg, personnages);
+      }))
+    );
+
+  }
   getActeurs(): Observable<Acteur[]> {
     return this.http.get<Acteur[]>(this.apiUrl);
   }

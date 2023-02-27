@@ -14,5 +14,6 @@ public class ActeurInput {
     private String prenAct;
     private LocalDate dateNaiss;
     private LocalDate dateDeces;
+    private String lienImg;
 
 }
