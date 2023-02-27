@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {FilmCategorieService} from "../../services/filmCategorie.service";
 
 @Component({
   selector: 'app-barre-affichage-categorie',
@@ -7,4 +7,8 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./barre-affichage-categorie.component.scss']
 })
 export class BarreAffichageCategorieComponent {
+  constructor(public filmCategorieService: FilmCategorieService) {
+
+  }
+
 }

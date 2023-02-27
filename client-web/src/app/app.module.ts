@@ -11,6 +11,7 @@ import {TableauGestionComponent} from './Gestion_Video/tableau-gestion/tableau-g
 import {AjoutVideoComponent} from './Gestion_Video/ajout-video/ajout-video.component';
 import {ModifVideoComponent} from './Gestion_Video/modif-video/modif-video.component';
 import {VideosFavoritesComponent} from './Interfaces_Video/videos-favorites/videos-favorites.component';
+import {ActeursComponent} from "./Acteurs/acteurs.component";
 import {
   BarreAffichageCategorieComponent
 } from './Interfaces_Video/barre-affichage-categorie/barre-affichage-categorie.component';
@@ -38,6 +39,7 @@ import {FormsModule} from "@angular/forms";
     AjoutVideoComponent,
     ModifVideoComponent,
     VideosFavoritesComponent,
+    ActeursComponent,
     BarreAffichageCategorieComponent,
     VideosComponent,
     BarreAffichageActeurRealisateurComponent,
