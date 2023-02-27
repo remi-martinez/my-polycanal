@@ -16,10 +16,10 @@
     <td></td>
   </tr>
 
-  <tr>
-    <td class="titre">Super 8</td>
-    <td class="realisateur">Spielberg</td>
-    <td><img (click)="modifFilm()" src="assets/img/modifier.png"><img src="assets/img/suppression.png"></td>
+  <tr *ngFor="let film of films">
+    <td class="titre">{{film.titre}}</td>
+    <td class="realisateur">{{film.noRea.prenRea + " " + film.noRea.nomRea}}</td>
+    <td><img (click)="modifFilm(film.id)" src="assets/img/modifier.png"><img src="assets/img/suppression.png"></td>
   </tr>
 </table>
 
