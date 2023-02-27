@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {FilmCategorieService} from "../../services/filmCategorie.service";
 
 @Component({
   selector: 'app-carousel-type',
@@ -7,26 +8,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./carousel-type.component.scss']
 })
 export class CarouselTypeComponent {
-  constructor(private router: Router) { }
+  constructor(public filmCategorieService: FilmCategorieService) {
 
-  goTousFilms() {
-    this.router.navigateByUrl('categories');
   }
-
-  goActionFilms() {
-    this.router.navigateByUrl('categories');
-  }
-
-  goComedieFilm() {
-    this.router.navigateByUrl('categories');
-  }
-
-  goPolicierFilm() {
-    this.router.navigateByUrl('categories');
-  }
-
-  goWesternFilm() {
-    this.router.navigateByUrl('categories');
-  }
-
 }

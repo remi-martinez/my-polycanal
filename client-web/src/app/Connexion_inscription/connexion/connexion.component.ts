@@ -15,6 +15,7 @@ export class ConnexionComponent implements OnInit {
   password!: string;
 
   ngOnInit(): void {
+    this.authService.logout()
     if (localStorage.getItem('token')) {
       this.router.navigateByUrl('');
     }
