@@ -86,6 +86,22 @@ public class PersonnageService {
                     personnage.getFilm().getLienImg()
                     );
 
+            return personnageDTO;
+        }).collect(Collectors.toList());
+    }
+
+    public List<PersonnageAvecFilmDto> getPersonnagesByFilm(Integer idFilm) {
+        Film film = filmService.getByIdOrThrow(idFilm);
+        List<Personnage> personnages = personnageRepository.findAllByFilm(film);
+        return personnages.stream().map(personnage -> {
+            PersonnageAvecFilmDto personnageDTO = new PersonnageAvecFilmDto(
+                    personnage.getNomPers(),
+                    personnage.getFilm().getId(),
+                    personnage.getFilm().getTitre(),
+                    personnage.getFilm().getDateSortie(),
+                    personnage.getFilm().getLienImg()
+            );
+
 
             return personnageDTO;
         }).collect(Collectors.toList());

@@ -1,5 +1,5 @@
-import {Film} from "./film";
 import {Acteur} from "./acteur";
+import {Film} from "./film";
 
 export class Personnage {
   acteur: Acteur;

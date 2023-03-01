@@ -8,7 +8,6 @@ import {TableauGestionComponent} from "./Gestion_Video/tableau-gestion/tableau-g
 import {AjoutVideoComponent} from "./Gestion_Video/ajout-video/ajout-video.component";
 import {ModifVideoComponent} from "./Gestion_Video/modif-video/modif-video.component";
 import {VideosFavoritesComponent} from "./Interfaces_Video/videos-favorites/videos-favorites.component";
-import {ActeursComponent} from "./Acteurs/acteurs.component";
 import {
   BarreAffichageCategorieComponent
 } from "./Interfaces_Video/barre-affichage-categorie/barre-affichage-categorie.component";
@@ -21,7 +20,10 @@ import {GestionProfilsComponent} from "./Gestion_Profils/gestion-profils/gestion
 import {ModifierProfilComponent} from "./Gestion_Profils/modifier-profil/modifier-profil.component";
 import {ConnexionComponent} from "./Connexion_inscription/connexion/connexion.component";
 import {HomeComponent} from "./Accueil/home.component";
+import {ActeursComponent} from "./Acteurs/acteurs.component";
+import {PersonnageComponent} from "./Personnages/personnage.component";
 import {RechercheComponent} from "./Recherche/recherche.component";
+import {AjoutPersonnageComponent} from "./Personnages/ajout-personnage/ajout-personnage.component";
 
 const routes: Routes = [
   {
@@ -32,10 +34,11 @@ const routes: Routes = [
   {path: 'gestionVideo', component: TableauGestionComponent},
   {path: 'ajoutVideo', component: AjoutVideoComponent},
   {path: 'modifVideo', component: ModifVideoComponent},
-  {path: 'videoFav', component: VideosFavoritesComponent},
-  {path: 'acteurs', component: ActeursComponent},
+  {path: 'personnages', component: PersonnageComponent},
+  {path: 'ajoutPersonnage', component: AjoutPersonnageComponent},
   {path: 'categories', component: BarreAffichageCategorieComponent},
   {path: 'categories', component: VideosComponent},
+  {path: 'acteurs', component: ActeursComponent},
   {path: 'personnalite', component: BarreAffichageActeurRealisateurComponent},
   {path: 'recherche', component: RechercheComponent},
   {
