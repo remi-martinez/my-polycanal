@@ -1,0 +1,36 @@
+<div>
+  <div class="grille">
+    <div class="" *ngFor="let acteur of acteurs">
+      <div class="imgContainer">
+        <img src="{{acteur.lienImg}}" class="afficheFilm" (click)="showPopUp(acteur)">
+      </div>
+      <div class="txtContainer">
+        <h3 class="titre">{{ acteur.prenAct + " " + acteur.nomAct }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" *ngIf="popUp">
+    <div class="col">
+      <img class="imgFilm" src="{{acteur?.lienImg}}">
+    </div>
+    <div class="col col-info">
+      <img (click)="popUp = false" src="assets/img/annuler.png" class="croixPopUp">
+      <h1>{{ acteur?.prenAct +" "+ acteur?.nomAct }}</h1>
+
+      <h2>Personnages:</h2>
+        <ul>
+          <li *ngFor="let personnage of personnages" class="cardPersonnage">
+<!--            @TODO: lien vers film-->
+            <a href="/"><img src="{{personnage.lienImg}}"></a>
+            <div class="cardPersonnageInfoFilm">
+              <div class="cardPersonnageTitre">{{personnage.titre}}</div> : <span>{{ personnage.nomPers }}</span>
+            </div>
+          </li>
+
+        </ul>
+    </div>
+
+  </div>
+</div>
+

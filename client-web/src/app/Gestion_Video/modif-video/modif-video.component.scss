@@ -54,7 +54,7 @@ input[name="date"],input[name="budget"],input[name="recette"]{
 }
 
 
-input[type=submit] {
+.btn-submit {
   width: 40%;
   background-color: #E23F66;
   color: white;
@@ -65,6 +65,6 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+.btn-submit:hover {
   background-color: rgba(226, 63, 102, 0.82);
 }

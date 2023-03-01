@@ -1,5 +1,6 @@
 package com.server.cinemaepul.personnage;
 
+import com.server.cinemaepul.acteur.Acteur;
 import com.server.cinemaepul.acteur.ActeurService;
 import com.server.cinemaepul.film.FilmService;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Service
@@ -69,5 +71,22 @@ public class PersonnageService {
         Personnage personnage = getByIdOrThrow(noAct, noFilm);
         personnageRepository.delete(personnage);
         return personnage.getId();
+    }
+
+    public List<PersonnageAvecFilmDto> getPersonnagesByActeur(Integer idActeur) {
+        Acteur acteur = acteurService.getByIdOrThrow(idActeur);
+        List<Personnage> personnages = personnageRepository.findAllByActeur(acteur);
+        return personnages.stream().map(personnage -> {
+            PersonnageAvecFilmDto personnageDTO = new PersonnageAvecFilmDto(
+                    personnage.getNomPers(),
+                    personnage.getFilm().getId(),
+                    personnage.getFilm().getTitre(),
+                    personnage.getFilm().getDateSortie(),
+                    personnage.getFilm().getLienImg()
+                    );
+
+
+            return personnageDTO;
+        }).collect(Collectors.toList());
     }
 }

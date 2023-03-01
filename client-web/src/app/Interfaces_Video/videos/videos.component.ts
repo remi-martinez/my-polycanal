@@ -15,7 +15,7 @@ export class VideosComponent implements OnInit{
   filmsObserver: any;
   films: Film[] | undefined;
   film: Film | undefined;
-  showOverlay!: boolean;
+  popUp!: boolean;
   showFav: boolean = false;
   codeCat: string|null = null;
 
@@ -46,7 +46,7 @@ export class VideosComponent implements OnInit{
   }
 
   showPopUp(film: Film) {
-    this.showOverlay = true;
+    this.popUp = true;
     this.film = film;
   }
 
