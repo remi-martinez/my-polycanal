@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Acteur} from "../models/acteur";
 import {map, Observable} from "rxjs";
 import {Personnage} from "../models/personnage";
+import {PersonnageAvecFilmDto} from "../models/personnageAvecFilmDto";
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,6 @@ export class ActeurService {
 
   constructor(private http: HttpClient) { }
 
-  getAllActeursWithPersonnages(): Observable<Acteur[]> {
-    return this.http.get<any[]>(this.apiUrl).pipe( //TODO Faire l'url avec le DTO
-      map(items => items.map(item => {
-        const personnages = item.personnages.map((p: any) => new Personnage(p.nomPers, p.film, p.acteur));
-        return new Acteur(item.nomAct, item.prenAct, new Date(item.dateNaiss), item.dateDeces ? new Date(item.dateDeces) : null, item.lienImg, personnages);
-      }))
-    );
-
-  }
   getActeurs(): Observable<Acteur[]> {
     return this.http.get<Acteur[]>(this.apiUrl);
   }
@@ -43,4 +35,12 @@ export class ActeurService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<Acteur>(url);
   }
+
+  getPersonnagesByActeurId(acteurId: number): Observable<PersonnageAvecFilmDto> {
+
+    const url = `${this.apiUrl}/${acteurId}/personnages`;
+    return this.http.get<PersonnageAvecFilmDto>(url);
+  }
+
+
 }

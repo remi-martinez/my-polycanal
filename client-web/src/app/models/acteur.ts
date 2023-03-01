@@ -1,6 +1,7 @@
 import {Personnage} from "./personnage";
 
 export class Acteur {
+  id: number;
   nomAct: string;
   prenAct: string;
   dateNaiss: Date;
@@ -8,7 +9,8 @@ export class Acteur {
   lienImg: string;
   personnages: Personnage[];
 
-  constructor(nomAct: string, prenAct: string, dateNaiss: Date, dateDeces: Date | null, lienImg: string, personnages: Personnage[]) {
+  constructor(id: number, nomAct: string, prenAct: string, dateNaiss: Date, dateDeces: Date | null, lienImg: string, personnages: Personnage[]) {
+    this.id = id;
     this.nomAct = nomAct;
     this.prenAct = prenAct;
     this.dateNaiss = dateNaiss;
@@ -18,6 +20,6 @@ export class Acteur {
   }
 
   static adapt(item: any): Acteur {
-    return new Acteur(item.nomAct, item.prenAct, item.dateNaiss, item.dateDeces, item.lienImg, item.personnages)
+    return new Acteur(item.id, item.nomAct, item.prenAct, item.dateNaiss, item.dateDeces, item.lienImg, item.personnages)
   }
 }

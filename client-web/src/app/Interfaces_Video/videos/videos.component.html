@@ -1,30 +1,44 @@
-<div>
+<div class="blur">
   <div class="grille">
     <div class="" *ngFor="let film of films">
       <div class="imgContainer">
-        <img src="{{film.lienImg}}" class="afficheFilm" (click)="showPopUp(film)" >
+        <img src="{{film.lienImg}}" class="afficheFilm" (click)="showPopUp(film)">
         <img src="assets/img/annuler.png" class="croix">
       </div>
       <div class="txtContainer">
-        <h3 (click)="showOverlay = true" class="titre">{{ film.titre }}</h3>
-        <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film.codeCat?.libelleCat }}</p>      </div>
+        <h3 class="titre">{{ film.titre }}</h3>
+        <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p></div>
     </div>
   </div>
 
-  <div class="popup" *ngIf="showOverlay">
-    <img (click)="showOverlay = false" src="assets/img/annuler.png" class="croixPopUp">
-    <h1>{{ film?.titre }}</h1>
-    <img class="imgFilm" src="assets/img/testFilm1.webp">
-    <img class="imgFav" (click)="showFav = true" *ngIf="!showFav" src="assets/img/etoile-vide.png"><img class="imgFav"
-                                                                                                        (click)="showFav = false"
-                                                                                                        *ngIf="showFav"
-                                                                                                        src="assets/img/etoile.png">
-    <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p>
-    <p style="display: inline-block; color: #E23F66"> De : </p>
-    <p style="display: inline-block; cursor: pointer"
-       (click)="goPersonnaliteFilms()">{{ film?.noRea?.prenRea + " " + film?.noRea?.nomRea }}</p>
-    <p style="display: inline-block;color: #E23F66"> Casting : </p>
-    <p style="display: inline-block; cursor: pointer" (click)="goPersonnaliteFilms()"></p>
+  <div class="popup" *ngIf="popUp">
+    <div class="col">
+      <img class="imgFilm" src="{{film?.lienImg}}">
+    </div>
+    <div class="col col-info">
+
+      <img (click)="popUp = false" src="assets/img/annuler.png" class="croixPopUp">
+      <h1>{{ film?.titre }}</h1>
+
+      <span style="display: inline-flex; width: 200px">
+        <h3>Ajouter au favoris</h3>
+        <img class="imgFav" (click)="showFav = true" *ngIf="!showFav" src="assets/img/etoile-vide.png">
+        <img class="imgFav" (click)="showFav = false" *ngIf="showFav" src="assets/img/etoile.png">
+      </span>
+
+
+      <h3>Catégorie:</h3>
+      <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p>
+
+      <h3 style="display: inline-block; color: #E23F66"> De : </h3>
+      <p style="display: inline-block; cursor: pointer"
+         (click)="goPersonnaliteFilms()">{{ film?.noRea?.prenRea + " " + film?.noRea?.nomRea }}</p>
+      <br>
+
+      <h3 style="display: inline-block;color: #E23F66"> Casting : </h3>
+      <p style="display: inline-block; cursor: pointer" (click)="goPersonnaliteFilms()"></p>
+    </div>
+
   </div>
 
 </div>

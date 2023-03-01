@@ -67,41 +67,36 @@ p{
   border: 1px solid black;
   width: 40%;
   height: 92%;
+  box-shadow: 0px 0px 500px 500px rgba(0,0,0);
+  display: flex;
 }
 
 .popup .croixPopUp{
-  margin-top: 0.5%;
-  margin-bottom: 0.5%;
-  margin-left: 0.5%;
-  width: 3%;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-}
-
-.popup .imgFilm{
-  width: 100%;
 }
 
 .popup h1{
   color: white;
   font-family: 'Hind', sans-serif;
-  text-align: center;
 }
+
 
 .popup .imgFav{
-  margin-left: 2%;
   cursor: pointer;
-  width: 5%;
-  margin-top: 2%;
-  display: block;
+  max-height: 50%;
+  margin: 17px;
 }
 
-.popup p{
+.popup span{
   color: grey;
   font-family: 'Hind', sans-serif;
   font-size: 1em;
   display: block;
   margin-top: 2%;
   margin-left: 2%;
+  height: 50px;
 }
 
 .overlay {
@@ -119,3 +114,41 @@ p{
   height: 100px;
 }
 
+.imgFilm{
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+}
+
+.col{
+  flex: 50%;
+}
+
+.col-info{
+  padding-left: 20px;
+}
+//Card personnage
+
+.cardPersonnage{
+  //border: solid 1px red;
+  width: 300px;
+  display: inline-flex;
+}
+
+.cardPersonnage img{
+  height : 150px;
+  flex: 50%;
+  float: left;
+  object-fit: contain;
+}
+
+.cardPersonnageInfoFilm {
+  flex: 50%;
+}
+
+.cardPersonnageTitre{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #c73a54;
+  font-family: 'Hind', sans-serif;
+}
