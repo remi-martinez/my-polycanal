@@ -27,4 +27,36 @@ public class Personnage {
     private Film film;
     @Column(name = "nom_pers", nullable = false)
     private String nomPers;
+
+    public PersonnageId getId() {
+        return id;
+    }
+
+    public void setId(PersonnageId id) {
+        this.id = id;
+    }
+
+    public Acteur getActeur() {
+        return acteur;
+    }
+
+    public void setActeur(Acteur acteur) {
+        this.acteur = acteur;
+    }
+
+    public Film getFilm() {
+        return film;
+    }
+
+    public void setFilm(Film film) {
+        this.film = film;
+    }
+
+    public String getNomPers() {
+        return nomPers;
+    }
+
+    public void setNomPers(String nomPers) {
+        this.nomPers = nomPers;
+    }
 }
