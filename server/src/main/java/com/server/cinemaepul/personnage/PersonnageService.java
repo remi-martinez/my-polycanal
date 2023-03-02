@@ -2,6 +2,7 @@ package com.server.cinemaepul.personnage;
 
 import com.server.cinemaepul.acteur.Acteur;
 import com.server.cinemaepul.acteur.ActeurService;
+import com.server.cinemaepul.film.Film;
 import com.server.cinemaepul.film.FilmService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,5 +89,10 @@ public class PersonnageService {
 
             return personnageDTO;
         }).collect(Collectors.toList());
+    }
+
+    public List<Personnage> getPersonnagesByFilmId(Integer idFilm) {
+        Film film = filmService.getByIdOrThrow(idFilm);
+        return personnageRepository.findAllByFilm(film);
     }
 }

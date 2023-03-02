@@ -41,6 +41,4 @@ export class ActeurService {
     const url = `${this.apiUrl}/${acteurId}/personnages`;
     return this.http.get<PersonnageAvecFilmDto>(url);
   }
-
-
 }

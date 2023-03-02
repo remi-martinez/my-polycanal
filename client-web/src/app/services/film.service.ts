@@ -26,6 +26,11 @@ export class FilmService {
     return this.http.get<Film[]>(url);
   }
 
+  getBestFilms(): Observable<Film[]>{
+    const url = `${this.apiUrl}/best`;
+    return this.http.get<Film[]>(url);
+  }
+
   addFilm(film: Film): Observable<Film> {
     return this.http.post<Film>(this.apiUrl, film);
   }
@@ -38,5 +43,10 @@ export class FilmService {
   deleteFilm(id: number): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
+  }
+
+  getFilmsBySearch(value: string): Observable<Film[]>{
+    const url = `${this.apiUrl}/search/${value}`;
+    return this.http.get<Film[]>(url);
   }
 }

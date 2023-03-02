@@ -1,15 +1,18 @@
+import {Film} from "./film";
+import {Acteur} from "./acteur";
+
 export class Personnage {
-  noActeur: number;
-  noFilm: number;
+  acteur: Acteur;
+  film: Film;
   nomPers: string;
 
-  constructor(noActeur: number, noFilm: number, nomPers: string) {
-    this.noActeur = noActeur;
-    this.noFilm = noFilm;
+  constructor(acteur: Acteur, film: Film, nomPers: string) {
+    this.acteur = acteur;
+    this.film = film;
     this.nomPers = nomPers;
   }
 
   static adapt(item: any): Personnage {
-    return new Personnage(item.noActeur, item.noFilm, item.nomPers)
+    return new Personnage(item.acteur, item.film, item.nomPers)
   }
 }

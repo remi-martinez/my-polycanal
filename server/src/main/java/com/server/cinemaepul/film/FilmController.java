@@ -28,10 +28,17 @@ public class FilmController {
     }
 
     @GetMapping("/categorie/{codeCat}")
-    public List<Film> getByCategorie(@PathVariable("codeCat") String codeCat) {
-        return filmService.getAllByCategorie(codeCat);
+    public List<Film> getByCategorie(@PathVariable("codeCat") String codeCat) {return filmService.getAllByCategorie(codeCat);}
+
+    @GetMapping("/search/{value}")
+    public List<Film> getBySearch(@PathVariable("value") String value) {
+        return filmService.getAllBySearch(value);
     }
 
+    @GetMapping("/best")
+    public List<Film> getBestFilms() {
+        return filmService.getBestFilms();
+    }
     @PostMapping
     public Film create(@RequestBody FilmInput filmInput) {
         return filmService.create(filmInput);

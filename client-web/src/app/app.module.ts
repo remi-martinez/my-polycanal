@@ -29,6 +29,7 @@ import {HttpRequestInterceptor} from "./http-request-interceptor";
 import {HomeComponent} from "./Accueil/home.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AjoutPersonnageComponent} from "./Gestion_Video/ajout-personnage/ajout-personnage.component";
+import {RechercheComponent} from "./Recherche/recherche.component";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {AjoutPersonnageComponent} from "./Gestion_Video/ajout-personnage/ajout-p
     PageIntrouvableComponent,
     ConnexionComponent,
     HomeComponent,
-    AjoutPersonnageComponent
+    AjoutPersonnageComponent,
+    RechercheComponent
   ],
   imports: [
     BrowserModule,

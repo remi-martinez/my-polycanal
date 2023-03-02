@@ -3,11 +3,11 @@
     <div class="" *ngFor="let film of films">
       <div class="imgContainer">
         <img src="{{film.lienImg}}" class="afficheFilm" (click)="showPopUp(film)">
-        <img src="assets/img/annuler.png" class="croix">
       </div>
       <div class="txtContainer">
-        <h3 class="titre">{{ film.titre }}</h3>
-        <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p></div>
+        <h3 class="titre" style="color: #f2f2f2">{{ film.titre }}</h3>
+        <p style="display: block">{{ film?.codeCat?.libelleCat }}</p>
+      </div>
     </div>
   </div>
 
@@ -20,23 +20,37 @@
       <img (click)="popUp = false" src="assets/img/annuler.png" class="croixPopUp">
       <h1>{{ film?.titre }}</h1>
 
-      <span style="display: inline-flex; width: 200px">
-        <h3>Ajouter au favoris</h3>
-        <img class="imgFav" (click)="showFav = true" *ngIf="!showFav" src="assets/img/etoile-vide.png">
-        <img class="imgFav" (click)="showFav = false" *ngIf="showFav" src="assets/img/etoile.png">
-      </span>
-
-
       <h3>Catégorie:</h3>
-      <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p>
-
-      <h3 style="display: inline-block; color: #E23F66"> De : </h3>
-      <p style="display: inline-block; cursor: pointer"
-         (click)="goPersonnaliteFilms()">{{ film?.noRea?.prenRea + " " + film?.noRea?.nomRea }}</p>
+      <p>{{ film?.codeCat?.libelleCat }}</p>
       <br>
 
-      <h3 style="display: inline-block;color: #E23F66"> Casting : </h3>
-      <p style="display: inline-block; cursor: pointer" (click)="goPersonnaliteFilms()"></p>
+      <h3> De : </h3>
+      <p>{{film?.noRea?.prenRea + " " + film?.noRea?.nomRea }}</p>
+      <br>
+
+      <h3> Casting : </h3>
+        <ul>
+          <li *ngFor="let p of personnages ">{{ p?.acteur?.prenAct + " " + p?.acteur?.nomAct }}</li>
+        </ul>
+
+
+      <br>
+
+      <h3> Durée : </h3>
+      <p>{{ toHoursAndMinutes(film?.duree) }}</p>
+      <br>
+
+      <h3> Budget : </h3>
+      <p>{{ toEuro(film?.budget) }}</p>
+      <br>
+
+      <h3> Recette : </h3>
+      <p>{{ toEuro(film?.montantRecette) }}</p>
+      <br>
+
+      <h3> Sortie le : </h3>
+      <p>{{ film?.dateSortie }}</p>
+      <br>
     </div>
 
   </div>
