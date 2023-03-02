@@ -11,34 +11,17 @@ import {Observable} from "rxjs";
 })
 export class HeaderComponent {
   public connectedUtilisateur: Utilisateur | undefined;
-  estAccueilActif = false;
-  estEnDirectActif = false;
-  estProgrammeTVActif = false;
-  estChaineAppsActif = false;
-  estVideosActif = false;
-  //on récupère le chemin de la route active
-  cheminActuel = this.route.snapshot.routeConfig?.path;
-  //pour animation recherche
-  showRechercheDiv = false;
-
+  value: string = '';
+  showRechercheDiv = true;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               public authService: AuthService) {
   }
 
-  ngOnInit() {
-    // Définissions de la variable appropriée en fonction de la page active
-    // @ts-ignore
-    this.estAccueilActif = true;
-    this.authService.getCurrentUser().subscribe(
-      value => {
-        this.connectedUtilisateur = value;
-      }
-    )
-
+  search(value: string) {
+    this.router.navigate(['/recherche'], { queryParams: { value: value } });
   }
-
   rechercheDepliante() {
     this.showRechercheDiv = !this.showRechercheDiv;
   }

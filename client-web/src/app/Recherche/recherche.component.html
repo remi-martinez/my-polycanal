@@ -1,4 +1,5 @@
 <div class="blur">
+  <h1>Films</h1>
   <div class="grille">
     <div class="" *ngFor="let film of films">
       <div class="imgContainer">
@@ -6,7 +7,7 @@
       </div>
       <div class="txtContainer">
         <h3 class="titre">{{ film.titre }}</h3>
-        <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p></div>
+        <p  style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p></div>
     </div>
   </div>
 
@@ -27,18 +28,19 @@
 
 
       <h3>Catégorie:</h3>
-      <p (click)="goCategorieFilms()" style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p>
+      <p style="cursor: pointer">{{ film?.codeCat?.libelleCat }}</p>
 
       <h3 style="display: inline-block; color: #E23F66"> De : </h3>
-      <p style="display: inline-block; cursor: pointer"
-         (click)="goPersonnaliteFilms()">{{ film?.noRea?.prenRea + " " + film?.noRea?.nomRea }}</p>
+      <p style="display: inline-block; cursor: pointer">{{ film?.noRea?.prenRea + " " + film?.noRea?.nomRea }}</p>
       <br>
 
       <h3 style="display: inline-block;color: #E23F66"> Casting : </h3>
-      <p style="display: inline-block; cursor: pointer" (click)="goPersonnaliteFilms()"></p>
+      <p style="display: inline-block; cursor: pointer" ></p>
     </div>
 
   </div>
+
+  <h1>Acteurs</h1>
 
 </div>
 

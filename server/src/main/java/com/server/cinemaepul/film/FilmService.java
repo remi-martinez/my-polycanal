@@ -77,4 +77,8 @@ public class FilmService {
         filmRepository.deleteById(filmId);
         return filmId;
     }
+
+    public List<Film> getAllBySearch(String value) {
+        return filmRepository.findAllBySearch(value);
+    }
 }

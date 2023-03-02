@@ -1,9 +1,7 @@
-<body>
-<div>
-  <img src="assets/img/tousFilms.webp" (click)="this.filmCategorieService.goTousFilms()">
-  <img src="assets/img/action.webp" (click)="this.filmCategorieService.goActionFilms()">
-  <img src="assets/img/comedie.webp" (click)="this.filmCategorieService.goComedieFilm()">
-  <img src="assets/img/policier.webp" (click)="this.filmCategorieService.goPolicierFilm()">
-  <img src="assets/img/policier.webp" (click)="this.filmCategorieService.goWesternFilm()">
+<div class="affiches">
+  <img src="assets/img/tousFilms.webp" (click)="this.filmCategorieService.goTousFilms()" class="affiche" id="affiche-tous-films">
+  <img src="assets/img/action.webp" (click)="this.filmCategorieService.goActionFilms()" class="affiche" id="affiche-action">
+  <img src="assets/img/comedie.webp" (click)="this.filmCategorieService.goComedieFilm()" class="affiche" id="affiche-comedie">
+  <img src="assets/img/policier.webp" (click)="this.filmCategorieService.goPolicierFilm()" class="affiche" id="affiche-policier">
+  <img src="assets/img/policier.webp" (click)="this.filmCategorieService.goWesternFilm()" class="affiche" id="affiche-western">
 </div>
-</body>

@@ -19,8 +19,6 @@ export class VideosComponent implements OnInit{
   showFav: boolean = false;
   codeCat: string|null = null;
 
-  public destroyed = new Subject<any>();
-
   constructor(private router: Router, private route: ActivatedRoute, private filmService: FilmService) {
     this.codeCat = this.route.snapshot.queryParamMap.get('codeCat');
   }

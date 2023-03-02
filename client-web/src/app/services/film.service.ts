@@ -39,4 +39,9 @@ export class FilmService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete(url);
   }
+
+  getFilmsBySearch(value: string): Observable<Film[]>{
+    const url = `${this.apiUrl}/search/${value}`;
+    return this.http.get<Film[]>(url);
+  }
 }

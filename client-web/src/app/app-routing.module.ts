@@ -21,6 +21,7 @@ import {GestionProfilsComponent} from "./Gestion_Profils/gestion-profils/gestion
 import {ModifierProfilComponent} from "./Gestion_Profils/modifier-profil/modifier-profil.component";
 import {ConnexionComponent} from "./Connexion_inscription/connexion/connexion.component";
 import {HomeComponent} from "./Accueil/home.component";
+import {RechercheComponent} from "./Recherche/recherche.component";
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
   {path: 'categories', component: BarreAffichageCategorieComponent},
   {path: 'categories', component: VideosComponent},
   {path: 'personnalite', component: BarreAffichageActeurRealisateurComponent},
+  {path: 'recherche', component: RechercheComponent},
   {
     path: 'personnalite',
     component: VideosComponent

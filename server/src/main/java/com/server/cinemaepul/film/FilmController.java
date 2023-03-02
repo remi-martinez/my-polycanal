@@ -31,6 +31,10 @@ public class FilmController {
     public List<Film> getByCategorie(@PathVariable("codeCat") String codeCat) {
         return filmService.getAllByCategorie(codeCat);
     }
+    @GetMapping("/search/{value}")
+    public List<Film> getBySearch(@PathVariable("value") String value) {
+        return filmService.getAllBySearch(value);
+    }
 
     @PostMapping
     public Film create(@RequestBody FilmInput filmInput) {

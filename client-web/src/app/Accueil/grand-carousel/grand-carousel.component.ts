@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class GrandCarouselComponent {
   images=[
-    {path:'/assets/img/imageTestTopGun.png'},
-    {path:'/assets/img/elvis-.jpg'},
-    {path:'/assets/img/imageTestTopGun.png'},
-    {path:'/assets/img/elvis-.jpg'},
-    {path:'/assets/img/imageTestTopGun.png'},
-    {path:'/assets/img/elvis-.jpg'}
+    {path:'/assets/img/imageTestTopGun.png', class:'affiche'},
+    {path:'/assets/img/elvis-.jpg', class:'affiche'},
+    {path:'/assets/img/imageTestTopGun.png', class:'affiche'},
+    {path:'/assets/img/elvis-.jpg', class:'affiche'},
+    {path:'/assets/img/imageTestTopGun.png', class:'affiche'},
+    {path:'/assets/img/elvis-.jpg', class:'affiche'}
   ];
 }
