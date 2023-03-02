@@ -4,6 +4,8 @@ import com.server.cinemaepul.categorie.CategorieService;
 import com.server.cinemaepul.realisateur.RealisateurService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +41,10 @@ public class FilmService {
 
     public List<Film> getAllByCategorie(String codeCat) {
         return filmRepository.findAllByCodeCat(categorieService.getById(codeCat));
+    }
+
+    public List<Film> getBestFilms() {
+        return filmRepository.findAll(PageRequest.of(0, 5)).getContent();
     }
 
     public Film create(FilmInput filmInput) {

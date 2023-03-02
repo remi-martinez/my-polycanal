@@ -1,6 +1,7 @@
 package com.server.cinemaepul.film;
 
 import com.server.cinemaepul.categorie.Categorie;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -10,7 +11,9 @@ import java.util.Optional;
 
 public interface FilmRepository extends JpaRepository<Film, Integer> {
     Film findByTitre(String titre);
+
     List<Film> findAllByCodeCat(Categorie codeCat);
+
     @Query("SELECT f FROM Film f " +
             "LEFT JOIN Realisateur r on r.id = f.noRea " +
             "LEFT JOIN Categorie c on c.id = f.codeCat " +
