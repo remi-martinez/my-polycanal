@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { FontAwesome, Octicons } from '@expo/vector-icons';
-import { SimpleText } from '../Text/SimpleText';
+import { SimpleText } from '../Shared/SimpleText';
 import Colors from '../../constants/Colors';
 
 interface ClickableItemProps {

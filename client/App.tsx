@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { RootSiblingParent } from 'react-native-root-siblings';
 import { useFonts } from 'expo-font';
 
 import useCachedResources from './hooks/useCachedResources';
@@ -18,10 +19,12 @@ export default function App() {
     return <></>
   } else {
     return (
-      <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme}/>
-        <StatusBar/>
-      </SafeAreaProvider>
+      <RootSiblingParent>
+        <SafeAreaProvider>
+          <Navigation colorScheme={colorScheme}/>
+          <StatusBar/>
+        </SafeAreaProvider>
+      </RootSiblingParent>
     );
   }
 }
