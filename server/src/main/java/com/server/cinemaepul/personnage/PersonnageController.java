@@ -36,4 +36,14 @@ public class PersonnageController {
     public PersonnageId delete(@PathVariable("idAct") Integer id, @PathVariable("idFilm") Integer id2) {
         return personnageService.delete(id, id2);
     }
+
+    @GetMapping("/film/{filmId}")
+    public List<Personnage> getPersonnagesByFilm(@PathVariable("filmId") Integer filmId) {
+        try {
+            return personnageService.getPersonnagesByFilmId(filmId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

@@ -14,7 +14,9 @@ export class GrandCarouselComponent implements OnInit {
   films$: Observable<Film[]> | undefined;
   filmsObserver: any;
   films: Film[] | undefined;
-
+  images: any[] = [];
+  popUp!: boolean;
+  film: Film | undefined;
   constructor(private filmService: FilmService) {
   }
 
@@ -24,8 +26,8 @@ export class GrandCarouselComponent implements OnInit {
       this.filmsObserver = {
         next: (f: Film[]) => {
           for (const film of f) {
-              this.images.push({path:'/assets/img/imageTestTopGun.png', class:'affiche'});
-              console.log(this.images)
+            this.images.push({path: film.lienImg});
+            console.log(this.images);
           }
 
         },
@@ -35,12 +37,8 @@ export class GrandCarouselComponent implements OnInit {
       this.films$.subscribe(this.filmsObserver)
     }
 
-  images=[
-    {path:'/assets/img/imageTestTopGun.png', class:'affiche'},
-    {path:'/assets/img/elvis-.jpg', class:'affiche'},
-    {path:'/assets/img/imageTestTopGun.png', class:'affiche'},
-    {path:'/assets/img/elvis-.jpg', class:'affiche'},
-    {path:'/assets/img/imageTestTopGun.png', class:'affiche'},
-    {path:'/assets/img/elvis-.jpg', class:'affiche'}
-  ];
+  showPopUp(film: Film) {
+    this.popUp = true;
+    this.film = film;
+  }
 }

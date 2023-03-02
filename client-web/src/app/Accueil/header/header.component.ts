@@ -12,7 +12,7 @@ import {Observable} from "rxjs";
 export class HeaderComponent {
   public connectedUtilisateur: Utilisateur | undefined;
   value: string = '';
-  showRechercheDiv = true;
+  showRechercheDiv = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,

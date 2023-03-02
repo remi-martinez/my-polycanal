@@ -3,6 +3,9 @@ import {ActivatedRoute, NavigationEnd, ParamMap, Router, RouterEvent} from "@ang
 import {FilmService} from "../../services/film.service";
 import {Film} from "../../models/film";
 import {Observable, Subject, takeUntil} from "rxjs";
+import {PersonnageAvecFilmDto} from "../../models/personnageAvecFilmDto";
+import {Personnage} from "../../models/personnage";
+import {PersonnageService} from "../../services/personnage.service";
 
 @Component({
   selector: 'app-videos',
@@ -18,8 +21,10 @@ export class VideosComponent implements OnInit{
   popUp!: boolean;
   showFav: boolean = false;
   codeCat: string|null = null;
-
-  constructor(private router: Router, private route: ActivatedRoute, private filmService: FilmService) {
+  personnages$: Observable<Personnage[]> | undefined;
+  personnagesObserver: any;
+  personnages: Personnage[] | undefined;
+  constructor(private router: Router, private route: ActivatedRoute, private filmService: FilmService, private personnageService: PersonnageService) {
     this.codeCat = this.route.snapshot.queryParamMap.get('codeCat');
   }
 
@@ -46,13 +51,27 @@ export class VideosComponent implements OnInit{
   showPopUp(film: Film) {
     this.popUp = true;
     this.film = film;
+    this.personnages$ = this.personnageService.getPersonnagesByFilmId(film.id);
+    this.personnagesObserver = {
+      next: (p: Personnage[]) => {
+        this.personnages = p;
+      },
+      error: (err: Error) => console.error("Error while fetching : " + err),
+      complete: () => console.log(this.personnages)
+    }
+    this.personnages$.subscribe(this.personnagesObserver)
   }
 
-  goCategorieFilms() {
-    this.router.navigateByUrl('categories');
+  toHoursAndMinutes(duree: number|undefined) {
+    if (duree){
+      const hours = Math.floor(duree / 60);
+      const minutes = duree % 60;
+      return `${hours}h${minutes > 0 ? ` ${minutes}m` : ''}`;
+    }
+    return '';
   }
 
-  goPersonnaliteFilms(){
-    this.router.navigateByUrl('personnalite')
+  toEuro(number: number|undefined) {
+    return number ? new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR' }).format(number) : '';
   }
 }
