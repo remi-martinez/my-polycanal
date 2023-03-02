@@ -10,8 +10,6 @@ import {CarouselTypeComponent} from './Accueil/carousel-type/carousel-type.compo
 import {TableauGestionComponent} from './Gestion_Video/tableau-gestion/tableau-gestion.component';
 import {AjoutVideoComponent} from './Gestion_Video/ajout-video/ajout-video.component';
 import {ModifVideoComponent} from './Gestion_Video/modif-video/modif-video.component';
-import {VideosFavoritesComponent} from './Interfaces_Video/videos-favorites/videos-favorites.component';
-import {ActeursComponent} from "./Acteurs/acteurs.component";
 import {
   BarreAffichageCategorieComponent
 } from './Interfaces_Video/barre-affichage-categorie/barre-affichage-categorie.component';
@@ -28,7 +26,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {HttpRequestInterceptor} from "./http-request-interceptor";
 import {HomeComponent} from "./Accueil/home.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AjoutPersonnageComponent} from "./Gestion_Video/ajout-personnage/ajout-personnage.component";
+import {AjoutPersonnageComponent} from "./Personnages/ajout-personnage/ajout-personnage.component";
+import {ActeursComponent} from "./Acteurs/acteurs.component";
+import {PersonnageComponent} from "./Personnages/personnage.component";
 import {RechercheComponent} from "./Recherche/recherche.component";
 
 @NgModule({
@@ -40,8 +40,6 @@ import {RechercheComponent} from "./Recherche/recherche.component";
     TableauGestionComponent,
     AjoutVideoComponent,
     ModifVideoComponent,
-    VideosFavoritesComponent,
-    ActeursComponent,
     BarreAffichageCategorieComponent,
     VideosComponent,
     BarreAffichageActeurRealisateurComponent,
@@ -51,7 +49,9 @@ import {RechercheComponent} from "./Recherche/recherche.component";
     PageIntrouvableComponent,
     ConnexionComponent,
     HomeComponent,
+    ActeursComponent,
     AjoutPersonnageComponent,
+    PersonnageComponent,
     RechercheComponent
   ],
   imports: [

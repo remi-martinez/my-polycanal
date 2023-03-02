@@ -21,11 +21,11 @@ export class PersonnageService {
     return this.http.get<Personnage>(url);
   }
 
-  addPersonnage(personnage: Personnage): Observable<Personnage> {
+  addPersonnage(personnage: any): Observable<Personnage> {
     return this.http.post<Personnage>(this.apiUrl, personnage);
   }
 
-  updatePersonnage(idA: number, idF: number, personnage: Personnage): Observable<Personnage> {
+  updatePersonnage(idA: number, idF: number, personnage: any): Observable<Personnage> {
     const url = `${this.apiUrl}/${idA}-${idF}`;
     return this.http.put<Personnage>(url, personnage);
   }

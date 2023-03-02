@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, ParamMap, Router, RouterEvent} from "@angular/router";
-import {Observable, Subject, takeUntil} from "rxjs";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {Observable} from "rxjs";
 import {Acteur} from "../models/acteur";
 import {ActeurService} from "../services/acteur.service";
-import {Film} from "../models/film";
-import {Personnage} from "../models/personnage";
 import {PersonnageAvecFilmDto} from "../models/personnageAvecFilmDto";
 
 @Component({
@@ -12,7 +10,7 @@ import {PersonnageAvecFilmDto} from "../models/personnageAvecFilmDto";
   templateUrl: './acteurs.component.html',
   styleUrls: ['../Interfaces_Video/videos/videos.component.scss']
 })
-export class ActeursComponent implements OnInit{
+export class ActeursComponent implements OnInit {
 
   acteurs$: Observable<Acteur[]> | undefined;
   acteursObserver: any;

@@ -35,6 +35,12 @@ export class TableauGestionComponent implements OnInit {
     this.router.navigate([ 'modifVideo' ], { queryParams: { id:idFIlm } })
   }
 
+  suppFilm(idFIlm: any) {
+    this.filmService.deleteFilm(idFIlm).subscribe(() => {
+      window.location.reload()
+    });
+  }
+
   ajoutFilm() {
     this.router.navigateByUrl('ajoutVideo');
   }

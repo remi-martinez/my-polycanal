@@ -1,4 +1,4 @@
-<body>
+<div>
 
 <h1>Gestionnaire de vidéos</h1>
 
@@ -19,7 +19,10 @@
   <tr *ngFor="let film of films">
     <td class="titre">{{film.titre}}</td>
     <td class="realisateur">{{film.noRea.prenRea + " " + film.noRea.nomRea}}</td>
-    <td><img (click)="modifFilm(film.id)" src="assets/img/modifier.png"><img src="assets/img/suppression.png"></td>
+    <td>
+      <img (click)="modifFilm(film.id)" src="assets/img/modifier.png">
+      <img (click)="suppFilm(film.id)" src="assets/img/suppression.png">
+    </td>
   </tr>
 </table>
 
@@ -27,4 +30,4 @@
   <p>Ajouter un film</p>
 </div>
 
-</body>
+</div>

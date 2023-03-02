@@ -1,5 +1,7 @@
 package com.server.cinemaepul.film;
 
+import com.server.cinemaepul.personnage.PersonnageAvecFilmDto;
+import com.server.cinemaepul.personnage.PersonnageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,9 @@ import java.util.Optional;
 public class FilmController {
     @Autowired
     private FilmService filmService;
+
+    @Autowired
+    private PersonnageService personnageService;
 
     @GetMapping
     public List<Film> findAll() {
@@ -35,10 +40,21 @@ public class FilmController {
         return filmService.getAllBySearch(value);
     }
 
-    @GetMapping("/best")
-    public List<Film> getBestFilms() {
-        return filmService.getBestFilms();
+    @GetMapping("/{id}/personnages")
+    public List<PersonnageAvecFilmDto> getPersonnagesByFilm(@PathVariable("id") Integer filmId) {
+        try {
+            return personnageService.getPersonnagesByFilm(filmId);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
+
+    @GetMapping("/best")
+        public List<Film> getBestFilms() {
+            return filmService.getBestFilms();
+        }
+
     @PostMapping
     public Film create(@RequestBody FilmInput filmInput) {
         return filmService.create(filmInput);
