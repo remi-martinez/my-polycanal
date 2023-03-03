@@ -24,6 +24,9 @@ import {ActeursComponent} from "./Acteurs/acteurs.component";
 import {PersonnageComponent} from "./Personnages/personnage.component";
 import {RechercheComponent} from "./Recherche/recherche.component";
 import {AjoutPersonnageComponent} from "./Personnages/ajout-personnage/ajout-personnage.component";
+import {AjoutActeurComponent} from "./Acteurs/ajout-acteur/ajout-acteur.component";
+import {RealisateursComponent} from "./Realisateurs/realisateurs.component";
+import {AjoutRealisateurComponent} from "./Realisateurs/ajout-realisateur/ajout-realisateur.component";
 import {AuthGuardService} from "./services/auth-guard.service";
 
 const routes: Routes = [
@@ -36,7 +39,10 @@ const routes: Routes = [
   {path: 'ajoutVideo', component: AjoutVideoComponent, canActivate: [AuthGuardService]},
   {path: 'modifVideo', component: ModifVideoComponent, canActivate: [AuthGuardService]},
   {path: 'personnages', component: PersonnageComponent, canActivate: [AuthGuardService]},
+  {path: 'realisateurs', component: RealisateursComponent, canActivate: [AuthGuardService]},
   {path: 'ajoutPersonnage', component: AjoutPersonnageComponent, canActivate: [AuthGuardService]},
+  {path: 'ajoutActeur', component: AjoutActeurComponent, canActivate: [AuthGuardService]},
+  {path: 'ajoutRealisateur', component: AjoutRealisateurComponent, canActivate: [AuthGuardService]},
   {path: 'categories', component: BarreAffichageCategorieComponent, canActivate: [AuthGuardService]},
   {path: 'categories', component: VideosComponent, canActivate: [AuthGuardService]},
   {path: 'acteurs', component: ActeursComponent, canActivate: [AuthGuardService]},

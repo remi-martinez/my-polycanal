@@ -34,7 +34,7 @@ public class Acteur {
     @Column(name = "date_deces")
     private LocalDate dateDeces;
 
-    @Column(name = "lien_img", length = 100)
+    @Column(name = "lien_img", length = 255)
     private String lienImg;
 
     @OneToMany(mappedBy = "acteur")

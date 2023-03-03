@@ -32,6 +32,7 @@ public class RealisateurService {
         Realisateur realisateur = Realisateur.builder()
                 .nomRea(realisateurInput.getNomRea())
                 .prenRea(realisateurInput.getPrenRea())
+                .lienImg(realisateurInput.getLienImg())
                 .build();
         return realisateurRepository.save(realisateur);
     }
@@ -43,6 +44,7 @@ public class RealisateurService {
                 .id(oldRealisateur.getId())
                 .nomRea(realisateurInput.getNomRea())
                 .prenRea(realisateurInput.getPrenRea())
+                .lienImg(realisateurInput.getLienImg())
                 .build();
         return realisateurRepository.save(realisateur);
     }

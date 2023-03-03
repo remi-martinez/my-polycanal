@@ -21,7 +21,7 @@ public class Utilisateur {
     @Column(name = "login", nullable = false, length = 30)
     private String login;
 
-    @Column(name = "password", nullable = false, length = 30)
+    @Column(name = "password", nullable = false, length = 255)
     private String password;
 
     @Transient

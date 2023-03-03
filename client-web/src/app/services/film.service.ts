@@ -27,6 +27,11 @@ export class FilmService {
     return this.http.get<Film[]>(url);
   }
 
+  getFilmsByRealisateur(noRea: number): Observable<Film[]> {
+    const url = `${this.apiUrl}/realisateur/${noRea}`;
+    return this.http.get<Film[]>(url);
+  }
+
   getBestFilms(): Observable<Film[]>{
     const url = `${this.apiUrl}/best`;
     return this.http.get<Film[]>(url);

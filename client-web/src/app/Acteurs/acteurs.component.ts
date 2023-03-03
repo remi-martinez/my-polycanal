@@ -8,7 +8,7 @@ import {PersonnageAvecFilmDto} from "../models/personnageAvecFilmDto";
 @Component({
   selector: 'app-acteurs',
   templateUrl: './acteurs.component.html',
-  styleUrls: ['../Interfaces_Video/videos/videos.component.scss']
+  styleUrls: ['./acteurs.component.scss']
 })
 export class ActeursComponent implements OnInit {
 
@@ -52,5 +52,9 @@ export class ActeursComponent implements OnInit {
       complete: () => console.log(this.personnages)
     }
     this.personnages$.subscribe(this.personnagesObserver)
+  }
+
+  ajoutActeur() {
+    this.router.navigateByUrl('ajoutActeur');
   }
 }

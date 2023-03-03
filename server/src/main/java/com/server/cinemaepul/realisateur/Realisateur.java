@@ -27,6 +27,9 @@ public class Realisateur {
     @Column(name = "pren_rea", nullable = false, length = 20)
     private String prenRea;
 
+    @Column(name = "lien_img", nullable = false)
+    private String lienImg;
+
     @JsonIgnore
     @OneToMany(mappedBy = "noRea")
     private Set<Film> films = new LinkedHashSet<>();

@@ -2,6 +2,7 @@ package com.server.cinemaepul.film;
 
 import com.server.cinemaepul.personnage.PersonnageAvecFilmDto;
 import com.server.cinemaepul.personnage.PersonnageService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +35,9 @@ public class FilmController {
 
     @GetMapping("/categorie/{codeCat}")
     public List<Film> getByCategorie(@PathVariable("codeCat") String codeCat) {return filmService.getAllByCategorie(codeCat);}
+
+    @GetMapping("/realisateur/{noRea}")
+    public List<Film> getAllByRealisateur(@PathVariable("noRea") Integer noRea) {return filmService.getAllByRealisateur(noRea);}
 
     @GetMapping("/search/{value}")
     public List<Film> getBySearch(@PathVariable("value") String value) {
