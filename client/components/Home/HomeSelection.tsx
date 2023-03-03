@@ -1,6 +1,17 @@
-import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
-import Carousel, { getInputRangeFromIndexes, Pagination } from 'react-native-snap-carousel';
+import React, { useEffect, useRef, useState } from 'react';
+import {
+  Image,
+  StyleSheet,
+  TouchableHighlight,
+  TouchableOpacity,
+  TouchableWithoutFeedbackComponent,
+  View
+} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
+import { useNavigation } from '@react-navigation/native';
+import axios, { AxiosResponse } from 'axios/index';
+import config from '../../config.json';
+import { Film } from '../../models/film';
 
 
 type HomeSelectionProps = {};
@@ -9,84 +20,56 @@ type HomeSelectionState = {
   activeIndex: number;
   entries: any;
   activeSlide: any;
-  carouselItems: { title: string; text: string; }[];
+  carouselItems: Film[];
 };
 
-export default class HomeSelection extends React.Component<HomeSelectionProps, HomeSelectionState> {
-  private carousel: Carousel<any> | any;
+export const HomeSelection = (props: HomeSelectionProps) => {
 
-  items = [
-    {
-      title: 'Item 1',
-      text: 'Text 1',
-    },
-    {
-      title: 'Item 2',
-      text: 'Text 2',
-    },
-    {
-      title: 'Item 3',
-      text: 'Text 3',
-    },
-    {
-      title: 'Item 3',
-      text: 'Text 3',
-    },
-    {
-      title: 'Item 3',
-      text: 'Text 3',
-    },
-    {
-      title: 'Item 3',
-      text: 'Text 3',
-    },
-    {
-      title: 'Item 3',
-      text: 'Text 3',
-    },
-    {
-      title: 'Item 3',
-      text: 'Text 3',
-    },
-  ];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [carouselItems, setCarouselItems] = useState<Partial<Film[]>>([]);
+  const carouselRef = useRef(null);
+  const navigation = useNavigation();
 
-  constructor(props: {} | Readonly<{}>) {
-    super(props);
-    this.state = {
-      activeIndex: 0,
-      activeSlide: 0,
-      carouselItems: this.items,
-      entries: this.items,
-    }
+  useEffect(() => {
+    axios.get<Film[]>(`${config.apiUrl}/films/best`).then((response: AxiosResponse<Film[]>) => {
+      setCarouselItems(response.data as Film[]);
+    });
+  })
+
+  const openMovieDetails = (id: number) => {
+    navigation.navigate('MovieDetails', {screen: 'MovieDetailsContent', params: { filmId: id }});
   }
 
-  _renderItem({item, index} : {item: any, index: number}) {
-    const imgUri = 'https://thumb.canalplus.pro/http/unsafe/253x400/filters:quality(80)/img-hapi.canalplus.pro:80/ServiceImage/ImageID/109420988';
+  const _renderItem = ({item, index}: { item: Film | undefined, index: number }) => {
     return (
       <View style={styles.itemContainer}>
-        <Image source={{uri: imgUri}} style={styles.imageStyles} resizeMode="contain"/>
+        <TouchableHighlight onPress={() => openMovieDetails(item?.id!)}>
+          {item?.lienImg && <Image source={{uri: item.lienImg}} style={styles.imageStyles} resizeMode="contain"/>}
+        </TouchableHighlight>
       </View>
-
     )
   }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Carousel
-          inactiveSlideScale={1}
-          activeSlideAlignment='start'
-          layout={'default'}
-          ref={ref => this.carousel = ref}
-          data={ this.state.carouselItems }
-          sliderWidth={400}
-          itemWidth={180}
-          renderItem={this._renderItem}
-          onSnapToItem={index => this.setState({activeIndex: index, activeSlide: index})}
-          vertical={false}/>
-      </View>
-    );
-  }
+  return (
+    <View style={styles.container}>
+      <Carousel
+        inactiveSlideScale={1}
+        inactiveSlideOpacity={1}
+        activeSlideAlignment="start"
+        layout={'default'}
+        ref={carouselRef}
+        data={carouselItems}
+        sliderWidth={400}
+        itemWidth={180}
+        renderItem={_renderItem}
+        onSnapToItem={(index: number) => {
+          setActiveIndex(index);
+          setActiveSlide(index);
+        }}
+        vertical={false}/>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

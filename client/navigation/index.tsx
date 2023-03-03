@@ -22,7 +22,6 @@ import LinkingConfiguration from './LinkingConfiguration';
 import { TitleLogo } from '../components/TitleLogo';
 import AccountButton from '../components/Account/AccountButton';
 import LiveTabScreen from '../screens/LiveTabScreen';
-import ChannelsTabScreen from '../screens/ChannelsTabScreen';
 import MoreTabScreen from '../screens/MoreTabScreen';
 import InfoModalButton from '../components/InfoModalButton';
 import AccountScreen from '../screens/AccountScreen';
@@ -30,6 +29,7 @@ import { LoginScreen } from '../screens/LoginScreen';
 import { WelcomeScreen } from '../screens/WelcomeScreen';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import Toast from 'react-native-root-toast';
+import MovieDetailsStack from './MovieDetailsStack';
 
 export default function Navigation({colorScheme}: { colorScheme: ColorSchemeName }) {
   return (
@@ -156,6 +156,9 @@ export function RootNavigator() {
         <Stack.Group screenOptions={{presentation: 'modal'}}>
           <Stack.Screen name="Modal" component={ModalScreen}/>
         </Stack.Group>
+        <Stack.Group screenOptions={{presentation: 'modal', headerShown: false}}>
+          <Stack.Screen name="MovieDetails" component={MovieDetailsStack}/>
+        </Stack.Group>
         <Stack.Screen name="Account" component={AccountScreen} options={{title: 'Mon compte', headerBackTitle: ''}}/>
       </Stack.Navigator>
     </AuthContext.Provider>
@@ -206,15 +209,6 @@ function BottomTabNavigator() {
           title: 'En direct',
           tabBarActiveTintColor: Colors.secondary,
           tabBarIcon: ({color}) => <TabBarIcon name="dot-circle" color={color}/>,
-        }}
-      />
-      <BottomTab.Screen
-        name="ChannelsTab"
-        component={ChannelsTabScreen}
-        options={{
-          title: 'Chaînes & Apps',
-          tabBarActiveTintColor: Colors.secondary,
-          tabBarIcon: ({color}) => <TabBarIcon name="cubes" color={color}/>,
         }}
       />
       <BottomTab.Screen

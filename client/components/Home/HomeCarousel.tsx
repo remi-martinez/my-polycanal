@@ -12,21 +12,30 @@ type HomeCarouselState = {
   carouselItems: { title: string; text: string; }[];
 };
 
+type Item = {
+  title: string
+  text: string
+  imgUri?: string
+}
+
 export default class HomeCarousel extends React.Component<HomeCarouselProps, HomeCarouselState> {
   private carousel: Carousel<any> | any;
 
-  items = [
+  items: Item[] = [
     {
-      title: 'Item 1',
-      text: 'Text 1',
+      title: 'The Game',
+      text: '',
+      imgUri: 'https://thumb.canalplus.pro/http/unsafe/655x367/filters:quality(80)/img-hapi.canalplus.pro:80/ServiceImage/ImageID/109432654'
     },
     {
-      title: 'Item 2',
-      text: 'Text 2',
+      title: 'Drive',
+      text: '',
+      imgUri: 'https://m.media-amazon.com/images/I/51BANINoAxL.jpg'
     },
     {
-      title: 'Item 3',
-      text: 'Text 3',
+      title: 'Inception',
+      text: '',
+      imgUri: 'https://www.joblo.com/wp-content/uploads/2010/05/inception-poster-quad-1.jpg'
     }
   ];
 
@@ -40,8 +49,7 @@ export default class HomeCarousel extends React.Component<HomeCarouselProps, Hom
     }
   }
 
-  _renderItem({item, index} : {item: any, index: number}) {
-    const imgUri = 'https://www.lepoint.fr/images/2019/07/22/19151092lpw-19151480-article-jpg_6376776_1250x625.jpg';
+  _renderItem({item, index} : {item: Item, index: number}) {
     return (
       <View style={{
         backgroundColor: 'none',
@@ -49,7 +57,7 @@ export default class HomeCarousel extends React.Component<HomeCarouselProps, Hom
         marginLeft: 25,
         marginRight: 25,
       }}>
-        <Image source={{uri: imgUri}} style={styles.imageStyles} resizeMode="contain"/>
+        <Image source={{uri: item?.imgUri}} style={styles.imageStyles} resizeMode="contain"/>
       </View>
 
     )
@@ -69,9 +77,6 @@ export default class HomeCarousel extends React.Component<HomeCarouselProps, Hom
           borderRadius: 5,
           marginHorizontal: -4,
           backgroundColor: 'rgba(241,241,241,0.92)'
-        }}
-        inactiveDotStyle={{
-          // Define styles for inactive dots here
         }}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}/>

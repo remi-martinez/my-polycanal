@@ -4,7 +4,7 @@ import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 import HomeCarousel from '../components/Home/HomeCarousel';
 import HomeCategories from '../components/Home/HomeCategories';
-import HomeSelection from '../components/Home/HomeSelection';
+import { HomeSelection } from '../components/Home/HomeSelection';
 
 
 export default function HomeTabScreen({navigation}: RootTabScreenProps<'HomeTab'>) {

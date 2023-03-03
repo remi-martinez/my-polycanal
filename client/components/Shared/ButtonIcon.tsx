@@ -1,17 +1,19 @@
 import React from 'react';
 import { StyleProp, StyleSheet, Text, TouchableOpacity, ViewStyle } from 'react-native';
 import Colors from '../../constants/Colors';
+import { AntDesign, FontAwesome, FontAwesome5, Ionicons } from '@expo/vector-icons';
+import { GlyphMap, IconProps } from '@expo/vector-icons/build/createIconSet';
 
 interface ButtonProps {
-  title: string
-  uppercase?: boolean
+  icon:  keyof typeof FontAwesome.glyphMap;
+  secondary?: boolean
   disabled?: boolean
   style?: StyleProp<ViewStyle>
   onPress: any
 }
 interface ButtonState { }
 
-export default class ButtonStyled extends React.Component<ButtonProps, ButtonState> {
+export default class ButtonIcon extends React.Component<ButtonProps, ButtonState> {
 
   onPress = () => {
     this.props.onPress();
@@ -21,11 +23,11 @@ export default class ButtonStyled extends React.Component<ButtonProps, ButtonSta
     return (
       <TouchableOpacity
         onPress={this.onPress}
-        style={[styles.appButtonContainer, this.props.disabled ? styles.disabled : styles.enabled, this.props.style]}
+        style={[styles.appButtonContainer, this.props.disabled ? styles.disabled : styles.enabled,
+          {backgroundColor: this.props.secondary ? Colors.secondary : Colors.grey},
+          this.props.style]}
         disabled={this.props.disabled}>
-        <Text style={[styles.appButtonText, this.props.disabled ? styles.disabledText : styles.enabledText ]}>
-          {this.props.title || 'Button'}
-        </Text>
+        <FontAwesome name={this.props.icon} color={Colors.white} size={15}></FontAwesome>
       </TouchableOpacity>
     );
   }
@@ -33,8 +35,7 @@ export default class ButtonStyled extends React.Component<ButtonProps, ButtonSta
 
 const styles = StyleSheet.create({
   appButtonContainer: {
-    backgroundColor: Colors.secondary,
-    borderRadius: 3,
+    borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 12
   },

@@ -6,6 +6,7 @@
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Realisateur } from './models/realisateur';
 
 declare global {
   namespace ReactNavigation {
@@ -17,6 +18,9 @@ declare global {
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
+  MovieDetails: NavigatorScreenParams<any> | undefined;
+  MovieDetailsContent: { filmId: number | undefined };
+  MoreDetails: { realisateur: Realisateur | undefined, filmId: number | undefined };
   NotFound: undefined;
   Account: undefined;
   Login: undefined;
