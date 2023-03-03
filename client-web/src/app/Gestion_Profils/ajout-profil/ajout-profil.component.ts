@@ -15,12 +15,9 @@ export class AjoutProfilComponent {
   confirmPassword!: string;
 
   goMenu() {
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('gestionProfils');
   }
 
-  allFieldsEntered(): boolean {
-    return !(!(this.nom)) && !(!this.password) && !(!this.adresseMail) && !(!this.confirmPassword);
-  }
 
 
 }

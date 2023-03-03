@@ -24,30 +24,32 @@ import {ActeursComponent} from "./Acteurs/acteurs.component";
 import {PersonnageComponent} from "./Personnages/personnage.component";
 import {RechercheComponent} from "./Recherche/recherche.component";
 import {AjoutPersonnageComponent} from "./Personnages/ajout-personnage/ajout-personnage.component";
+import {AuthGuardService} from "./services/auth-guard.service";
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: HomeComponent
+    component: HomeComponent, canActivate: [AuthGuardService]
   },
-  {path: 'gestionVideo', component: TableauGestionComponent},
-  {path: 'ajoutVideo', component: AjoutVideoComponent},
-  {path: 'modifVideo', component: ModifVideoComponent},
-  {path: 'personnages', component: PersonnageComponent},
-  {path: 'ajoutPersonnage', component: AjoutPersonnageComponent},
-  {path: 'categories', component: BarreAffichageCategorieComponent},
-  {path: 'categories', component: VideosComponent},
-  {path: 'acteurs', component: ActeursComponent},
-  {path: 'personnalite', component: BarreAffichageActeurRealisateurComponent},
-  {path: 'recherche', component: RechercheComponent},
+  {path: 'gestionVideo', component: TableauGestionComponent, canActivate: [AuthGuardService]},
+  {path: 'ajoutVideo', component: AjoutVideoComponent, canActivate: [AuthGuardService]},
+  {path: 'modifVideo', component: ModifVideoComponent, canActivate: [AuthGuardService]},
+  {path: 'personnages', component: PersonnageComponent, canActivate: [AuthGuardService]},
+  {path: 'ajoutPersonnage', component: AjoutPersonnageComponent, canActivate: [AuthGuardService]},
+  {path: 'categories', component: BarreAffichageCategorieComponent, canActivate: [AuthGuardService]},
+  {path: 'categories', component: VideosComponent, canActivate: [AuthGuardService]},
+  {path: 'acteurs', component: ActeursComponent, canActivate: [AuthGuardService]},
+  {path: 'personnalite', component: BarreAffichageActeurRealisateurComponent, canActivate: [AuthGuardService]},
+  {path: 'recherche', component: RechercheComponent, canActivate: [AuthGuardService]},
   {
     path: 'personnalite',
-    component: VideosComponent
+    component: VideosComponent, canActivate: [AuthGuardService]
   },
+  {path: 'gestionProfils', component: GestionProfilsComponent, canActivate: [AuthGuardService]},
+  {path: 'modifierProfil', component: ModifierProfilComponent, canActivate: [AuthGuardService]},
+  //Route public
   {path: 'ajoutProfil', component: AjoutProfilComponent},
-  {path: 'gestionProfils', component: GestionProfilsComponent},
-  {path: 'modifierProfil', component: ModifierProfilComponent},
   {path: 'connexion', component: ConnexionComponent}
 ];
 

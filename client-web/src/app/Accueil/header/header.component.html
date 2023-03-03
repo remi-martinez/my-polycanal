@@ -22,11 +22,11 @@
     <img class="imageCompte" (mouseenter)="showPopUpProfile=true" src="../../../assets/img/popcorn.png" />
     <div [ngClass]="{'v-show': showPopUpProfile === true, 'v-hide': showPopUpProfile === false}" (mouseleave)="showPopUpProfile=false" class="popupProfil">
       <div class="row-menu">
-        <div class="col-menu">
-          <img class="bulleCompte" src="../../../assets/img/popcorn.png" />
-          <span>Alex</span>
+        <div class="col-menu" *ngIf="connectedUtilisateur" (click)="goGestionProfils()">
+          <img class="bulleCompte"  src="../../../assets/img/popcorn.png" />
+          <span>{{this.connectedUtilisateur.login}}</span>
         </div>
-        <div class="col-menu" style="margin-left: -20%" (click)="goAjoutProfil()">
+        <div class="col-menu" (click)="goAjoutProfil()">
           <img class="bulleCompte"src="../../../assets/img/plus.png" />
           <span>Ajouter</span>
         </div>
@@ -34,7 +34,7 @@
 
       <p (click)="goGestionProfils()">Gérer les profils</p>
       <hr>
-      <div class="liste_gestion_profil">
+      <div class="liste_gestion_profil" (click)="goGestionProfils()">
           <img style="margin-left: 0%" src="../../../assets/img/mon_compte.png"/>
           <p>Mon compte</p>
       </div>

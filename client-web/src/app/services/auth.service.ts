@@ -38,10 +38,13 @@ export class AuthService {
     return !!this._connectedUser;
   }
 
-  public getCurrentUser(): Observable<any> {
-    return this._currentUserSubject.asObservable()
+  public getCurrentUser(): Utilisateur | undefined {
+    return this._connectedUser;
   }
 
+  public getCurrentUserObservable(): Observable<Utilisateur| undefined>{
+    return this.currentUser;
+  }
 
   logout(): void {
     localStorage.removeItem('token');

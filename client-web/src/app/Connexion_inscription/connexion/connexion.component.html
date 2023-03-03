@@ -5,8 +5,8 @@
   <input type="login" name="login" placeholder="Identifiant" [(ngModel)]="login">
   <label>Mot de passe </label>
   <input type="password" name="password" placeholder="Mot de passe" [(ngModel)]="password">
+  <input type="submit" class="btn-connexion" (click)="onSubmit()" value="Connexion">
 </form>
-<button [disabled]="false" class="btn-connexion" (click)="onSubmit()">Connexion</button>
 
 <p>Vous n'avez pas encore de compte my CANAL ?</p>
 <div (click)="goAjoutProfil()">
