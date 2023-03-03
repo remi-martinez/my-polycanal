@@ -27,12 +27,10 @@ export class GrandCarouselComponent implements OnInit {
         next: (f: Film[]) => {
           for (const film of f) {
             this.images.push({path: film.lienImg});
-            console.log(this.images);
           }
 
         },
         error: (err: Error) => console.error("Error while fetching : " + err),
-        complete: () => console.log(this.films)
       }
       this.films$.subscribe(this.filmsObserver)
     }

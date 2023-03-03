@@ -21,11 +21,9 @@
       <h2>Personnages:</h2>
       <ul>
         <li *ngFor="let film of films" class="cardPersonnage">
-          <!--            @TODO: lien vers film-->
           <a href="/"><img src="{{film.lienImg}}"></a>
           <div class="cardPersonnageInfoFilm">
-            <div class="cardPersonnageTitre">{{film.titre}}</div>
-            : <span>{{ film.dateSortie }}</span>
+            <div class="cardPersonnageTitre">{{film.titre}}</div><span>{{ film.dateSortie }}</span>
           </div>
         </li>
 

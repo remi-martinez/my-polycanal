@@ -26,7 +26,6 @@ export class TableauGestionComponent implements OnInit {
         this.films = f;
       },
       error: (err: Error) => console.error("Error while fetching : " + err),
-      complete: () => console.log(this.films)
     }
     this.films$.subscribe(this.filmsObserver)
   }

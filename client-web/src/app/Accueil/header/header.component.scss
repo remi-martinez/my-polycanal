@@ -206,11 +206,18 @@ header > .imgNav > img{
 
 .v-show{
   animation: 0.2s ease-in-out v-show-animation;
+  opacity: 1;
+  display: block;
 }
 
 .v-hide{
   animation: 0.2s ease-in-out v-hide-animation;
-  opacity: 0%;
+  display: none;
+  opacity: 0;
+}
+
+.txtContainer{
+  display: block;
 }
 
 /*------ANIMATION-------*/
