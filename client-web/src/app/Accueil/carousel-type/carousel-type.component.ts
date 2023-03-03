@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Component} from '@angular/core';
 import {FilmCategorieService} from "../../services/filmCategorie.service";
-import {Observable} from "rxjs";
-import {Film} from "../../models/film";
 
 @Component({
   selector: 'app-carousel-type',

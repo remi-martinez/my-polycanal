@@ -9,7 +9,8 @@ import {CategorieService} from "../../services/categorie.service";
 
 @Component({
   selector: 'app-ajout-video',
-  template: `<h1>Ajouter un film</h1>
+  template: `
+    <h1>Ajouter un film</h1>
   <div class="form-class">
     <form [formGroup]="form">
       <div class="input-label-div">
@@ -51,7 +52,7 @@ import {CategorieService} from "../../services/categorie.service";
         <label>Lien image</label>
         <input type="text" name="lien_image" placeholder="lien de l'image" [formControl]="form.controls.lienImg">
       </div>
-      <button class="btn-submit" (click)="goTableauFilm()">Submit</button>
+      <button class="btn-submit" (click)="goTableauFilm()">Ajouter</button>
     </form>
   </div>
 

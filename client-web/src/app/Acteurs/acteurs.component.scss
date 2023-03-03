@@ -16,13 +16,6 @@ h3{
   color: #E23F66;
 }
 
-.ajouter p{
-  color: white;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  font-family: 'Hind', sans-serif;
-}
-
 li{
   font-family: 'Hind', sans-serif;
   color: grey;
@@ -160,11 +153,23 @@ li{
 }
 
 .ajouter{
+  margin-left: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #E23F66;
   border-radius: 5px;
-  width: 15%;
-  text-align: center;
-  margin-left: 42%;
-  margin-top: 5%;
+  width: 170px;
+  height: 40px;
   cursor: pointer;
+}
+
+.ajouter p{
+  color: white;
+  font-family: 'Hind', sans-serif;
+}
+
+.header-act {
+  display: flex;
+  align-items: center;
 }

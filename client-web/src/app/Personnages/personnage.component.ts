@@ -3,15 +3,14 @@ import {Router} from "@angular/router";
 import {FilmService} from "../services/film.service";
 import {ActeurService} from "../services/acteur.service";
 import {Observable} from "rxjs";
-import {PersonnageAvecFilmDto} from "../models/personnageAvecFilmDto";
 import {PersonnageService} from "../services/personnage.service";
-import {Acteur} from "../models/acteur";
 import {Personnage} from "../models/personnage";
 
 @Component({
   selector: 'app-personnages',
   template: `
     <div>
+      <h1>Liste des personnages</h1>
       <table>
         <tr>
           <th style="border-radius: 10px 0px 0px 0px">Titre du film</th>
@@ -35,7 +34,7 @@ import {Personnage} from "../models/personnage";
           </td>
         </tr>
       </table>
-      <div class="ajouter" (click)="ajoutPersonnage()" >
+      <div class="ajouter" (click)="ajoutPersonnage()">
         <p>Ajouter un personnage</p>
       </div>
     </div>
@@ -67,7 +66,7 @@ export class PersonnageComponent implements OnInit {
   }
 
   suppPers(aId: any, pId: any) {
-    this.personnageService.deletePersonnage(aId,pId).subscribe(() => {
+    this.personnageService.deletePersonnage(aId, pId).subscribe(() => {
       window.location.reload();
     })
   }

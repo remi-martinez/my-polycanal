@@ -6,6 +6,7 @@ import {ActeurService} from "../../services/acteur.service";
 @Component({
   selector: 'app-ajout-acteur',
   template: `
+    <h1>Ajouter un acteur</h1>
     <div class="form-class">
       <form [formGroup]="form">
         <div class="input-label-div">
@@ -30,7 +31,7 @@ import {ActeurService} from "../../services/acteur.service";
           <label>Lien image</label>
           <input type="text" name="lien_image" placeholder="lien de l'image" [formControl]="form.controls.lienImg">
         </div>
-        <button class="btn-submit" (click)="goPageActeurs()">Ajouter l'acteur</button>
+        <button class="btn-submit" (click)="goPageActeurs()">Ajouter</button>
       </form>
     </div>
   `,
