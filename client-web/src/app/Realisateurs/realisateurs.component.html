@@ -1,4 +1,10 @@
 <div>
+  <div class="header-real">
+    <h1>Liste des réalisateurs</h1>
+    <div class="ajouter" (click)="ajoutRealisateur()">
+      <p>Ajouter un realisateur</p>
+    </div>
+  </div>
   <div class="grille">
     <div class="" *ngFor="let realisateur of realisateurs">
       <div class="imgContainer">
@@ -23,16 +29,14 @@
         <li *ngFor="let film of films" class="cardPersonnage">
           <a href="/"><img src="{{film.lienImg}}"></a>
           <div class="cardPersonnageInfoFilm">
-            <div class="cardPersonnageTitre">{{film.titre}}</div><span>{{ film.dateSortie }}</span>
+            <div class="cardPersonnageTitre">{{film.titre}}</div>
+            <span>{{ film.dateSortie }}</span>
           </div>
         </li>
 
       </ul>
     </div>
 
-  </div>
-  <div class="ajouter" (click)="ajoutRealisateur()">
-    <p>Ajouter un réalisateur</p>
   </div>
 </div>
 

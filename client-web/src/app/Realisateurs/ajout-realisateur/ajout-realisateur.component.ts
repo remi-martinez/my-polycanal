@@ -6,6 +6,7 @@ import {RealisateurService} from "../../services/realisateur.service";
 @Component({
   selector: 'app-ajout-realisateur',
   template: `
+    <h1>Ajouter un réalisateur</h1>
     <div class="form-class">
       <form [formGroup]="form">
         <div class="input-label-div">
@@ -20,7 +21,7 @@ import {RealisateurService} from "../../services/realisateur.service";
           <label>Lien image</label>
           <input type="text" name="lien_image" placeholder="lien de l'image" [formControl]="form.controls.lienImg">
         </div>
-        <button class="btn-submit" (click)="goPageRealisateurs()">Ajouter le réalisateur</button>
+        <button class="btn-submit" (click)="goPageRealisateurs()">Ajouter</button>
       </form>
       <meta property="og:image"
             content="https://fr.web.img5.acsta.net/c_310_420/pictures/14/10/30/10/59/215487.jpg" />

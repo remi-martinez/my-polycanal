@@ -10,6 +10,7 @@ import {PersonnageService} from "../../services/personnage.service";
 @Component({
   selector: 'app-ajout-personnage',
   template: `
+    <h1>Ajouter un personnage</h1>
     <div class="form-class">
       <form [formGroup]="form">
         <div class="input-label-div">
@@ -30,7 +31,7 @@ import {PersonnageService} from "../../services/personnage.service";
             <option *ngFor="let film of films" [value]="film.id">{{film.titre}}</option>
           </select>
         </div>
-        <button class="btn-submit" (click)="goTableauPersonnages()">Submit</button>
+        <button class="btn-submit" (click)="goTableauPersonnages()">Ajouter</button>
       </form>
     </div>
   `,

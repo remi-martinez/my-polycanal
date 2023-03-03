@@ -1,4 +1,10 @@
 <div>
+  <div class="header-act">
+    <h1>Liste des acteurs</h1>
+    <div class="ajouter" (click)="ajoutActeur()" >
+      <p>Ajouter un acteur</p>
+    </div>
+  </div>
   <div class="grille">
     <div class="" *ngFor="let acteur of acteurs">
       <div class="imgContainer">
@@ -29,10 +35,6 @@
 
         </ul>
     </div>
-
-  </div>
-  <div class="ajouter" (click)="ajoutActeur()" >
-    <p>Ajouter un acteur</p>
   </div>
 </div>
 

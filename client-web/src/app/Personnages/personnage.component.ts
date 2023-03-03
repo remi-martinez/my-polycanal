@@ -10,6 +10,7 @@ import {Personnage} from "../models/personnage";
   selector: 'app-personnages',
   template: `
     <div>
+      <h1>Liste des personnages</h1>
       <table>
         <tr>
           <th style="border-radius: 10px 0px 0px 0px">Titre du film</th>

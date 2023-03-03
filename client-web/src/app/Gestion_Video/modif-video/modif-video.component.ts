@@ -53,7 +53,7 @@ import { Film } from 'src/app/models/film';
         <label>Lien image</label>
         <input type="text" name="lien_image" placeholder="lien de l'image" [formControl]="form.controls.lienImg">
       </div>
-      <button class="btn-submit" (click)="goTableauFilm()">Submit</button>
+      <button class="btn-submit" (click)="goTableauFilm()">Modifier</button>
     </form>
   </div>
 
