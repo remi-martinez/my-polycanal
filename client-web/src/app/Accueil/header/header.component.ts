@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
     this.connectedUtilisateurObserver = {
       next: (u: Utilisateur) => {
         this.connectedUtilisateur = u;
-        console.log(this.connectedUtilisateur)
       },
       error: (err: Error) => console.error("Error while fetching : " + err)
     }

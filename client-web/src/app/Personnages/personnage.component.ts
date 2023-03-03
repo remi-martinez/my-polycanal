@@ -62,7 +62,6 @@ export class PersonnageComponent implements OnInit {
         this.personnages = f;
       },
       error: (err: Error) => console.error("Error while fetching : " + err),
-      complete: () => console.log(this.personnages)
     }
     this.personnages$.subscribe(this.personnagesObserver)
   }
