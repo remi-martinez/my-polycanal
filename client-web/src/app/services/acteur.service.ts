@@ -22,16 +22,16 @@ export class ActeurService {
     return this.http.get<Acteur>(url);
   }
 
-  addActeur(acteur: Acteur): Observable<Acteur> {
+  addActeur(acteur: any): Observable<Acteur> {
     return this.http.post<Acteur>(this.apiUrl, acteur);
   }
 
-  updateActeur(acteurId: string, acteur: Acteur): Observable<Acteur> {
+  updateActeur(acteurId: string, acteur: any): Observable<Acteur> {
     const url = `${this.apiUrl}/${acteurId}`;
     return this.http.put<Acteur>(url, acteur);
   }
 
-  deleteActeur(id: number): Observable<Acteur> {
+  deleteActeur(id: number): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<Acteur>(url);
   }

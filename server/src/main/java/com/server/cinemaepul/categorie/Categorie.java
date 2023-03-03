@@ -25,7 +25,7 @@ public class Categorie {
     @Column(name = "libelle_cat", nullable = false, length = 20)
     private String libelleCat;
 
-    @Column(name = "image", nullable = false, length = 150)
+    @Column(name = "image", nullable = false, length = 255)
     private String image;
 
     @JsonIgnore

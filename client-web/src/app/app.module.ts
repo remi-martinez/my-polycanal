@@ -30,6 +30,9 @@ import {AjoutPersonnageComponent} from "./Personnages/ajout-personnage/ajout-per
 import {ActeursComponent} from "./Acteurs/acteurs.component";
 import {PersonnageComponent} from "./Personnages/personnage.component";
 import {RechercheComponent} from "./Recherche/recherche.component";
+import {AjoutActeurComponent} from "./Acteurs/ajout-acteur/ajout-acteur.component";
+import {RealisateursComponent} from "./Realisateurs/realisateurs.component";
+import {AjoutRealisateurComponent} from "./Realisateurs/ajout-realisateur/ajout-realisateur.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import {RechercheComponent} from "./Recherche/recherche.component";
     ActeursComponent,
     AjoutPersonnageComponent,
     PersonnageComponent,
-    RechercheComponent
+    RechercheComponent,
+    AjoutActeurComponent,
+    RealisateursComponent,
+    AjoutRealisateurComponent
   ],
   imports: [
     BrowserModule,

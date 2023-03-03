@@ -10,4 +10,5 @@ import lombok.*;
 public class RealisateurInput {
     private String nomRea;
     private String prenRea;
+    private String lienImg;
 }
