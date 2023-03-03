@@ -20,49 +20,23 @@
     </div>
 
     <img class="imageCompte" (mouseenter)="showPopUpProfile=true" src="../../../assets/img/popcorn.png" />
-    <!-- popup profil-->
-    <div  [ngClass]="{'v-show': showPopUpProfile === true, 'v-hide': showPopUpProfile === false}" (mouseleave)="showPopUpProfile=false" class="popupProfil">
-      <ul>
-        <li><img src="../../../assets/img/popcorn.png" /></li>
-        <li><p style="margin-left: -130%">{{this.connectedUtilisateur?.login}}</p></li>
-      </ul>
-      <ul class="imgAjout"  style="margin-left: -20%" (click)="goAjoutProfil()">
-        <li><img src="../../../assets/img/plus.png" /></li>
-        <li><p>Ajouter</p></li>
-      </ul>
+    <div [ngClass]="{'v-show': showPopUpProfile === true, 'v-hide': showPopUpProfile === false}" (mouseleave)="showPopUpProfile=false" class="popupProfil">
+      <div class="row-menu">
+        <div class="col-menu">
+          <img class="bulleCompte" src="../../../assets/img/popcorn.png" />
+          <span>Alex</span>
+        </div>
+        <div class="col-menu" style="margin-left: -20%" (click)="goAjoutProfil()">
+          <img class="bulleCompte"src="../../../assets/img/plus.png" />
+          <span>Ajouter</span>
+        </div>
+      </div>
+
       <p (click)="goGestionProfils()">Gérer les profils</p>
       <hr>
       <div class="liste_gestion_profil">
-        <ul>
-          <li>
-            <img style="margin-left: 0%" src="../../../assets/img/mon_compte.png"/>
-            <p>Mon compte</p>
-          </li>
-        </ul>
-      </div>
-      <div class="liste_gestion_profil">
-        <ul>
-          <li>
-            <img style="margin-left: -20%" src="../../../assets/img/canape.png"/>
-            <p>Le Club</p>
-          </li>
-        </ul>
-      </div>
-      <div class="liste_gestion_profil">
-        <ul>
-          <li>
-            <img style="margin-left: -10%" src="../../../assets/img/assistance.png"/>
-            <p>Assistance</p>
-          </li>
-        </ul>
-      </div>
-      <div class="liste_gestion_profil">
-        <ul>
-          <li>
-            <img style="margin-left: -20%" src="../../../assets/img/astuces.png"/>
-            <p>Astuces</p>
-          </li>
-        </ul>
+          <img style="margin-left: 0%" src="../../../assets/img/mon_compte.png"/>
+          <p>Mon compte</p>
       </div>
       <div class="managerConnexion" (click)="managerConnexion()">
         <p *ngIf="this.connectedUtilisateur">Se déconnecter</p>

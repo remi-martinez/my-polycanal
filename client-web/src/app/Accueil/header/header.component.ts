@@ -38,9 +38,6 @@ export class HeaderComponent {
     }
     this.router.navigateByUrl('connexion');
   }
-  displayPopUpProfile() {
-    this.showPopUpProfile = !this.showPopUpProfile;
-  }
 
 
 

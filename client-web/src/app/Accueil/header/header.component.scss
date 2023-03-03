@@ -48,12 +48,17 @@ header .imgNav{
   margin-top: 1%;
 }
 
-header .imgNav img{
-  color: white;
+header .bulleCompte{
+  height: 80px;
+  width: 80px;
+  margin-top: 1em;
+}
+
+header > .imgNav > img{
   height: 40px;
   width: 40px;
-  margin-left: 10%;
   cursor: pointer;
+  margin-left: 10%;
 }
 
 .barreRecherche{
@@ -91,21 +96,31 @@ header .imgNav img{
 
 /*popup profil*/
 
+.row-menu{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+}
+.col-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  height: auto;
+}
+
 .imgNav .popupProfil{
   border-radius: 10px;
   background-color: #2b2b2b;
   z-index: 10;
   width: 22%;
-  height: 70%;
+  height: auto;
   margin-left: -15%;
   margin-top: 1%;
   position: absolute;
-}
-
-.imgNav .popupProfil img{
-  width: 50%;
-  height: 33%;
-  margin-left: -20%;
 }
 
 .popupProfil ul{
@@ -129,9 +144,15 @@ header .imgNav img{
   color: white;
 }
 
-.imgAjout:hover{
+.bulleCompte:hover{
   transform: scale(1.1);
   cursor:pointer;
+}
+
+.bulleCompte + span{
+  font-size: 1.2rem;
+  font-family: 'Hind', sans-serif;
+  color: white;
 }
 
 .popupProfil p{
@@ -148,27 +169,23 @@ header .imgNav img{
   height: 1px;
 }
 
-.liste_gestion_profil{
-  height:11%;
+.liste_gestion_profil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.liste_gestion_profil img {
+  margin-right: 10px;
 }
 
 .liste_gestion_profil:hover{
   background-color: gray;
 }
 
-.liste_gestion_profil img{
-  display: inline-block;
-  transform: scale(0.4);
-  margin-top: -20%;
-  margin-left: 0%;
-}
-
 .popupProfil .liste_gestion_profil  p{
-  display: inline-block;
-  margin-left: 0%;
-  margin-top: 0%;
-  vertical-align: top;
-  font-size: 15px;
+  font-size: 20px;
+  color: white;
 }
 
 .managerConnexion{
@@ -195,6 +212,7 @@ header .imgNav img{
   animation: 0.2s ease-in-out v-hide-animation;
   opacity: 0%;
 }
+
 /*------ANIMATION-------*/
 @keyframes zoneDeRecherche {
 
