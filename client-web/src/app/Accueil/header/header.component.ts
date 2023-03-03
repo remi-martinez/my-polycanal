@@ -13,6 +13,7 @@ export class HeaderComponent {
   public connectedUtilisateur: Utilisateur | undefined;
   value: string = '';
   showRechercheDiv = false;
+  showPopUpProfile = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -25,19 +26,22 @@ export class HeaderComponent {
   rechercheDepliante() {
     this.showRechercheDiv = !this.showRechercheDiv;
   }
-
   goAjoutProfil() {
     this.router.navigateByUrl('ajoutProfil')
   }
-
   goGestionProfils() {
     this.router.navigateByUrl('gestionProfils')
   }
-
   managerConnexion() {
     if (localStorage.getItem('connectedUser')) {
       this.authService.logout();
     }
     this.router.navigateByUrl('connexion');
   }
+  displayPopUpProfile() {
+    this.showPopUpProfile = !this.showPopUpProfile;
+  }
+
+
+
 }

@@ -82,7 +82,7 @@ header .imgNav img{
 }
 
 .imageCompte:hover + .popupProfil{
-  opacity: 1;
+  display: block;
 }
 
 .lien-actif{
@@ -100,13 +100,7 @@ header .imgNav img{
   margin-left: -15%;
   margin-top: 1%;
   position: absolute;
-  opacity: 0;
 }
-
-.imgNav .popupProfil:hover{
-  opacity: 1;
-}
-
 
 .imgNav .popupProfil img{
   width: 50%;
@@ -193,6 +187,14 @@ header .imgNav img{
   padding-top: 3%;
 }
 
+.v-show{
+  animation: 0.2s ease-in-out v-show-animation;
+}
+
+.v-hide{
+  animation: 0.2s ease-in-out v-hide-animation;
+  opacity: 0%;
+}
 /*------ANIMATION-------*/
 @keyframes zoneDeRecherche {
 
@@ -205,6 +207,30 @@ header .imgNav img{
     transform-origin: 100% 0;
     transform: scaleX(1);
     opacity: 1;
+  }
+}
+
+@keyframes v-show-animation {
+  from{
+    opacity: 0%;
+  }
+  50%{
+    opacity: 50%;
+  }
+  to{
+    opacity: 100%;
+  }
+}
+
+@keyframes v-hide-animation {
+  from{
+    opacity: 100%;
+  }
+  50%{
+    opacity: 50%;
+  }
+  to{
+    opacity: 0%;
   }
 }
 
