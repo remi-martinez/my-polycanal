@@ -63,7 +63,15 @@ export default function MovieDetailsScreen({route, navigation}: { route: any, na
   }
 
   const deleteFilm = () => {
-
+    axios.delete<number>(`${config.apiUrl}/films/${filmId}`).then((response: AxiosResponse<number>) => {
+      navigation.navigate('Root');
+      Toast.show(`Le film ${film.titre} a été supprimé.`, {
+        duration: Toast.durations.LONG,
+        backgroundColor: Colors.danger,
+      }).then(() => setFilm({}));
+    }).catch((error: AxiosError) => {
+      console.log(error);
+    });
   }
 
   const moreInfos = () => {

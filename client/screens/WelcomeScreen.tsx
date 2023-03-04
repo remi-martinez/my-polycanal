@@ -27,8 +27,8 @@ export const WelcomeScreen = ({navigation}: { navigation: any }) => {
             <Text style={styles.mainText}>Ne cherchez pas, vous ne trouverez pas + ailleurs</Text>
             <ButtonStyled onPress={() => navigation.navigate('Login')} style={styles.button} title="Se connecter"/>
             <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-between'}}>
-              <Text style={styles.subtitleText}>Connectez-vous dès maintenant pour profiter d'un catalogue inédit de
-                films.</Text>
+              <Text style={styles.subtitleText}>Connectez-vous dès maintenant pour profiter d'un catalogue de
+                films inédits.</Text>
             </View>
           </View>
         </LinearGradient>
