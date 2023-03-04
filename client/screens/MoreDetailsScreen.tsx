@@ -40,7 +40,7 @@ export default function MoreDetailsScreen({route, navigation}: { route: any, nav
         <Text style={styles.title}>Personnages</Text>
         <View style={styles.personnagesContainer}>
           {personnages.map((personnage: Personnage, index: number ) =>
-            <View style={styles.imageWithLegend}>
+            <View style={styles.imageWithLegend} key={index}>
               {realisateur?.lienImg && <Image source={{uri: personnage.acteur?.lienImg}} style={styles.imageStyles} resizeMode="contain"/>}
               <View style={styles.multiRowLegend} key={index}>
                 <Text>{`${personnage.acteur?.prenAct} ${personnage.acteur?.nomAct}`}</Text>

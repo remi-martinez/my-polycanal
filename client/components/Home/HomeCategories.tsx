@@ -30,7 +30,8 @@ export default class HomeCategories extends React.Component<HomeCategoriesProps,
 
   componentDidMount() {
     axios.get<Categorie[]>(`${config.apiUrl}/categories`).then((response: AxiosResponse<Categorie[]>) => {
-      this.setState({categories: response.data as Categorie[]});
+      const tousFilms = new Categorie('999', 'TO', 'https://i.imgur.com/CCRoHeS.png')
+      this.setState({ categories: [tousFilms, ...response.data] });
     });
   }
 

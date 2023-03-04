@@ -1,7 +1,6 @@
 import { Image, StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 import { Film } from '../models/film';
-import Spinner from 'react-native-loading-spinner-overlay';
 import React, { useEffect, useState } from 'react';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import config from '../config.json';
@@ -9,23 +8,31 @@ import Colors from '../constants/Colors';
 import ButtonStyled from '../components/Shared/ButtonStyled';
 import ButtonIcon from '../components/Shared/ButtonIcon';
 import { NavigationProp } from '@react-navigation/native';
+import MovieForm from '../components/Movie/MovieForm';
 
+
+type FormData = {
+  lienImg: string
+  titre: string
+  libelleCat: string
+  duree: number
+  dateSortie: Date
+  nomRea: string
+  budget: number
+  montantRecette: number
+}
 
 export default function MovieDetailsScreen({route, navigation}: { route: any, navigation: NavigationProp<any> }) {
   const {filmId} = route.params;
   const [film, setFilm] = useState<Partial<Film>>({} as Film);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [editMode, setEditMode] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    setError(false);
     axios.get<Film>(`${config.apiUrl}/films/${filmId}`).then((response: AxiosResponse<Film>) => {
-      setLoading(false);
-      return setFilm(response.data as Film);
+      const _film = response.data as Film;
+      setFilm(_film);
     }).catch((error: AxiosError) => {
-      setLoading(false);
-      setError(true);
+      console.log(error);
     });
   }, [])
 
@@ -47,28 +54,12 @@ export default function MovieDetailsScreen({route, navigation}: { route: any, na
     return amount.toLocaleString('fr-FR', {style: 'currency', currency: 'EUR', minimumFractionDigits: 0});
   }
 
-  const spinnerContainer = () => {
-    return (
-      <View style={styles.containerCentered}>
-        <Spinner visible={true}/>
-      </View>
-    )
-  }
-
-  const errorContainer = () => {
-    return (
-      <View style={styles.containerCentered}>
-        <Text style={{color: Colors.danger}}>Une erreur est survenue lors du chargement du film.</Text>
-      </View>
-    )
-  }
-
   const closeDetails = () => {
     navigation.goBack();
   }
 
   const editFilm = () => {
-
+    setEditMode(true);
   }
 
   const deleteFilm = () => {
@@ -76,7 +67,31 @@ export default function MovieDetailsScreen({route, navigation}: { route: any, na
   }
 
   const moreInfos = () => {
-    navigation.navigate('MoreDetails', { realisateur: film.noRea, filmId: film.id });
+    navigation.navigate('MoreDetails', {realisateur: film.noRea, filmId: film.id});
+  }
+
+  const handleFormSubmit = (val: ((prevState: (Partial<FormData> | undefined)) => (Partial<FormData> | undefined)) | Partial<FormData> | undefined) => {
+    if (!val) {
+      return setEditMode(false);
+    }
+
+    val = val as FormData;
+    axios.put<Film>(`${config.apiUrl}/films/${filmId}`, {
+      'titre': val.titre,
+      'duree': val.duree,
+      'dateSortie': val.dateSortie,
+      'budget': val.budget,
+      'montantRecette': val.montantRecette,
+      'noRea': 2,
+      'codeCat': val.libelleCat?.substring(0, 2).toUpperCase(),
+      'lienImg': val.lienImg
+    }).then((response: AxiosResponse<Film>) => {
+      setFilm(response.data as Film);
+      setEditMode(false);
+    }).catch((error: AxiosError) => {
+      console.log(error);
+      setEditMode(false);
+    });
   }
 
   const contentContainer = () => {
@@ -117,7 +132,11 @@ export default function MovieDetailsScreen({route, navigation}: { route: any, na
     );
   }
 
-  return (contentContainer());
+  return (editMode
+    ? <MovieForm film={film}
+                 mode="edition"
+                 outputEvent={(val) => handleFormSubmit(val)}/>
+    : contentContainer());
 }
 
 const styles = StyleSheet.create({
@@ -133,11 +152,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     flexDirection: 'row',
   },
-  containerCentered: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   title: {
     fontSize: 50,
     fontWeight: 'bold',
@@ -151,11 +165,6 @@ const styles = StyleSheet.create({
   },
   textWhite: {
     color: Colors.white
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
   },
   imageStyles: {
     height: 400,

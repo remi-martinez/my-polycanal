@@ -27,6 +27,7 @@ export default {
   buttonBgHover: 'hsl(350, 83%, 59%)',
   buttonDisabledBg: 'hsla(350, 83%, 57%, 0.5)',
   danger: 'hsl(350,90%,45%)',
+  success: 'hsl(128,71%,37%)',
   buttonDisabledFg: 'hsla(0, 0%, 100%, 0.7)',
   buttonFg: 'hsl(0, 0%, 100%)',
   border: 'hsl(233, 8%, 23%)',

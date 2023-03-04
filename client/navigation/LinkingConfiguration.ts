@@ -25,9 +25,9 @@ const linking: LinkingOptions<RootStackParamList> = {
               SearchTab: 'search',
             },
           },
-          LiveTab: {
+          NewMovieTab: {
             screens: {
-              LiveTab: 'live',
+              NewMovieTab: 'new',
             }
           },
           ChannelsTab: {
