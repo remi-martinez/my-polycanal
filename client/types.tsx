@@ -24,6 +24,7 @@ export type RootStackParamList = {
   NotFound: undefined;
   Account: undefined;
   Login: undefined;
+  SearchTab: { code: string | undefined };
   Welcome: NavigatorScreenParams<RootTabParamList> | undefined;
 };
 

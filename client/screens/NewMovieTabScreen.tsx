@@ -20,14 +20,6 @@ type FormData = {
   montantRecette: number
 }
 
-<<<<<<< Updated upstream:client/screens/LiveTabScreen.tsx
-export default function LiveTabScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Live Tab</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/LiveTab.tsx" />
-=======
 export default function NewMovieTabScreen() {
   const [film, setFilm] = useState<Partial<Film>>({} as Film);
   const navigation = useNavigation();
@@ -41,7 +33,7 @@ export default function NewMovieTabScreen() {
         'dateSortie': val.dateSortie,
         'budget': val.budget,
         'montantRecette': val.montantRecette,
-        'noRea': 2,
+        'noRea': 9,
         'codeCat': val.libelleCat?.substring(0, 2).toUpperCase(),
         'lienImg': val.lienImg
       }).then((response: AxiosResponse<Film>) => {
@@ -60,7 +52,6 @@ export default function NewMovieTabScreen() {
       <MovieForm film={film}
                  mode='creation'
                  outputEvent={(val) => {createMovie(val)}}/>
->>>>>>> Stashed changes:client/screens/NewMovieTabScreen.tsx
     </View>
   );
 }

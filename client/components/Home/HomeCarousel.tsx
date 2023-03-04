@@ -28,15 +28,15 @@ export default class HomeCarousel extends React.Component<HomeCarouselProps, Hom
       imgUri: 'https://thumb.canalplus.pro/http/unsafe/655x367/filters:quality(80)/img-hapi.canalplus.pro:80/ServiceImage/ImageID/109432654'
     },
     {
+      title: 'Inception',
+      text: '',
+      imgUri: 'https://www.joblo.com/wp-content/uploads/2010/05/inception-poster-quad-1.jpg'
+    },
+    {
       title: 'Drive',
       text: '',
       imgUri: 'https://m.media-amazon.com/images/I/51BANINoAxL.jpg'
     },
-    {
-      title: 'Inception',
-      text: '',
-      imgUri: 'https://www.joblo.com/wp-content/uploads/2010/05/inception-poster-quad-1.jpg'
-    }
   ];
 
   constructor(props: {} | Readonly<{}>) {

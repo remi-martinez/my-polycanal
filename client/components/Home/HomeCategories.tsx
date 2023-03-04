@@ -1,70 +1,60 @@
-import React from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Image, StyleSheet, TouchableHighlight, View } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import axios, { AxiosResponse } from 'axios';
 import config from '../../config.json';
 import { Categorie } from '../../models/categorie';
+import { useNavigation } from '@react-navigation/native';
 
 
-type HomeCategoriesProps = {};
+const HomeCategories = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [entries, setEntries] = useState([]);
+  const [categories, setCategories] = useState<Categorie[]>([]);
+  const carousel = React.useRef(null);
+  const navigation = useNavigation();
 
-type HomeCategoriesState = {
-  activeIndex: number;
-  entries: any;
-  activeSlide: any;
-  categories: Categorie[];
-};
-
-export default class HomeCategories extends React.Component<HomeCategoriesProps, HomeCategoriesState> {
-  private carousel: Carousel<any> | any;
-
-  constructor(props: {} | Readonly<{}>) {
-    super(props);
-    this.state = {
-      activeIndex: 0,
-      activeSlide: 0,
-      entries: [],
-      categories: [],
-    }
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     axios.get<Categorie[]>(`${config.apiUrl}/categories`).then((response: AxiosResponse<Categorie[]>) => {
-      const tousFilms = new Categorie('999', 'TO', 'https://i.imgur.com/CCRoHeS.png')
-      this.setState({ categories: [tousFilms, ...response.data] });
+      const tousFilms = new Categorie('TO', 'TO', 'https://i.imgur.com/CCRoHeS.png')
+      setCategories([tousFilms, ...response.data]);
     });
+  }, []);
+
+  const handleCategoryTouched = (code: string) => {
+    navigation.navigate('SearchTab', { code: 'AC' });
   }
 
-  _renderCategory({item, index}: { item: Categorie, index: number }) {
+  const _renderCategory = ({ item, index }: { item: Categorie, index: number }) => {
     return (
-      <View style={{
-        backgroundColor: 'none',
-        borderRadius: 5,
-        marginLeft: 0,
-        marginRight: 0,
-      }}>
-        <Image source={{uri: item.image}} style={styles.imageStyles} resizeMode="center"/>
-      </View>
-
+      <TouchableHighlight onPress={() => handleCategoryTouched(item.id)}>
+        <View style={{
+          backgroundColor: 'none',
+          borderRadius: 5,
+          marginLeft: 0,
+          marginRight: 0,
+        }}>
+          <Image source={{ uri: item.image }} style={styles.imageStyles} resizeMode="center" />
+        </View>
+      </TouchableHighlight>
     )
   }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Carousel
-          activeSlideAlignment="start"
-          layout={'default'}
-          ref={ref => this.carousel = ref}
-          data={this.state.categories}
-          sliderWidth={400}
-          itemWidth={200}
-          renderItem={this._renderCategory}
-          vertical={false}/>
-      </View>
-    );
-  }
-}
+  return (
+    <View style={styles.container}>
+      <Carousel
+        activeSlideAlignment="start"
+        layout={'default'}
+        ref={carousel}
+        data={categories}
+        sliderWidth={400}
+        itemWidth={200}
+        renderItem={_renderCategory}
+        vertical={false} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -78,3 +68,5 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   }
 });
+
+export default HomeCategories;

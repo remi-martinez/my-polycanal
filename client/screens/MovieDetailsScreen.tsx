@@ -9,6 +9,7 @@ import ButtonStyled from '../components/Shared/ButtonStyled';
 import ButtonIcon from '../components/Shared/ButtonIcon';
 import { NavigationProp } from '@react-navigation/native';
 import MovieForm from '../components/Movie/MovieForm';
+import Toast from 'react-native-root-toast';
 
 
 type FormData = {
