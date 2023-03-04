@@ -21,7 +21,7 @@ import { AuthContextType, RootStackParamList, RootTabParamList, RootTabScreenPro
 import LinkingConfiguration from './LinkingConfiguration';
 import { TitleLogo } from '../components/TitleLogo';
 import AccountButton from '../components/Account/AccountButton';
-import LiveTabScreen from '../screens/LiveTabScreen';
+import NewMovieTabScreen from '../screens/NewMovieTabScreen';
 import MoreTabScreen from '../screens/MoreTabScreen';
 import InfoModalButton from '../components/InfoModalButton';
 import AccountScreen from '../screens/AccountScreen';
@@ -203,12 +203,12 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="LiveTab"
-        component={LiveTabScreen}
+        name="NewMovieTab"
+        component={NewMovieTabScreen}
         options={{
-          title: 'En direct',
+          title: 'Nouveau',
           tabBarActiveTintColor: Colors.secondary,
-          tabBarIcon: ({color}) => <TabBarIcon name="dot-circle" color={color}/>,
+          tabBarIcon: ({color}) => <TabBarIcon name="plus-circle" color={color}/>,
         }}
       />
       <BottomTab.Screen

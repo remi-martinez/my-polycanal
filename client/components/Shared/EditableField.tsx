@@ -1,21 +1,23 @@
 import React from 'react';
-import { StyleProp, StyleSheet, Text, TextInput, View, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, Text, TextInput, TextStyle, View, ViewStyle } from 'react-native';
 import Colors from '../../constants/Colors';
 
 type InputProps = {
   onChangeText: any
   icon?: any
   iconPosition?: 'left' | 'right'
-  style?: StyleProp<ViewStyle>
+  style?: StyleProp<ViewStyle> | StyleProp<TextStyle>
   value?: string
-  label?: string
+  size?: number
+  height?: number | string
   width?: number | string
+  label?: string
   placeholder?: string
   error?: string
   password?: boolean
 }
 
-const Input = ({onChangeText, iconPosition, icon, style, value, placeholder, label, width, error, password, ...props}: InputProps) => {
+const EditableField = ({onChangeText, iconPosition, icon, style, value, size, height, width, placeholder, label, error, password, ...props}: InputProps) => {
   const [focused, setFocused] = React.useState(false);
 
   const getFlexDirection = () => {
@@ -40,19 +42,20 @@ const Input = ({onChangeText, iconPosition, icon, style, value, placeholder, lab
     }
   };
   return (
-    <View style={[styles.inputContainer, {width: width}]}>
+    <View style={styles.inputContainer}>
       {label && <Text style={{color: Colors.white}}>{label}</Text>}
 
       <View
         style={[
           styles.wrapper,
+          {width: width, height: height},
           {alignItems: icon ? 'center' : 'baseline'},
           {borderColor: getBorderColor(), flexDirection: getFlexDirection()},
         ]}>
         <View>{icon && icon}</View>
 
         <TextInput
-          style={[styles.textInput, style]}
+          style={[styles.textInput, {fontSize: size}, style]}
           onChangeText={onChangeText}
           secureTextEntry={password}
           defaultValue={value}
@@ -76,10 +79,9 @@ const Input = ({onChangeText, iconPosition, icon, style, value, placeholder, lab
 const styles = StyleSheet.create({
   wrapper: {
     height: 48,
-    borderWidth: 1,
+    borderBottomWidth: 1,
     borderRadius: 3,
     paddingHorizontal: 5,
-    backgroundColor: 'rgba(255, 255, 255, 0.125))',
     marginTop: 5,
   },
 
@@ -101,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Input;
+export default EditableField;

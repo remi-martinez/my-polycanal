@@ -35,6 +35,8 @@ export default class ButtonIcon extends React.Component<ButtonProps, ButtonState
 
 const styles = StyleSheet.create({
   appButtonContainer: {
+    height: 36,
+    widht: 36,
     borderRadius: 20,
     paddingVertical: 10,
     paddingHorizontal: 12
