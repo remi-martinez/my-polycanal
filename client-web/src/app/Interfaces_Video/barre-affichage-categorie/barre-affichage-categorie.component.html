@@ -1,11 +1,11 @@
 <div>
 <h1>Catégorie choisie</h1>
 
-<h2 (click)="this.filmCategorieService.goTousFilms()">Tous les films</h2>
-<h2 (click)="this.filmCategorieService.goActionFilms()">Action</h2>
-<h2 (click)="this.filmCategorieService.goComedieFilm()">Comédie</h2>
-<h2 (click)="this.filmCategorieService.goPolicierFilm()">Policier</h2>
-<h2 (click)="this.filmCategorieService.goWesternFilm()">Western</h2>
+<h2 [ngClass]="{'selection_cat': codeCat==null}" (click)="this.filmCategorieService.goTousFilms()">Tous les films</h2>
+<h2 [ngClass]="{'selection_cat': codeCat=='AC'}" (click)="this.filmCategorieService.goActionFilms()">Action</h2>
+<h2 [ngClass]="{'selection_cat': codeCat=='CO'}" (click)="this.filmCategorieService.goComedieFilm()">Comédie</h2>
+<h2 [ngClass]="{'selection_cat': codeCat=='PO'}" (click)="this.filmCategorieService.goPolicierFilm()">Policier</h2>
+<h2 [ngClass]="{'selection_cat': codeCat=='WE'}" (click)="this.filmCategorieService.goWesternFilm()">Western</h2>
 
 <app-videos></app-videos>
 </div>
