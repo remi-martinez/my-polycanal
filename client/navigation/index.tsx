@@ -153,7 +153,7 @@ export function RootNavigator() {
         </Stack.Group>
         <Stack.Screen name="Root" component={BottomTabNavigator} options={{headerShown: false}}/>
         <Stack.Screen name="NotFound" component={NotFoundScreen} options={{title: 'Page introuvable'}}/>
-        <Stack.Group screenOptions={{presentation: 'modal'}}>
+        <Stack.Group screenOptions={{presentation: 'modal', title: 'A propos'}}>
           <Stack.Screen name="Modal" component={ModalScreen}/>
         </Stack.Group>
         <Stack.Group screenOptions={{presentation: 'modal', headerShown: false}}>
@@ -209,15 +209,6 @@ function BottomTabNavigator() {
           title: 'Nouveau',
           tabBarActiveTintColor: Colors.secondary,
           tabBarIcon: ({color}) => <TabBarIcon name="plus-circle" color={color}/>,
-        }}
-      />
-      <BottomTab.Screen
-        name="MoreTab"
-        component={MoreTabScreen}
-        options={{
-          title: 'En plus',
-          tabBarActiveTintColor: Colors.secondary,
-          tabBarIcon: ({color}) => <TabBarIcon name="ellipsis-h" color={color}/>,
         }}
       />
     </BottomTab.Navigator>

@@ -34,7 +34,7 @@ export const LoginScreen = ({ navigation }: { navigation: any }) => {
       <View style={styles.container}>
         <Image source={img} style={styles.logoStyle} resizeMode="contain"/>
         <Text style={styles.subtitleText}>
-          Vous avez déjà un compte CANAL+ ? Saisissez vos informations ci-dessous ou inscrivez-vous gratuitement
+          Vous avez déjà un compte myPOLYCANAL ? Saisissez vos informations ci-dessous ou inscrivez-vous gratuitement
         </Text>
         <View style={styles.tabBarContainer}>
           <TabView

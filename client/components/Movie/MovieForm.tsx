@@ -32,11 +32,13 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
   const [formData, setFormData] = useState<Partial<FormData>>({});
   const [date, setDate] = useState(new Date());
   const [codeCat, setCodeCat] = useState('');
+  const [real, setReal] = useState('');
 
   useEffect(() => {
     if (mode === 'edition') {
       setCreateMode(false);
       setCodeCat(film.codeCat?.id!);
+      setReal(`${film.noRea?.prenRea} ${film.noRea?.nomRea}`)
       setFormData({
         lienImg: film.lienImg,
         titre: film.titre,
@@ -51,16 +53,7 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
     if (mode === 'creation') {
       setCreateMode(true);
       setCodeCat('');
-      setFormData({
-        lienImg: undefined,
-        titre: undefined,
-        libelleCat: undefined,
-        duree: undefined,
-        dateSortie: new Date(),
-        nomRea: undefined,
-        budget: undefined,
-        montantRecette: undefined
-      })
+      clearForm();
     }
   }, [])
 
@@ -72,10 +65,24 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
     outputEvent(undefined);
   }
 
+  const clearForm = () => {
+    film = {}
+    setFormData({
+      lienImg: undefined,
+      titre: undefined,
+      libelleCat: undefined,
+      duree: undefined,
+      dateSortie: new Date(),
+      nomRea: undefined,
+      budget: undefined,
+      montantRecette: undefined
+    })
+  }
+
   const actionsButtons = () => {
     return (
-      <View style={styles.absoluteBottomMiddle}>
-        <ButtonIcon icon="close" onPress={abortEdition} secondary={true} style={{marginHorizontal: 20}}/>
+      <View style={[ createMode ? styles.absoluteBottomMiddleCreation : styles.absoluteBottomMiddle]}>
+        {!createMode && <ButtonIcon icon="close" onPress={abortEdition} secondary={true} style={{marginHorizontal: 20}}/>}
         <ButtonIcon icon="check" onPress={saveEdition} secondary={true} style={{backgroundColor: Colors.success}}/>
       </View>
     );
@@ -95,6 +102,7 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
     return (
       <View style={styles.container}>
         <Input value={film.lienImg}
+               width={createMode ? 320 : 360}
                placeholder="Lien du poster"
                onChangeText={(val: string) => setFormData({...formData, lienImg: val})}/>
         {actionsButtons()}
@@ -105,7 +113,7 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
                        style={[styles.title, {fontSize: 28, textAlign: 'center'}]}
                        onChangeText={(val: string) => setFormData({...formData, titre: val})}/>
         <View style={styles.containerInline}>
-          <View>
+          <View style={createMode ? { marginRight: 10 } : {}}>
             <Text style={{marginTop: 10}}>Catégorie</Text>
             <View style={styles.pickerWrapper}>
               <Picker
@@ -122,10 +130,13 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
               />
             </View>
           </View>
-          <Input label="Durée"
-                 value={film.duree?.toString()}
-                 width={100}
-                 onChangeText={(val: string) => setFormData({...formData, duree: +val})}/>
+          <View style={createMode ? { marginRight: 10 } : {}}>
+            <Input label="Durée"
+                   placeholder="Durée"
+                   value={film.duree?.toString()}
+                   width={100}
+                   onChangeText={(val: string) => setFormData({...formData, duree: +val})}/>
+          </View>
           <View>
             <Text style={{marginTop: 10}}>Date de sortie</Text>
             <RNDateTimePicker style={{width: 100, height: 50}}
@@ -133,9 +144,9 @@ export default function MovieForm({film, mode, outputEvent, ...props}: MovieForm
                               onChange={(e) => handleDatePickerChange(e.nativeEvent.timestamp!)}/>
           </View>
         </View>
-        <View style={[styles.container, {marginLeft: '20%', marginTop: '10%'}]}>
+        <View style={[styles.container, createMode ? {marginLeft: 0} : {marginLeft: '5%', marginTop: '10%'}]}>
           <Input label="Réalisateur"
-                 value={`${film.noRea?.prenRea} ${film.noRea?.nomRea}`}
+                 value={real}
                  onChangeText={(val: string) => setFormData({...formData, nomRea: val})}/>
           <Input label="Budget"
                  value={film.budget?.toString()}
@@ -184,4 +195,12 @@ const styles = StyleSheet.create({
     zIndex: 99,
     flexDirection: 'row',
   },
+  absoluteBottomMiddleCreation: {
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    bottom: 100,
+    right: 150,
+    zIndex: 99,
+    flexDirection: 'row',
+  }
 });
