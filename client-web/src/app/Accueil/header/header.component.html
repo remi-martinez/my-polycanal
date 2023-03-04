@@ -7,12 +7,12 @@
 <header>
   <a routerLink="" ><img src="../../../assets/img/title-logo.png"></a>
   <ul>
-    <li><a routerLink="" >Accueil</a></li>
-    <li><a routerLink="categories" >Films</a></li>
-    <li><a routerLink="gestionVideo" >Gérer les films</a></li>
-    <li><a routerLink="personnages" >Personnages</a></li>
-    <li><a routerLink="acteurs" >Acteurs</a></li>
-    <li><a routerLink="realisateurs" >Realisateurs</a></li>
+    <li><a [ngClass]="{'selection_cat': this.routeName=='/'}" routerLink="" >Accueil</a></li>
+    <li><a [ngClass]="{'selection_cat': this.routeName?.includes('categories')}" routerLink="categories" >Films</a></li>
+    <li><a [ngClass]="{'selection_cat': this.routeName?.includes('gestionVideo')}" routerLink="gestionVideo" >Gérer les films</a></li>
+    <li><a [ngClass]="{'selection_cat': this.routeName?.includes('personnages')}" routerLink="personnages" >Personnages</a></li>
+    <li><a [ngClass]="{'selection_cat': this.routeName?.includes('acteurs')}" routerLink="acteurs" >Acteurs</a></li>
+    <li><a [ngClass]="{'selection_cat': this.routeName?.includes('realisateurs')}" routerLink="realisateurs" >Realisateurs</a></li>
   </ul>
   <div class="imgNav">
     <img class="imageLoupe" (click)="rechercheDepliante()"  src="../../../assets/img/loupe.png"  />

@@ -3,7 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AuthService} from "../../services/auth.service";
 import {Utilisateur} from "../../models/utilisateur";
 import {Observable} from "rxjs";
-import {Personnage} from "../../models/personnage";
 
 @Component({
   selector: 'app-header',
@@ -17,14 +16,21 @@ export class HeaderComponent implements OnInit {
   value: string = '';
   showRechercheDiv = false;
   showPopUpProfile = false;
+  routeName: string | undefined;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               public authService: AuthService) {
+    this.routeName = this.route.snapshot.routeConfig?.path;
+
   }
 
   ngOnInit(): void {
     this.connectedUtilisateur$ = this.authService.getCurrentUserObservable();
+
+    this.router.events.subscribe((val) =>
+    {this.routeName = this.router.url;
+    console.log(this.routeName);})
 
     this.connectedUtilisateurObserver = {
       next: (u: Utilisateur) => {
